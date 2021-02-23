@@ -12,8 +12,13 @@
 	</head>
 
 	<body>
-
-
+		<audio src="./backdround.mp3"></audio>
+		<script>
+			document.body.onclick = function() {
+				document.getElementsByTagName("audio")[0].play()
+			}
+		</script>
+	
 		<script type="module">
 
 			import * as THREE from '../build/three.module.js';
@@ -24,13 +29,9 @@
 			import { RGBELoader } from './jsm/loaders/RGBELoader.js';
 			import { RoughnessMipmapper } from './jsm/utils/RoughnessMipmapper.js';
 
-			let camera, scene, renderer;
+			let camera, scene, renderer, object;
 
 			init();
-			render();
-
-			
-
 			function init() {
 
 				const container = document.createElement( 'div' );
@@ -65,7 +66,6 @@
 						texture.dispose();
 						pmremGenerator.dispose();
 
-						render();
 
 						// model
 
@@ -87,6 +87,7 @@
 
 						let loader = new FBXLoader().setPath( 'my/' );
 						loader.load( 'Budda_Web3DTest_.FBX', function ( gltf ) {
+							object = gltf;
 							console.log(gltf)
 							gltf.traverse( function ( child ) {
 
@@ -98,7 +99,8 @@
 
 							} );
 
-							scene.add( gltf );
+							scene.add( object );
+							console.log(object)
 
 							roughnessMipmapper.dispose();
 
@@ -119,11 +121,11 @@
 				pmremGenerator.compileEquirectangularShader();
 
 				const controls = new OrbitControls( camera, renderer.domElement );
-				controls.addEventListener( 'change', render ); // use if there is no animation loop
-				controls.target.set( 0, 0, 0 );
+				//controls.addEventListener( 'change', render ); // use if there is no animation loop
+				controls.target.set( 0, 12, 0 );
 				controls.update();
 
-				window.addEventListener( 'resize', onWindowResize );
+				// window.addEventListener( 'resize', onWindowResize );
 
 			}
 
@@ -139,12 +141,16 @@
 			}
 
 			function render() {
-
+				object.rotation.y += 0.001;
+				
 				renderer.render( scene, camera );
-
+				setTimeout(function() {
+					render()
+				}, 10)
 			}
 
 		</script>
 
 	</body>
+
 </html>
