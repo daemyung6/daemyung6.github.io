@@ -21,7 +21,7 @@
 				text-align: center;
 				width: 100%;
 				position: absolute;
-				top: 75%;
+				top: 80%;
 				left: 0px;
 			}
 			.text p {
@@ -31,7 +31,7 @@
 			}
 			@font-face {
 				font-family: GyeonggiTitleBold;
-				src: url("./font/GyeonggiTitleBold.ttf");
+				src: url("./font/GyeonggiTitle_Light.ttf");
 			}
 		</style>
 	</head>
@@ -45,9 +45,14 @@
 		</div>
 		<script>
 			const playbt = document.getElementsByClassName("playbt")[0];
-			const sound = new Audio("./backdround.mp3");
+			const sound = new Audio();
 			let playbtswitch = false;
+			let soundfirst = true;
 			playbt.onclick = function() {
+				if(soundfirst) {
+					sound.src = "./backdround.mp3";
+					soundfirst = !soundfirst;
+				}
 				if(!playbtswitch) {
 					sound.play()
 					playbtswitch = !playbtswitch;
@@ -155,7 +160,7 @@
 								render();
 								setTimeout(function() {
 									anime()
-								}, 1000/60)
+								}, 1000/30)
 							}
 							anime()
 						} );
@@ -173,7 +178,7 @@
 				pmremGenerator.compileEquirectangularShader();
 
 				const controls = new OrbitControls( camera, renderer.domElement );
-				controls.addEventListener( 'change', render ); // use if there is no animation loop
+				// controls.addEventListener( 'change', render ); // use if there is no animation loop
 				controls.target.set( 0, 12, 0 );
 				controls.update();
 
@@ -188,7 +193,7 @@
 
 				renderer.setSize( window.innerWidth, window.innerHeight );
 
-				render();
+				// render();
 
 			}
 
