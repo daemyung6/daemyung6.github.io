@@ -8,14 +8,58 @@
 			body {
 				margin: 0px;
 			}
+			.audiodiv {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			.playbt {
+				width: 60px;
+    			margin: 10px;
+			}
+			.text {
+				text-align: center;
+				width: 100%;
+				position: absolute;
+				top: 75%;
+				left: 0px;
+			}
+			.text p {
+				font-family: GyeonggiTitleBold;
+				color: white;
+				font-size: 24px;
+			}
+			@font-face {
+				font-family: GyeonggiTitleBold;
+				src: url("./font/GyeonggiTitleBold.ttf");
+			}
 		</style>
 	</head>
 
 	<body>
-		<audio src="./backdround.mp3"></audio>
+		<div class="audiodiv">
+			<img class="playbt" src="./icon/play.png" alt="">
+		</div>
+		<div class="text">
+			<p>사단법인 정부조달문화상품협회</p>
+		</div>
 		<script>
-			document.body.onclick = function() {
-				document.getElementsByTagName("audio")[0].play()
+			const playbt = document.getElementsByClassName("playbt")[0];
+			const sound = new Audio("./backdround.mp3");
+			let playbtswitch = false;
+			playbt.onclick = function() {
+				if(!playbtswitch) {
+					sound.play()
+					playbtswitch = !playbtswitch;
+					this.src = "./icon/pause.png";
+					
+				}
+				else {
+					sound.pause()
+					playbtswitch = !playbtswitch;
+					
+					this.src = "./icon/play.png";
+				}
 			}
 		</script>
 	
@@ -44,7 +88,7 @@
 				camera.rotation.y = 1/180*Math.PI;
 				camera.position.x = 0;
 				camera.position.y = 10;
-				camera.position.z = 50;
+				camera.position.z = 100;
 
 				scene = new THREE.Scene();
 				scene.background = new THREE.Color(0x000000);
@@ -106,6 +150,11 @@
 
 							render();
 
+							setInterval(function() {
+								object.rotation.y += 0.002;
+								render();
+							}, 60/1000)
+
 						} );
 					} );
 
@@ -121,11 +170,11 @@
 				pmremGenerator.compileEquirectangularShader();
 
 				const controls = new OrbitControls( camera, renderer.domElement );
-				//controls.addEventListener( 'change', render ); // use if there is no animation loop
+				controls.addEventListener( 'change', render ); // use if there is no animation loop
 				controls.target.set( 0, 12, 0 );
 				controls.update();
 
-				// window.addEventListener( 'resize', onWindowResize );
+				window.addEventListener( 'resize', onWindowResize );
 
 			}
 
@@ -141,13 +190,9 @@
 			}
 
 			function render() {
-				object.rotation.y += 0.001;
-				
 				renderer.render( scene, camera );
-				setTimeout(function() {
-					render()
-				}, 10)
 			}
+			
 
 		</script>
 
