@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* Color black CSS */
+.black ::selection{background:#282828; color: #fff;}
+.black ::-moz-selection{background:#282828; color: #fff;}
+.black .twittericon, .black .bxsliderlist1, .black .latestnewstext1:hover a, .black .spacer, .black #main .buttoncontact, .black .footer-container .social-ico:hover, .black .latestnews .bx-wrapper a.bx-prev:hover, .black .latestnews .bx-wrapper a.bx-next:hover, .black .track-download-buy:hover, .black .close-btn:hover, .black .sell-platforms div:hover, .black .disc-play-btn:hover, .black .close-btn, .black .close2-btn, .black .date-box .info.date, .black .disc-img .overlay, .black .twitter-quotes, .black button.btn-play:hover, .black button.btn-pause:hover {background-color: #282828;}
+.black a.sliderlisticon3, .black .latestnewstext1 h3, .black .latestnewstext1 p.latestnewsdate, .black .symbol span, .black #main p.contacttext, .black #main .buttoncontact:hover, .black .discographycolumn h3, .black .discographycolumn a, .black p.contacttextarea, .black .track-info span, .black .disc-title span, .black .sell-platforms span, .black .topwrap p span, .black .audiojs .time, .black .news-container h1 span, .black .news-description span, .black .disc-info h2 {color: #282828 !important;}
+.black .navbar-nav > .active > a, .black .nav > li > a:hover, .black .main-menu li.current a, .black .main-menu li a:hover{border-color: #282828 !important;}
+.black .close-btn, .black .close2-btn{border-color: #282828;}
+.black .bx-wrapper .bx-pager.bx-default-pager a:hover, .black .bx-wrapper .bx-pager.bx-default-pager a.active, .black .parallax1 .bx-wrapper a.bx-next:hover, .black .parallax1 .bx-wrapper a.bx-prev:hover {background-color: #282828; border-color: #282828;}
+.black .view-first .mask {background-color: rgba(0,0,0,0.8);}
+.black .ch-grid:hover div {background-color: rgba(0,0,0,0.9);}
+.black #main .buttoncontact:hover{background-color: #fff;}
+.black .latestnewstext1:hover a h3, .black .latestnewstext1:hover a .latestnewsdate{color: #fff !important;}
+
+.black .news-info h1, .black .news-info .news-date, .black .news-description span, .black .twitter a, .black .welcome.logo ul li span, .black .date-box .info .buy a, .black .form h2, .black .buttoncontact:hover,.black .disc-info p a {color: #282828;}
+.black .last-news:hover .news-info, .black .news-nav div:hover, .black .nav-news div:hover, .black .welcome.logo .spacer-box, .black .top-spacer, .black .buttoncontact, .black .audiojs .play:hover, .black .audiojs .prev-track:hover, .black .audiojs .pause:hover, .black .audiojs .next-track:hover, .black .audiojs .progress {background-color: #282828;}
+.black .controller ul li.selected, .black .controller ul li:hover {border-color: #282828 !important; background-color: #282828 !important;}
+.black .dates-nav .prev:hover {background-position: -176px 0;}
+.black .dates-nav .next:hover {background-position: -176px -44px;}
+.black .slides-navigation .prev:hover, .black .slides-navigation .next:hover {background-position: 0 -108px;}
+.black #nav2 > ul > li a:hover, .black .track-info em{color: #282828;}
+.black #nav2 > a {background-color: #282828;}

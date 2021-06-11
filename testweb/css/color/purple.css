@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/* Color purple CSS */
+.purple ::selection{background:#d786fe; color: #fff;}
+.purple ::-moz-selection{background:#d786fe; color: #fff;}
+.purple .twittericon, .purple .bxsliderlist1, .purple .latestnewstext1:hover a, .purple .spacer, .purple #main .buttoncontact, .purple .footer-container .social-ico:hover, .purple .latestnews .bx-wrapper a.bx-prev:hover, .purple .latestnews .bx-wrapper a.bx-next:hover, .purple .track-download-buy:hover, .purple .close-btn:hover, .purple .sell-platforms div:hover, .purple .disc-play-btn:hover, .purple .close-btn, .purple .close2-btn, .purple .date-box .info.date, .purple .disc-img .overlay, .purple .twitter-quotes, .purple button.btn-play:hover, .purple button.btn-pause:hover {background-color: #d786fe;}
+.purple a.sliderlisticon3, .purple .latestnewstext1 h3, .purple .latestnewstext1 p.latestnewsdate, .purple .symbol span, .purple #main p.contacttext, .purple #main .buttoncontact:hover, .purple .discographycolumn h3, .purple .discographycolumn a, .purple p.contacttextarea, .purple .track-info span, .purple .disc-title span, .purple .sell-platforms span, .purple .topwrap p span, .purple .audiojs .time, .purple .news-container h1 span, .purple .news-description span, .purple .disc-info h2 {color: #d786fe !important;}
+.purple .navbar-nav > .active > a, .purple .nav > li > a:hover, .purple .main-menu li.current a, .purple .main-menu li a:hover{border-color: #d786fe !important;}
+.purple .close-btn, .purple .close2-btn{border-color: #d786fe;}
+.purple .bx-wrapper .bx-pager.bx-default-pager a:hover, .purple .bx-wrapper .bx-pager.bx-default-pager a.active, .purple .parallax1 .bx-wrapper a.bx-next:hover, .purple .parallax1 .bx-wrapper a.bx-prev:hover {background-color: #d786fe; border-color: #d786fe;}
+.purple .view-first .mask {background-color: rgba(215,134,254,0.8);}
+.purple .ch-grid:hover div {background-color: rgba(215,134,254,0.9);}
+.purple #main .buttoncontact:hover{background-color: #fff;}
+.purple .latestnewstext1:hover a h3, .purple .latestnewstext1:hover a .latestnewsdate{color: #fff !important;}
+
+.purple .news-info h1, .purple .news-info .news-date, .purple .news-description span, .purple .twitter a, .purple .welcome.logo ul li span, .purple .date-box .info .buy a, .purple .form h2, .purple .buttoncontact:hover,.purple .disc-info p a {color: #d786fe;}
+.purple .last-news:hover .news-info, .purple .news-nav div:hover, .purple .nav-news div:hover, .purple .welcome.logo .spacer-box, .purple .top-spacer, .purple .buttoncontact, .purple .audiojs .play:hover, .purple .audiojs .prev-track:hover, .purple .audiojs .pause:hover, .purple .audiojs .next-track:hover, .purple .audiojs .progress {background-color: #d786fe;}
+.purple .controller ul li.selected, .purple .controller ul li:hover {border-color: #d786fe !important; background-color: #d786fe !important;}
+.purple .dates-nav .prev:hover {background-position: -132px 0;}
+.purple .dates-nav .next:hover {background-position: -132px -44px;}
+.purple .slides-navigation .prev:hover, .purple .slides-navigation .next:hover {background-position: -204px -108px;}
+.purple #nav2 > ul > li a:hover{color: #d786fe;}
+.purple #nav2 > a {background-color: #d786fe;}
+
+.purple .post-meta i, .purple .track-info em {color: #d786fe;}
+.purple .post-meta a, .purple strong {color: #d786fe;}
+.purple .pm-link:hover {color: #d786fe !important;}
+.purple .side-widget ul li a:hover {color: #d786fe;}
+.purple article h3 {color: #d786fe !important;}
+.purple article h3 a {color: #d786fe !important;}
+.purple .tags a {color: #d786fe;}
+.purple .page-navigation li a:hover {border-color: #d786fe;color: #d786fe;}
+.purple .page-navigation li.active a {background: #d786fe;border-color: #d786fe;}
+.purple .side-widget h5 {color: #d786fe;}
+.purple .comments-wrap h6 {color: #d786fe;}
+.purple .comments-wrap span a {color: #d786fe;}
+.purple .comment-form label {color: #d786fe;}
+.purple .comment-author {color: #d786fe;}
+.purple .reply {background: #d786fe;}
+.purple .s-btn {background: #d786fe;}
+.purple .pdate {background-color:#d786fe;}
+.purple .reply:hover {background:#aaa;}
+.purple .reply:hover {background:#aaa;}
+.purple .comment-form .s-btn:hover {background:#aaa;}

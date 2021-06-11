@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/* Color Light CSS */
+.light .menudesktopcolor,.light .menudesktopcolorsmall,.light .section1, body.light, .light .header {background: #fff;}
+.light .symbol,.light .nav li a,.light .nav li.active a,.light .discographycolumn p, .light .disc-title, .light .track-info, .light .disc-info p {color: #000;}
+.light .nav li a {border-color: #fff;}
+.light .navbar-brand ul li {background-color: #B8B8B8;}
+.light .latestnews .bx-wrapper a.bx-prev, .light .latestnews .bx-wrapper a.bx-next, .light .close-btn {background-position: 0 bottom;}
+.light .sell-platforms .itunes {background-position: left bottom; width: 110px;}
+.light .sell-platforms .beatport {background-position: center bottom; width: 90px;}
+.light .sell-platforms .bandcamp {background-position: right bottom;}
+.light .color-picker .picker-btn, .light .color-picker {background-color: #555;}
+.light .news-info {background: #F1F1F1;}
+.light .last-news-prev, .light .last-news-next, .light .close2-btn, .light .nav-news .news-prev, .light .nav-news .news-next {background-position: bottom;}
+.light .main-menu li a{border-color: #fff; color: #000;}
+.light .news-thumb, .light .square-bg, .light .player-container {background-color: #EBEBEB;}
+.light .dates-nav .prev{background-position: -396px 0;}
+.light .dates-nav .next{background-position: -396px -44px;}
+.light .controller ul li{border-color: #919191; background-color: #ebebeb;}
+.light #comments, .light #name, .light #email{border-color: #fff;}
+.light .audiojs .play{background-position: 0 -30px;}
+.light .audiojs .pause{background-position: -30px -30px;}
+.light .audiojs .loading{background-position: 0 -30px;}
+.light .audiojs .next-track{background-position: -90px -30px;}
+.light .audiojs .prev-track{background-position: -60px -30px;}
+.light .audiojs .time em{color: #a9a9a9;}
+.light .track-name, .light .artist, .light .news-container h1{color: #484848;}
+.light .close-btn:hover, .light .close2-btn:hover {border-color: #000 !important; background-color: #000 !important;}
+.light #nav2 > a{background-position: top;}
+.light #nav2 > ul > li {background: #fff; background: rgba(255,255,255,0.8);}
+.light #nav2 > ul > li a {color: #000;}
+.light .disc-info p a:hover {color: #000 !important;}
+
+.light .pdate {background:#c3121c;}
+.light article {border-bottom: 1px solid #d2d2d2 !important;}
+.light article h3 {border-top: 1px solid #d2d2d2 !important;}
+.light .page-navigation li a {border: 1px solid #d2d2d2 !important; color: #d2d2d2 !important;}
+.light .page-navigation li.active a {color: #999 !important;}
+.light .search1 {border: 1px solid #aaa !important;}
+.light .side-widget ul li {border-bottom: 1px dotted #d2d2d2 !important;}
+.light .comments-wrap h6 {border-top: 1px solid #d2d2d2 !important;border-bottom: 2px solid #d2d2d2 !important;}
+.light .comment-form {border-bottom: 2px solid #d2d2d2 !important;}
+.light .comment-form input {color:#000;border: 1px solid #d2d2d2 !important;}
+.light .comment-form textarea {color: #000;border: 1px solid #d2d2d2 !important;}
+.light .comment-content p {border: 1px solid #d2d2d2 !important;}
+.light .sec-content {color:#000;}
+

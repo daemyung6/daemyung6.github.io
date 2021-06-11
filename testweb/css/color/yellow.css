@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/* Color Yellow CSS */
+.yellow ::selection{background:#f1d301; color: #fff;}
+.yellow ::-moz-selection{background:#f1d301; color: #fff;}
+.yellow .twittericon, .yellow .bxsliderlist1, .yellow .latestnewstext1:hover a, .yellow .spacer, .yellow #main .buttoncontact, .yellow .footer-container .social-ico:hover, .yellow .latestnews .bx-wrapper a.bx-prev:hover, .yellow .latestnews .bx-wrapper a.bx-next:hover, .yellow .track-download-buy:hover, .yellow .close-btn:hover, .yellow .sell-platforms div:hover, .yellow .disc-play-btn:hover, .yellow .close-btn, .yellow .close2-btn, .yellow .date-box .info.date, .yellow .disc-img .overlay, .yellow .twitter-quotes, .yellow button.btn-play:hover, .yellow button.btn-pause:hover {background-color: #f1d301;}
+.yellow a.sliderlisticon3, .yellow .latestnewstext1 h3, .yellow .latestnewstext1 p.latestnewsdate, .yellow .symbol span, .yellow #main p.contacttext, .yellow #main .buttoncontact:hover, .yellow .discographycolumn h3, .yellow .discographycolumn a, .yellow p.contacttextarea, .yellow .track-info span, .yellow .disc-title span, .yellow .sell-platforms span, .yellow .topwrap p span, .yellow .audiojs .time, .yellow .news-container h1 span, .yellow .news-description span, .yellow .disc-info h2 {color: #f1d301 !important;}
+.yellow .navbar-nav > .active > a, .yellow .nav > li > a:hover, .yellow .main-menu li.current a, .yellow .main-menu li a:hover{border-color: #f1d301 !important;}
+.yellow .close-btn, .yellow .close2-btn{border-color: #f1d301;}
+.yellow .bx-wrapper .bx-pager.bx-default-pager a:hover, .yellow .bx-wrapper .bx-pager.bx-default-pager a.active, .yellow .parallax1 .bx-wrapper a.bx-next:hover, .yellow .parallax1 .bx-wrapper a.bx-prev:hover {background-color: #f1d301; border-color: #f1d301;}
+.yellow .view-first .mask {background-color: rgba(241,211,1,0.8);}
+.yellow .ch-grid:hover div {background-color: rgba(241,211,1,0.9);}
+.yellow #main .buttoncontact:hover{background-color: #fff;}
+.yellow .latestnewstext1:hover a h3, .yellow .latestnewstext1:hover a .latestnewsdate{color: #fff !important;}
+
+.yellow .news-info h1, .yellow .news-info .news-date, .yellow .news-description span, .yellow .twitter a, .yellow .welcome.logo ul li span, .yellow .date-box .info .buy a, .yellow .form h2, .yellow .buttoncontact:hover,.yellow .disc-info p a {color: #f1d301;}
+.yellow .last-news:hover .news-info, .yellow .news-nav div:hover, .yellow .nav-news div:hover, .yellow .welcome.logo .spacer-box, .yellow .top-spacer, .yellow .buttoncontact, .yellow .audiojs .play:hover, .yellow .audiojs .prev-track:hover, .yellow .audiojs .pause:hover, .yellow .audiojs .next-track:hover, .yellow .audiojs .progress {background-color: #f1d301;}
+.yellow .controller ul li.selected, .yellow .controller ul li:hover {border-color: #f1d301 !important; background-color: #f1d301 !important;}
+.yellow .dates-nav .prev:hover {background-position: -264px 0;}
+.yellow .dates-nav .next:hover {background-position: -264px -44px;}
+.yellow .slides-navigation .prev:hover, .yellow .slides-navigation .next:hover {background-position: -306px -108px;}
+.yellow #nav2 > ul > li a:hover{color: #f1d301;}
+.yellow #nav2 > a {background-color: #f1d301;}
+
+.yellow .post-meta i, .yellow .track-info em {color: #f1d301;}
+.yellow .post-meta a, .yellow strong {color: #f1d301;}
+.yellow .pm-link:hover {color: #f1d301 !important;}
+.yellow .side-widget ul li a:hover {color: #f1d301;}
+.yellow article h3 {color: #f1d301 !important;}
+.yellow article h3 a {color: #f1d301 !important;}
+.yellow .tags a {color: #f1d301;}
+.yellow .page-navigation li a:hover {border-color: #f1d301;color: #f1d301;}
+.yellow .page-navigation li.active a {background: #f1d301;border-color: #f1d301;}
+.yellow .side-widget h5 {color: #f1d301;}
+.yellow .comments-wrap h6 {color: #f1d301;}
+.yellow .comments-wrap span a {color: #f1d301;}
+.yellow .comment-form label {color: #f1d301;}
+.yellow .comment-author {color: #f1d301;}
+.yellow .reply {background: #f1d301;}
+.yellow .s-btn {background: #f1d301;}
+.yellow .pdate {background-color:#f1d301;}
+.yellow .reply:hover {background:#aaa;}
+.yellow .reply:hover {background:#aaa;}
+.yellow .comment-form .s-btn:hover {background:#aaa;}

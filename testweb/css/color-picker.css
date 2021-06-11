@@ -1,0 +1,101 @@
+/* Color Picker Styles */
+.blue .color-picker .pickerTitle{background:#00D6FF;}
+.black .color-picker .pickerTitle{background:#000;}
+.yellow .color-picker .pickerTitle{background:#f1d301;}
+.turquoise .color-picker .pickerTitle{background:#29deb5;}
+.red .color-picker .pickerTitle{background:#c3121c;}
+.purple .color-picker .pickerTitle{background:#d786fe;}
+.orange .color-picker .pickerTitle{background:#fda527;}
+.green .color-picker .pickerTitle{background:#77be32;}
+
+.color-picker .picker-btn{
+	position: absolute;
+	left: -45px;
+	top: 65px;
+	border: none;
+	background: url("../img/icons/picker-ico.png") 5px no-repeat #202020;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+}
+.color-picker{
+	font-family: 'Montserrat', sans-serif;
+	width: 223px;
+	height: auto;
+	position: fixed;
+	top: 200px;
+	right: 0;
+	background: #202020;
+	z-index: 550;
+}
+.color-picker .pwrapper{
+	padding: 22px 22px 25px;
+	width: 174px;
+	height: auto;
+}
+.color-picker .pickerTitle{
+	text-transform: uppercase;
+	text-align: center;
+	float: none;
+	width: 100%;
+	margin: 0;
+	padding: 10px 5px;
+	cursor: auto;
+	border: none;
+	color:#fff;
+	background:#666;
+	line-height: 51px;
+	height: 50px;
+}
+.color-picker .pickersubTitle{
+	color:#7F7F7F;
+	text-transform: uppercase;
+	text-align: center;
+	float: none;
+	width: auto;
+	height: auto;
+	margin: 0 5px 15px;
+	padding: 10px 5px;
+	cursor: auto;
+	font-size:12px;
+	border-bottom: 1px solid #ededed;
+	border-top: 1px solid #ededed;
+	clear:both;
+}
+.color-picker div{
+	width: 30px;
+	height: 30px;
+	margin: 5px;
+	/*padding: 5px;*/
+	float: left;
+	cursor: pointer;
+	/*border: 2px solid #f0f0f0;*/
+}
+.color-picker div .picker-blue, .color-picker div .picker-red{margin-left: 10px;}
+.color-picker div.nopick{ width:0; height:0;}
+.color-picker .light-version{
+	width: 73px;
+	height: 29px;
+	margin-bottom:20px;
+/*	background: #fff;
+	line-height: 30px;
+	text-align: center;
+	color: #999;*/
+}
+.color-picker .dark-version{
+	width: 73px;
+	height: 29px;
+/*	background: #000;
+	line-height: 30px;
+	text-align: center;
+	color: #666;*/
+}
+.color-picker .picker-blue{background: #4cddf3;}
+.color-picker .picker-black{background: #000;}
+.color-picker .picker-green{background: #77be32;}
+.color-picker .picker-yellow{background: #f1d301;}
+.color-picker .picker-red{background: #c3121c;}
+.color-picker .picker-purple{background: #d786fe;}
+.color-picker .picker-turquoise{background: #29deb5;}
+.color-picker .picker-orange{background: #fda527;}
+.color-picker .picker-blue:hover,.color-picker .picker-black:hover,.color-picker .picker-green:hover,.color-picker .picker-yellow:hover,.color-picker .picker-red:hover,.color-picker .picker-purple:hover,.color-picker .picker-turquoise:hover,.color-picker .picker-orange:hover{border-color: #000;}

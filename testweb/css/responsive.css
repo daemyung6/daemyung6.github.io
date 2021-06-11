@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+/* Smaller than 1385 (devices and browsers) */
+@media only screen and (max-width: 1385px) {
+	.last-news-container {width: 900px;}
+	.slides-navigation a.next {right: -40px;}
+	.slides-navigation a.prev {left: -40px;}
+}
+
+/* Smaller than 1215 (devices and browsers) */
+@media only screen and (max-width: 1215px) {
+	.main-wrapper {width: 940px;}
+	.disc-container li:nth-child(2), .disc-container li:nth-child(5), .disc-container li:nth-child(8), .disc-container li:nth-child(11), .disc-container li:nth-child(14) {margin: 0 40px;}
+	.disc-container li {width: 286px;}
+	#myTweet {width: 940px;}
+	.nav-news .news-next {right: -60px;}
+	.nav-news .news-prev {left: -60px;}
+	.project-content {width: 940px;}
+	.disc-cover {width: 395px; margin-right: 20px;}
+	.disc-tracklist ol{margin: 0;}
+	.disc-tracklist ol li{line-height: 12px;}
+	.audio-player {width: 940px;}
+	.player-right {width: 830px;}
+	.main-menu li a {padding: 7px 8px;}
+	.main-menu {margin-right: 50px;}
+	.main-logo {margin-left: 50px;}
+	.slides-navigation{display: none;}
+}
+
+/* Smaller than 1085 (devices and browsers) */
+@media only screen and (max-width: 1085px) {
+	.main-wrapper {width: 700px;}
+	.last-news-container {width: 600px;}
+	.disc-container li:nth-child(2), .disc-container li:nth-child(5), .disc-container li:nth-child(8), .disc-container li:nth-child(11), .disc-container li:nth-child(14) {margin: 0 25px;}
+	.disc-container li {width: 216px;}
+	#myTweet {width: 700px;}
+	.news-container iframe {width: 600px; height: 338px;}
+	.news-container {width: 600px;}
+	.news-description {font-size: 17px;}
+	.nav-news div {top: 130px;}
+	.project-content {width: 700px;}
+	.disc-cover {width: 275px;}
+	.disc-tracklist {width: 405px;}
+	.disc-tracklist ol li {padding: 0;}
+	.track-download-buy{display: block; line-height: 14px; margin: 14px 0 18px;}
+	.close-btn {right: -50px;}
+	.sell-platforms {position: relative;left: 0; margin-top: 30px;}
+	.sell-platforms span{margin-top: 18px;}
+}
+
+/* Smaller than standard 976 (devices and browsers) */
+@media only screen and (max-width: 976px) {
+	.main-menu{display: none;}
+	.header {height: 100px;}
+	.main-logo {margin-top: 40px;}
+	#nav2 {display: block;}
+	.audio-player {width: 700px;}
+	.player-right {width: 580px;}
+	.title-container {width: 700px;}
+	.title-container .logo img {width: 700px;}
+	.top-spacer {width: 100px;}
+	.welcome.logo .spacer-box {left: 333px; top: 166px;}
+	.close-btn {right: -30px;}
+	.o-mob {display:block;}
+	.project-window {margin-bottom: 40px;padding-top: 65px;}
+	.play-btns {float:left;width:20px;margin-top:3px;}
+	.play-count {width:25px;float:left;display:table;font-size: 20px;color: #636262;font-family: Titillium Web;margin-top: 12px;}
+	.track-title {width: 230px;position: relative;float: left;top: 14px;}
+	.track-info {width: 230px;line-height: 25px;float: none;display: table;padding-left: 13px;position: relative;top: -12px;}
+	.track-info em {display:block;}
+	.track-download-buy {width:230px;float:none;display:block;}
+	.track-download-buy a {padding: 6px 10px 6px;float: none;display: table;position: relative;top: -19px;right: -10px;}
+	.disc-tracklist ol{margin: 10px 0 -30px;padding: 1px 0 0 0;padding-left:0px;max-height: inherit;overflow: hidden;}
+	.disc-tracklist ol li {overflow: hidden;}
+	.disc-info-wrap {max-width: 300px;display: block;}
+	.sell-platforms {padding-left: 0px;}
+	.sell-platforms span {margin-top: 18px;display: block;width: 100%;}
+	.sell-platforms a {width:100px;float:left;}
+	.sell-platforms .itunes {background-position: left 0;width: 113px;position: relative;right: 39px;background-size: 342px;height:43px;}
+	.sell-platforms .beatport {background-position: center 0;width: 99px;background-size: 304px;position: relative;right: 27px;top: 2px;height:38px;}
+	.sell-platforms .bandcamp {background-position: 118% 0px;background-size: 293px;width: 135px;position: relative;right: 27px;height: 37px;top: 3px;}
+	.itunes:after{content: "/";color: #c3121c;float: right;font-weight: bold;font-size: 22px;position: relative;right: 1px;top: 2px;width: 5px;background: none;}
+	.beatport:after {content: "/";color: #c3121c;float: right;font-weight: bold;font-size: 22px;position: relative;right: 1px;top: -2px;width: 5px;background: none;}
+	.mob-no {display:none;}
+	.grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12 {
+	position: relative;min-height: 1px;padding-right: 15px;padding-left: 15px;}
+	.container {width:700px;max-width:700px;padding-right: 12px;padding-left: 12px;margin-right: auto;margin-left: auto;}
+	.grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, .grid-9, .grid-10, .grid-11, .grid-12 {float: left;width: 90%;}
+	.side-widget ul {padding: 0px;position: relative;left: 15px;}
+	.comment-form input {width: 91.5%;}
+	.comment-form textarea {width: 91.5%;}
+	.comment-gravatar {width: 50px;float: left;}
+	.comment-author {margin-left: 65px;margin-top: 0px;font-size: 24px;font-weight: 700;color: #c3121c;}
+	.comment-content p {border: 1px solid #434343;border-radius: 10px;padding: 20px 15px;margin: 20px 0;margin-left: 65px;font-size:14px;line-height:25px;}
+	aside {padding-left: 0px !important;font-family:Roboto;}
+	.pdate {left: 20px;top: -25px;position:relative;}
+	article {padding-left: 0px;padding-bottom: 20px;margin-bottom: 80px;position: relative;line-height: 39px;font-family:Roboto;}
+	.page-wrap {display: block;}
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 795px) {
+
+	.project-window {height:auto !important;}
+	.o-mob {display:block;}
+	.project-window {margin-bottom: 40px;padding-top: 65px;}
+	.play-btns {float:left;width:20px;margin-top:3px;}
+	.play-count {width:25px;float:left;display:table;font-size: 20px;color: #636262;font-family: Titillium Web;margin-top: 12px;}
+	.track-title {width: 230px;position: relative;float: left;top: 14px;}
+	.track-info {width: 230px;line-height: 25px;float: none;display: table;padding-left: 13px;position: relative;top: -12px;}
+	.track-info em {display:block;}
+	.track-download-buy {width:230px;float:none;display:block;}
+	.track-download-buy a {padding: 6px 10px 6px;float: none;display: table;position: relative;top: -19px;right: -10px;}
+	.disc-tracklist ol{margin: 10px 0 -30px;padding: 1px 0 0 0;padding-left:0px;max-height: inherit;overflow: hidden;}
+	.disc-tracklist ol li {overflow: hidden;}
+	.disc-info-wrap {max-width: 300px;display: block;}
+	.sell-platforms {padding-left: 0px;}
+	.sell-platforms span {margin-top: 18px;display: block;width: 100%;}
+	.sell-platforms a {width:100px;float:left;}
+	.sell-platforms .itunes {background-position: left 0;width: 113px;position: relative;right: 39px;background-size: 342px;height:43px;}
+	.sell-platforms .beatport {background-position: center 0;width: 99px;background-size: 304px;position: relative;right: 27px;top: 2px;height:38px;}
+	.sell-platforms .bandcamp {background-position: 118% 0px;background-size: 293px;width: 135px;position: relative;right: 27px;height: 37px;top: 3px;}
+	.itunes:after{content: "/";color: #c3121c;float: right;font-weight: bold;font-size: 22px;position: relative;right: 1px;top: 2px;width: 5px;background: none;}
+	.beatport:after {content: "/";color: #c3121c;float: right;font-weight: bold;font-size: 22px;position: relative;right: 1px;top: -2px;width: 5px;background: none;}
+	.mob-no {display:none;}
+	.container {width:400px;max-width:400px;padding-right: 12px;padding-left: 12px;margin-right: auto;margin-left: auto;}
+	.dates-nav{display: none;}
+	.main-wrapper {width: 400px;}
+	.last-news-container {width: 300px;}
+	.last-news-next {right: -70px;}
+	.last-news-prev {left: -70px;}
+	.dates-wrapper {margin-left: 0px;}
+	.title-container {width: 400px;}
+	.title-container .logo img {width: 400px;}
+	.top-spacer {width: 60px; top: 7px; height: 2px;}
+	.welcome.logo .spacer-box {left: 192px;top: 97px;width: 10px;height: 10px;}
+	.audio-player {width: 400px;}
+	#myTweet {width: 400px; font-size: 20px;}
+	.disc-container li {width: 350px; float: none; margin: auto; }
+	.disc-container li:nth-child(2), .disc-container li:nth-child(5), .disc-container li:nth-child(8), .disc-container li:nth-child(11), .disc-container li:nth-child(14) {margin: 75px auto}
+	.front-content.contact {width: 400px; margin-left: -204px;}
+	.symbol {font-size: 20px; line-height: 22px;}
+	.navbar-brand ul li:first-child {height: 10px;margin-top: 10px;}
+	.navbar-brand ul li:nth-child(2) {height: 16px;margin-top: 4px;}
+	.navbar-brand ul li {width: 5px;height: 20px;}
+	.player-right {width: 290px;margin-left: 20px;}
+	.track-name, .artist {max-width: 213px;max-height: 30px;overflow: hidden;}
+	.news-container {width: 340px;}
+	.news-container iframe {width: 340px;height: 192px;}
+	.close2-btn {right: -50px;top: -50px;}
+	.news-description{max-height: 250px;}
+	.footer-container {width: 300px;}
+	.footer-container .social-ico {width: 140px; height: 140px; margin-left: 80px; margin-bottom: 80px; float: none;}
+	.footer-container .social-ico.s-facebook {background-position: -5px -5px;}
+	.footer-container .social-ico.s-youtube {background-position: -255px -5px;}
+	.footer-container .social-ico.s-plus {background-position: -252px -131px;}
+	.footer-container .social-ico.s-twitter {background-position: -125px -5px;}
+	.footer-container .social-ico.s-soundcloud {background-position: -5px -135px;}
+	.footer-container .social-ico:nth-child(3), .footer-container .social-ico:nth-child(4),.footer-container .social-ico:nth-child(5) {margin-left: 80px;margin-top: 80px;}
+	.square-bg {
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		margin-left: 0;
+		opacity: 0.5;
+
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		-o-transform: none;
+		transform: none;
+	}
+	.project-content {width: 400px;}
+	.close2-btn {right: 0; top: -70px;}
+	.news-container h1 {font-size: 20px;}
+	.disc-tracklist {width: 400px; float: none;}
+	.sell-platforms{width: 400px;}
+	.track-info,.track-length {font-size: 15px;}
+	.disc-cover {width: 400px;margin-right: 0; float: none;}
+	.disc-tracklist ol {max-height: 360px;}
+	.disc-title {font-size: 17px; margin-top: 50px;}
+	.disc-date {font-size: 17px; margin-bottom: 25px;}
+	.comment-form input {width: 84.5%;}
+	.comment-form textarea {width: 84.5%;}
+
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+
+
+	.project-window {height:auto !important;}
+	.news-box {overflow: hidden;width: 200px;position: relative;margin: 0 auto;}
+	.news-thumb {background-color: #111;background: #ff0000;width: 200px;overflow: hidden;}
+	.news-info {width: 160px;height: 240px;background: #2b2b2b;padding: 30px 20px;position: relative;}
+	.main-wrapper {width: 300px;}
+	.title-container {width: 300px;}
+	.title-container .logo img {width: 300px;}
+	.audio-player {width: 300px;}
+	#myTweet {width: 300px; font-size: 18px; padding: 0; margin-top: 50px;}
+	.welcome.logo ul li {font-size: 15px;}
+	.top-spacer {width: 45px;top: 4px;}
+	.welcome.logo .spacer-box {left: 143px;top: 71px;}
+	.welcome.logo ul li.t-current {top: 13px;}
+	.track-name, .artist {max-width: 110px;max-height: 25px;}
+	.player-right {width: 190px;margin-left: 20px;}
+	.square-bg {width: 100%;height: 100%;top: 0;left: 0;margin-left: 0;}
+	.disc-container li {width: 300px;}
+	.front-content.contact {width: 280px;margin-left: -140px;}
+	.name, .email {width: 100%;float: none;}
+	.email{margin-top: 18px;}
+	.buttoncontact {width: 280px; margin-top: 25px;}
+	.color-picker{display: none;}
+	.news-container {width: 300px;}
+	.news-container iframe {width: 300px;height: 169px;}
+	.last-news-next {right: -15px;}
+	.last-news-prev {left: -15px;}
+	.dates-wrapper {width: 350px; margin-left: 0;}
+	.date-box {padding: 0 50px;}
+	.date-box .info.date {width: 50px;}
+	.date-box .info .day {font-size: 25px;}
+	.date-box .info .city {font-size: 15px;}
+	.date-box .info {font-size: 12px;}
+	.date-box .info {max-width: 115px;}
+	.date-box .info .ico{display: none;}
+	.date-box .info .time, .date-box .info .buy, .date-box .info .place{padding-left: 0;}
+	.main-logo {margin-left: 20px;}
+	.twitter-quotes{margin-top: 50px;}
+	.front-content.dates {width: 100%;}
+	#comments, #name, #email {width: 97%;}
+	.nav-news {display: none;}
+	.close2-btn {right: 0; top: -70px;}
+	.news-container h1 {font-size: 20px;}
+	.disc-tracklist {width: 300px; float: none;}
+	.sell-platforms{width: 300px;}
+	.track-info,.track-length {font-size: 12px;}
+	.disc-cover {width: 300px;margin-right: 0; float: none;}
+	.disc-tracklist ol {max-height: 300px;}
+	.disc-title {font-size: 15px; margin-top: 50px;}
+	.disc-date {font-size: 15px; margin-bottom: 25px;}
+	.close-btn {right: 0;}
+	.project-content {width: 300px;}
+	.container {width:300px;max-width:300px;padding-right: 12px;padding-left: 12px;margin-right: auto;margin-left: auto;}
+	.comment-form input {width: 80.5%;}
+	.comment-form textarea {width: 80.5%;}
+	.o-mob {display:block;}
+	.project-window {margin-bottom: 40px;padding-top: 65px;}
+	.play-btns {float:left;width:20px;margin-top:3px;}
+	.play-count {width:25px;float:left;display:table;font-size: 20px;color: #636262;font-family: Titillium Web;margin-top: 12px;}
+	.track-title {width: 230px;position: relative;float: left;top: 14px;}
+	.track-info {width: 230px;line-height: 25px;float: none;display: table;padding-left: 13px;position: relative;top: -12px;}
+ 	.track-info em {display:block;}
+	.track-download-buy {width:230px;float:none;display:block;}
+	.track-download-buy a {padding: 6px 10px 6px;float: none;display: table;position: relative;top: -19px;right: -10px;}
+	.disc-tracklist ol{margin: 10px 0 -30px;padding: 1px 0 0 0;padding-left:0px;max-height: inherit;overflow: hidden;}
+	.disc-tracklist ol li {overflow: hidden;}
+	.disc-info-wrap {max-width: 300px;display: block;}
+	.sell-platforms {padding-left: 0px;}
+	.sell-platforms span {margin-top: 18px;display: block;width: 100%;}
+	.sell-platforms a {width:100px;float:left;}
+	.sell-platforms .itunes {background-position: left 0;width: 113px;position: relative;right: 39px;background-size: 342px;height:43px;}
+	.sell-platforms .beatport {background-position: center 0;width: 99px;background-size: 304px;position: relative;right: 27px;top: 2px;height:38px;}
+	.sell-platforms .bandcamp {background-position: 118% 0px;background-size: 293px;width: 135px;position: relative;right: 27px;height: 37px;top: 3px;}
+	.itunes:after{content: "/";color: #c3121c;float: right;font-weight: bold;font-size: 22px;position: relative;right: 1px;top: 2px;width: 5px;background: none;}
+	.beatport:after {content: "/";color: #c3121c;float: right;font-weight: bold;font-size: 22px;position: relative;right: 1px;top: -2px;width: 5px;background: none;}
+	.mob-no {display:none;}
+
+}
+
+/* Mobile Portrait Size to Mobile (devices and browsers) */
+@media only screen and (max-width: 320px) {
+
+}

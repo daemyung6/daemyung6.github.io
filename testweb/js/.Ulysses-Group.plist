@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>childOrder</key>
+	<array>
+		<string>fancybox</string>
+		<string>player</string>
+		<string>superslides-0.6.2</string>
+		<string>vendor</string>
+	</array>
+	<key>createMarkedFile</key>
+	<false/>
+	<key>sheetClusters</key>
+	<array>
+		<array>
+			<string>color-picker.js</string>
+		</array>
+		<array>
+			<string>discography.js</string>
+		</array>
+		<array>
+			<string>jquery-1.11.0.min.js</string>
+		</array>
+		<array>
+			<string>jquery.form.js</string>
+		</array>
+		<array>
+			<string>jquery.hoverdir.js</string>
+		</array>
+		<array>
+			<string>jquery.isotope.min.js</string>
+		</array>
+		<array>
+			<string>jquery.mb.YTPlayer.js</string>
+		</array>
+		<array>
+			<string>jquery.nav.js</string>
+		</array>
+		<array>
+			<string>jquery.scrolly.js</string>
+		</array>
+		<array>
+			<string>jquery.validate.js</string>
+		</array>
+		<array>
+			<string>news.js</string>
+		</array>
+		<array>
+			<string>plugins.js</string>
+		</array>
+		<array>
+			<string>sonorama.js</string>
+		</array>
+		<array>
+			<string>tweets.js</string>
+		</array>
+	</array>
+</dict>
+</plist>

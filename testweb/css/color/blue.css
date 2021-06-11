@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/* Color blue CSS */
+.blue ::selection{background:#4cddf3; color: #fff;}
+.blue ::-moz-selection{background:#4cddf3; color: #fff;}
+.blue .twittericon, .blue .bxsliderlist1, .blue .latestnewstext1:hover a, .blue .spacer, .blue #main .buttoncontact, .blue .footer-container .social-ico:hover, .blue .latestnews .bx-wrapper a.bx-prev:hover, .blue .latestnews .bx-wrapper a.bx-next:hover, .blue .track-download-buy:hover, .blue .close-btn:hover, .blue .sell-platforms div:hover, .blue .disc-play-btn:hover, .blue .close-btn, .blue .close2-btn, .blue .date-box .info.date, .blue .disc-img .overlay, .blue .twitter-quotes, .blue button.btn-play:hover, .blue button.btn-pause:hover {background-color: #4cddf3;}
+.blue a.sliderlisticon3, .blue .latestnewstext1 h3, .blue .latestnewstext1 p.latestnewsdate, .blue .symbol span, .blue #main p.contacttext, .blue #main .buttoncontact:hover, .blue .discographycolumn h3, .blue .discographycolumn a, .blue p.contacttextarea, .blue .track-info span, .blue .disc-title span, .blue .sell-platforms span, .blue .topwrap p span, .blue .audiojs .time, .blue .news-container h1 span, .blue .news-description span, .blue .disc-info h2 {color: #4cddf3 !important;}
+.blue .navbar-nav > .active > a, .blue .nav > li > a:hover, .blue .main-menu li.current a, .blue .main-menu li a:hover{border-color: #4cddf3 !important;}
+.blue .close-btn, .blue .close2-btn{border-color: #4cddf3;}
+.blue .bx-wrapper .bx-pager.bx-default-pager a:hover, .blue .bx-wrapper .bx-pager.bx-default-pager a.active, .blue .parallax1 .bx-wrapper a.bx-next:hover, .blue .parallax1 .bx-wrapper a.bx-prev:hover {background-color: #4cddf3; border-color: #4cddf3;}
+.blue .view-first .mask {background-color: rgba(76,221,243,0.8);}
+.blue .ch-grid:hover div {background-color: rgba(76,221,243,0.9);}
+.blue #main .buttoncontact:hover{background-color: #fff;}
+.blue .latestnewstext1:hover a h3, .blue .latestnewstext1:hover a .latestnewsdate{color: #fff !important;}
+
+.blue .news-info h1, .blue .news-info .news-date, .blue .news-description span, .blue .twitter a, .blue .welcome.logo ul li span, .blue .date-box .info .buy a, .blue .form h2, .blue .buttoncontact:hover,.blue .disc-info p a {color: #4cddf3;}
+.blue .last-news:hover .news-info, .blue .news-nav div:hover, .blue .nav-news div:hover, .blue .welcome.logo .spacer-box, .blue .top-spacer, .blue .buttoncontact, .blue .audiojs .play:hover, .blue .audiojs .prev-track:hover, .blue .audiojs .pause:hover, .blue .audiojs .next-track:hover, .blue .audiojs .progress {background-color: #4cddf3;}
+.blue .controller ul li.selected, .blue .controller ul li:hover {border-color: #4cddf3 !important; background-color: #4cddf3 !important;}
+.blue .dates-nav .prev:hover {background-position: -88px 0;}
+.blue .dates-nav .next:hover {background-position: -88px -44px;}
+.blue .slides-navigation .prev:hover, .blue .slides-navigation .next:hover {background-position: -102px 0;}
+.blue #nav2 > ul > li a:hover{color: #4cddf3;}
+.blue #nav2 > a {background-color: #4cddf3;}
+
+.blue .post-meta i, .blue .track-info em {color: #4cddf3;}
+.blue .post-meta a {color: #4cddf3;}
+.blue .pm-link:hover {color: #4cddf3 !important;}
+.blue .side-widget ul li a:hover {color: #4cddf3;}
+.blue article h3 {color: #4cddf3 !important;}
+.blue article h3 a {color: #4cddf3 !important;}
+.blue .tags a {color: #4cddf3;}
+.blue .page-navigation li a:hover {border-color: #4cddf3;color: #4cddf3;}
+.blue .page-navigation li.active a {background: #4cddf3;border-color: #4cddf3;}
+.blue .side-widget h5 {color: #4cddf3;}
+.blue .comments-wrap h6 {color: #4cddf3;}
+.blue .comments-wrap span a {color: #4cddf3;}
+.blue .comment-form label {color: #4cddf3;}
+.blue .comment-author {color: #4cddf3;}
+.blue .reply {background: #4cddf3;}
+.blue .s-btn {background: #4cddf3;}
+.blue .pdate {background-color:#4cddf3;}
+.blue .reply:hover {background:#aaa;}
+.blue .reply:hover {background:#aaa;}
+.blue .comment-form .s-btn:hover {background:#aaa;}

@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/* Color Orange CSS */
+.orange ::selection{background:#fda527; color: #fff;}
+.orange ::-moz-selection{background:#fda527; color: #fff;}
+.orange .twittericon, .orange .bxsliderlist1, .orange .latestnewstext1:hover a, .orange .spacer, .orange #main .buttoncontact, .orange .footer-container .social-ico:hover, .orange .latestnews .bx-wrapper a.bx-prev:hover, .orange .latestnews .bx-wrapper a.bx-next:hover, .orange .track-download-buy:hover, .orange .close-btn:hover, .orange .sell-platforms div:hover, .orange .disc-play-btn:hover, .orange .close-btn, .orange .close2-btn, .orange .date-box .info.date, .orange .disc-img .overlay, .orange .twitter-quotes, .orange button.btn-play:hover, .orange button.btn-pause:hover {background-color: #fda527;}
+.orange a.sliderlisticon3, .orange .latestnewstext1 h3, .orange .latestnewstext1 p.latestnewsdate, .orange .symbol span, .orange #main p.contacttext, .orange #main .buttoncontact:hover, .orange .discographycolumn h3, .orange .discographycolumn a, .orange p.contacttextarea, .orange .track-info span, .orange .disc-title span, .orange .sell-platforms span, .orange .topwrap p span, .orange .audiojs .time, .orange .news-container h1 span, .orange .news-description span, .orange .disc-info h2 {color: #fda527 !important;}
+.orange .navbar-nav > .active > a, .orange .nav > li > a:hover, .orange .main-menu li.current a, .orange .main-menu li a:hover{border-color: #fda527 !important;}
+.orange .close-btn, .orange .close2-btn{border-color: #fda527;}
+.orange .bx-wrapper .bx-pager.bx-default-pager a:hover, .orange .bx-wrapper .bx-pager.bx-default-pager a.active, .orange .parallax1 .bx-wrapper a.bx-next:hover, .orange .parallax1 .bx-wrapper a.bx-prev:hover {background-color: #fda527; border-color: #fda527;}
+.orange .view-first .mask {background-color: rgba(253,165,39,0.8);}
+.orange .ch-grid:hover div {background-color: rgba(253,165,39,0.9);}
+.orange #main .buttoncontact:hover{background-color: #fff;}
+.orange .latestnewstext1:hover a h3, .orange .latestnewstext1:hover a .latestnewsdate{color: #fff !important;}
+
+.orange .news-info h1, .orange .news-info .news-date, .orange .news-description span, .orange .twitter a, .orange .welcome.logo ul li span, .orange .date-box .info .buy a, .orange .form h2, .orange .buttoncontact:hover,.orange .disc-info p a {color: #fda527;}
+.orange .last-news:hover .news-info, .orange .news-nav div:hover, .orange .nav-news div:hover, .orange .welcome.logo .spacer-box, .orange .top-spacer, .orange .buttoncontact, .orange .audiojs .play:hover, .orange .audiojs .prev-track:hover, .orange .audiojs .pause:hover, .orange .audiojs .next-track:hover, .orange .audiojs .progress {background-color: #fda527;}
+.orange .controller ul li.selected, .orange .controller ul li:hover {border-color: #fda527 !important; background-color: #fda527 !important;}
+.orange .dates-nav .prev:hover {background-position: -308px 0;}
+.orange .dates-nav .next:hover {background-position: -308px -44px;}
+.orange .slides-navigation .prev:hover, .orange .slides-navigation .next:hover {background-position: -102px -108px;}
+.orange #nav2 > ul > li a:hover{color: #fda527;}
+.orange #nav2 > a {background-color: #fda527;}
+
+.orange .post-meta i, .orange .track-info em {color: #fda527;}
+.orange .post-meta a, .orange strong {color: #fda527;}
+.orange .pm-link:hover {color: #fda527 !important;}
+.orange .side-widget ul li a:hover {color: #fda527;}
+.orange article h3 {color: #fda527 !important;}
+.orange article h3 a {color: #fda527 !important;}
+.orange .tags a {color: #fda527;}
+.orange .page-navigation li a:hover {border-color: #fda527;color: #fda527;}
+.orange .page-navigation li.active a {background: #fda527;border-color: #fda527;}
+.orange .side-widget h5 {color: #fda527;}
+.orange .comments-wrap h6 {color: #fda527;}
+.orange .comments-wrap span a {color: #fda527;}
+.orange .comment-form label {color: #fda527;}
+.orange .comment-author {color: #fda527;}
+.orange .reply {background: #fda527;}
+.orange .s-btn {background: #fda527;}
+.orange .pdate {background-color:#fda527;}
+.orange .reply:hover {background:#aaa;}
+.orange .reply:hover {background:#aaa;}
+.orange .comment-form .s-btn:hover {background:#aaa;}

@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/* Color Turquoise CSS */
+.turquoise ::selection{background:#29deb5; color: #fff;}
+.turquoise ::-moz-selection{background:#29deb5; color: #fff;}
+.turquoise .twittericon, .turquoise .bxsliderlist1, .turquoise .latestnewstext1:hover a, .turquoise .spacer, .turquoise #main .buttoncontact, .turquoise .footer-container .social-ico:hover, .turquoise .latestnews .bx-wrapper a.bx-prev:hover, .turquoise .latestnews .bx-wrapper a.bx-next:hover, .turquoise .track-download-buy:hover, .turquoise .close-btn:hover, .turquoise .sell-platforms div:hover, .turquoise .disc-play-btn:hover, .turquoise .close-btn, .turquoise .close2-btn, .turquoise .date-box .info.date, .turquoise .disc-img .overlay, .turquoise .twitter-quotes, .turquoise button.btn-play:hover, .turquoise button.btn-pause:hover {background-color: #29deb5;}
+.turquoise a.sliderlisticon3, .turquoise .latestnewstext1 h3, .turquoise .latestnewstext1 p.latestnewsdate, .turquoise .symbol span, .turquoise #main p.contacttext, .turquoise #main .buttoncontact:hover, .turquoise .discographycolumn h3, .turquoise .discographycolumn a, .turquoise p.contacttextarea, .turquoise .track-info span, .turquoise .disc-title span, .turquoise .sell-platforms span, .turquoise .topwrap p span, .turquoise .audiojs .time, .turquoise .news-container h1 span, .turquoise .news-description span, .turquoise .disc-info h2 {color: #29deb5 !important;}
+.turquoise .navbar-nav > .active > a, .turquoise .nav > li > a:hover, .turquoise .main-menu li.current a, .turquoise .main-menu li a:hover{border-color: #29deb5 !important;}
+.turquoise .close-btn, .turquoise .close2-btn{border-color: #29deb5;}
+.turquoise .bx-wrapper .bx-pager.bx-default-pager a:hover, .turquoise .bx-wrapper .bx-pager.bx-default-pager a.active, .turquoise .parallax1 .bx-wrapper a.bx-next:hover, .turquoise .parallax1 .bx-wrapper a.bx-prev:hover {background-color: #29deb5; border-color: #29deb5;}
+.turquoise .view-first .mask {background-color: rgba(41,222,181,0.8);}
+.turquoise .ch-grid:hover div {background-color: rgba(41,222,181,0.9);}
+.turquoise #main .buttoncontact:hover{background-color: #fff;}
+.turquoise .latestnewstext1:hover a h3, .turquoise .latestnewstext1:hover a .latestnewsdate{color: #fff !important;}
+
+.turquoise .news-info h1, .turquoise .news-info .news-date, .turquoise .news-description span, .turquoise .twitter a, .turquoise .welcome.logo ul li span, .turquoise .date-box .info .buy a, .turquoise .form h2, .turquoise .buttoncontact:hover,.turquoise .disc-info p a {color: #29deb5;}
+.turquoise .last-news:hover .news-info, .turquoise .news-nav div:hover, .turquoise .nav-news div:hover, .turquoise .welcome.logo .spacer-box, .turquoise .top-spacer, .turquoise .buttoncontact, .turquoise .audiojs .play:hover, .turquoise .audiojs .prev-track:hover, .turquoise .audiojs .pause:hover, .turquoise .audiojs .next-track:hover, .turquoise .audiojs .progress {background-color: #29deb5;}
+.turquoise .controller ul li.selected, .turquoise .controller ul li:hover {border-color: #29deb5 !important; background-color: #29deb5 !important;}
+.turquoise .dates-nav .prev:hover {background-position: -220px 0;}
+.turquoise .dates-nav .next:hover {background-position: -220px -44px;}
+.turquoise .slides-navigation .prev:hover, .turquoise .slides-navigation .next:hover {background-position: -204px 0;}
+.turquoise #nav2 > ul > li a:hover{color: #29deb5;}
+.turquoise #nav2 > a {background-color: #29deb5;}
+
+.turquoise .post-meta i, .turquoise .track-info em {color: #29deb5;}
+.turquoise .post-meta a, .turquoise strong {color: #29deb5;}
+.turquoise .pm-link:hover {color: #29deb5 !important;}
+.turquoise .side-widget ul li a:hover {color: #29deb5;}
+.turquoise article h3 {color: #29deb5 !important;}
+.turquoise article h3 a {color: #29deb5 !important;}
+.turquoise .tags a {color: #29deb5;}
+.turquoise .page-navigation li a:hover {border-color: #29deb5;color: #29deb5;}
+.turquoise .page-navigation li.active a {background: #29deb5;border-color: #29deb5;}
+.turquoise .side-widget h5 {color: #29deb5;}
+.turquoise .comments-wrap h6 {color: #29deb5;}
+.turquoise .comments-wrap span a {color: #29deb5;}
+.turquoise .comment-form label {color: #29deb5;}
+.turquoise .comment-author {color: #29deb5;}
+.turquoise .reply {background: #29deb5;}
+.turquoise .s-btn {background: #29deb5;}
+.turquoise .pdate {background-color:#29deb5;}
+.turquoise .reply:hover {background:#aaa;}
+.turquoise .reply:hover {background:#aaa;}
+.turquoise .comment-form .s-btn:hover {background:#aaa;}

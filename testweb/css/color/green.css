@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/* Color Green CSS */
+.green ::selection{background:#77be32; color: #fff;}
+.green ::-moz-selection{background:#77be32; color: #fff;}
+.green .twittericon, .green .bxsliderlist1, .green .latestnewstext1:hover a, .green .spacer, .green #main .buttoncontact, .green .footer-container .social-ico:hover, .green .latestnews .bx-wrapper a.bx-prev:hover, .green .latestnews .bx-wrapper a.bx-next:hover, .green .track-download-buy:hover, .green .close-btn:hover, .green .sell-platforms div:hover, .green .disc-play-btn:hover, .green .close-btn, .green .close2-btn, .green .date-box .info.date, .green .disc-img .overlay, .green .twitter-quotes, .green button.btn-play:hover, .green button.btn-pause:hover {background-color: #77be32;}
+.green a.sliderlisticon3, .green .latestnewstext1 h3, .green .latestnewstext1 p.latestnewsdate, .green .symbol span, .green #main p.contacttext, .green #main .buttoncontact:hover, .green .discographycolumn h3, .green .discographycolumn a, .green p.contacttextarea, .green .track-info span, .green .disc-title span, .green .sell-platforms span, .green .topwrap p span, .green .audiojs .time, .green .news-container h1 span, .green .news-description span, .green .disc-info h2 {color: #77be32 !important;}
+.green .navbar-nav > .active > a, .green .nav > li > a:hover, .green .main-menu li.current a, .green .main-menu li a:hover{border-color: #77be32 !important;}
+.green .close-btn, .green .close2-btn{border-color: #77be32;}
+.green .bx-wrapper .bx-pager.bx-default-pager a:hover, .green .bx-wrapper .bx-pager.bx-default-pager a.active, .green .parallax1 .bx-wrapper a.bx-next:hover, .green .parallax1 .bx-wrapper a.bx-prev:hover {background-color: #77be32; border-color: #77be32;}
+.green .view-first .mask {background-color: rgba(119,190,50,0.8);}
+.green .ch-grid:hover div {background-color: rgba(119,190,50,0.9);}
+.green #main .buttoncontact:hover{background-color: #fff;}
+.green .latestnewstext1:hover a h3, .green .latestnewstext1:hover a .latestnewsdate{color: #fff !important;}
+
+.green .news-info h1, .green .news-info .news-date, .green .news-description span, .green .twitter a, .green .welcome.logo ul li span, .green .date-box .info .buy a, .green .form h2, .green .buttoncontact:hover,.green .disc-info p a {color: #77be32;}
+.green .last-news:hover .news-info, .green .news-nav div:hover, .green .nav-news div:hover, .green .welcome.logo .spacer-box, .green .top-spacer, .green .buttoncontact, .green .audiojs .play:hover, .green .audiojs .prev-track:hover, .green .audiojs .pause:hover, .green .audiojs .next-track:hover, .green .audiojs .progress {background-color: #77be32;}
+.green .controller ul li.selected, .green .controller ul li:hover {border-color: #77be32 !important; background-color: #77be32 !important;}
+.green .dates-nav .prev:hover {background-position: -352px 0;}
+.green .dates-nav .next:hover {background-position: -352px -44px;}
+.green .slides-navigation .prev:hover, .green .slides-navigation .next:hover {background-position: -306px 0;}
+.green #nav2 > ul > li a:hover{color: #77be32;}
+.green #nav2 > a {background-color: #77be32;}
+
+.green .post-meta i, .green .track-info em {color: #77be32;}
+.green .post-meta a {color: #77be32;}
+.green .pm-link:hover {color: #77be32 !important;}
+.green .side-widget ul li a:hover {color: #77be32;}
+.green article h3 {color: #77be32 !important;}
+.green article h3 a {color: #77be32 !important;}
+.green .tags a, .green strong {color: #77be32;}
+.green .page-navigation li a:hover {border-color: #77be32;color: #77be32;}
+.green .page-navigation li.active a {background: #77be32;border-color: #77be32;}
+.green .side-widget h5 {color: #77be32;}
+.green .comments-wrap h6 {color: #77be32;}
+.green .comments-wrap span a {color: #77be32;}
+.green .comment-form label {color: #77be32;}
+.green .comment-author {color: #77be32;}
+.green .reply {background: #77be32;}
+.green .s-btn {background: #77be32;}
+.green .pdate {background-color:#77be32;}
+.green .reply:hover {background:#aaa;}
+.green .reply:hover {background:#aaa;}
+.green .comment-form .s-btn:hover {background:#aaa;}
