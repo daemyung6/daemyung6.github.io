@@ -4,7 +4,7 @@
 .blue ::-moz-selection{background:#4cddf3; color: #fff;}
 .blue .twittericon, .blue .bxsliderlist1, .blue .latestnewstext1:hover a, .blue .spacer, .blue #main .buttoncontact, .blue .footer-container .social-ico:hover, .blue .latestnews .bx-wrapper a.bx-prev:hover, .blue .latestnews .bx-wrapper a.bx-next:hover, .blue .track-download-buy:hover, .blue .close-btn:hover, .blue .sell-platforms div:hover, .blue .disc-play-btn:hover, .blue .close-btn, .blue .close2-btn, .blue .date-box .info.date, .blue .disc-img .overlay, .blue .twitter-quotes, .blue button.btn-play:hover, .blue button.btn-pause:hover {background-color: #4cddf3;}
 .blue a.sliderlisticon3, .blue .latestnewstext1 h3, .blue .latestnewstext1 p.latestnewsdate, .blue .symbol span, .blue #main p.contacttext, .blue #main .buttoncontact:hover, .blue .discographycolumn h3, .blue .discographycolumn a, .blue p.contacttextarea, .blue .track-info span, .blue .disc-title span, .blue .sell-platforms span, .blue .topwrap p span, .blue .audiojs .time, .blue .news-container h1 span, .blue .news-description span, .blue .disc-info h2 {color: #4cddf3 !important;}
-.blue .navbar-nav > .active > a, .blue .nav > li > a:hover, .blue .main-menu li.current a, .blue .main-menu li a:hover{border-color: #4cddf3 !important;}
+.blue .navbar-nav > .active > a, .blue .nav > li > a:hover, .blue .main-menu li.current a, .blue .main-menu li a:hover{border-color: #e3d73d !important;}
 .blue .close-btn, .blue .close2-btn{border-color: #4cddf3;}
 .blue .bx-wrapper .bx-pager.bx-default-pager a:hover, .blue .bx-wrapper .bx-pager.bx-default-pager a.active, .blue .parallax1 .bx-wrapper a.bx-next:hover, .blue .parallax1 .bx-wrapper a.bx-prev:hover {background-color: #4cddf3; border-color: #4cddf3;}
 .blue .view-first .mask {background-color: rgba(76,221,243,0.8);}
@@ -19,7 +19,7 @@
 .blue .dates-nav .next:hover {background-position: -88px -44px;}
 .blue .slides-navigation .prev:hover, .blue .slides-navigation .next:hover {background-position: -102px 0;}
 .blue #nav2 > ul > li a:hover{color: #4cddf3;}
-.blue #nav2 > a {background-color: #4cddf3;}
+.blue #nav2 > a {background-color: #f3d44c;}
 
 .blue .post-meta i, .blue .track-info em {color: #4cddf3;}
 .blue .post-meta a {color: #4cddf3;}

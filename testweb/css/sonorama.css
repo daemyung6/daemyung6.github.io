@@ -20,7 +20,9 @@
 	left: 50%;
 }
 body{
-	background: #000;
+	background-image: url(../img/BG.png);
+    background-size: contain;
+
 }
 .main-wrapper{
 	width: 1200px;
@@ -65,10 +67,16 @@ section h1 {
 	height: 150px;
 	position: fixed;
 	top: 0;
-	background: #000;
 	z-index: 500;
 }
-.main-logo{float: left; margin-left: 130px; margin-top: 60px;}
+.main-logo {
+	float: left;
+    margin-left: 130px;
+    margin-top: 20px;
+}
+.main-logo img {
+	width: 150px;
+}
 .main-menu{float: right; margin-right: 130px; margin-top: 60px;}
 .main-menu li{
 	float: left;
@@ -107,15 +115,15 @@ section h1 {
 .navbar-brand ul {margin-right: 7px;}
 .main-menu li a {
 	position: relative;
-	display: inlne-block;
-	padding: 7px 14px;
-	margin: 24px 2px 0 2px;
-	border: #000 2px solid;
-	color: #fff;
-	font-size: 14px;
-	text-transform: uppercase;
-	font-family: "open sans";
-	font-weight: bold;
+    display: inlne-block;
+    padding: 7px 14px;
+    margin: 24px 2px 0 2px;
+    border: #0000 2px solid;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "open sans";
+    font-weight: bold;
 }
 .main-menu li a:hover{border-color: #c3121c !important;}
 .main-menu li.current a{border-color: #c3121c !important;}
@@ -1342,7 +1350,6 @@ p.user, p.timePosted, p.interact{display: none;}
 .sec-content strong {font-weight: normal;}
 #about-us>div:nth-of-type(1) {
 	/*background: url(../img/parallax/02.jpg) 50% 0% repeat-y fixed;*/
-	background-color: #000;
 	width: 100%;
 	text-align: center;
 	padding:1px 0px;
@@ -1357,4 +1364,18 @@ p.user, p.timePosted, p.interact{display: none;}
     /*min-width: 1000px;*/
     margin: 0;
     padding: 0;
+}
+
+
+.mainback {
+	position: absolute;
+    z-index: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+	background-image: url(../img/BG.png);
+}
+.mainback img {
+	width: 100%;
+	
 }

@@ -36,11 +36,11 @@
 
         <style>
             @font-face {
-                font-family: NanumGothic;
-                src: url("./font/NanumGothic.ttf");
+                font-family: 'NanumBarunGothic';
+                src: url('/font/NanumBarunGothic.eot');
             }
             p {
-                font-family: NanumGothic;
+                font-family: NanumBarunGothic;
             }
             p.center {
                 text-align: center;
@@ -49,10 +49,64 @@
                 color: #aeaeae;
                 margin-top: 100px;
             }
+            .body {
+                
+            }
+            .center {
+                display: flex;
+                justify-content: center;
+            }
+            .subtitle {
+                margin-top: 50px;
+                margin-bottom: 50px;
+                width: calc(190px);
+            }
+            .menuslide {
+                width: 100%;
+                height: 1170px;
+                overflow: hidden;
+            }
+            .menuslide .wrapper {
+                position: absolute;
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+            }
+            .menuslide .inner {
+                display: inline-block;
+                white-space: nowrap;
+                width: 100%;
+                position: absolute;
+                transition: all 500ms;
+                left: calc(-1 * (0%));
+            }
+            .menuslide .inner .item {
+                width: 100%;
+                display: inline-flex;
+                justify-content: center;
+            }
+            .menuslide .news-nav div {
+                cursor: pointer;
+                width: 46px;
+                height: 84px;
+                position: absolute;
+                top: 650px;
+            }
+            .menuslide .menu-next {
+                right: -85px;
+                background: url(../img/icons/next-news.png) #838282;
+            }
+            .menuslide .menu-prev {
+                left: -85px;
+                background: url(../img/icons/prev-news.png) #838282;
+            }
+
         </style>
 
     </head>
     <body>
+
+        
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -66,7 +120,10 @@
 
         <div class="full-wrapper header">
         	<div class="main-logo">
-            	<a class="symbol" href="#"><div class="navbar-brand"><ul><li></li><li></li><li></li></ul></div>sonorama<span>.</span></a>
+            	<!-- <a class="symbol" href="#"><div class="navbar-brand"><ul><li></li><li></li><li></li></ul></div>sonorama<span>.</span></a> -->
+                <a class="symbol" href="#">
+                    <img src="./img/logo.png" alt="">
+                </a>
             </div>
 
             <nav class="main-menu">
@@ -100,25 +157,26 @@
             <div class="overlay"></div>
             <div class="slides-container">
                 <img src="img/slider/slider-01.jpg" alt='img'>
-                <img src="img/slider/slider-02.jpg" alt='img'>
-                <img src="img/slider/slider-03.jpg" alt='img'>
+                <img src="img/slider/slider-01.jpg" alt='img'>
+                <img src="img/slider/slider-01.jpg" alt='img'>
         	</div>
-        	<nav class="slides-navigation">
+        	<!-- <nav class="slides-navigation">
             	<a href="#" class="next"></a>
             	<a href="#" class="prev"></a>
-        	</nav>
+        	</nav> -->
         </section> <!-- end Slider -->
 
         <div class="main-title">
             <div class="title-container">
                 <div class="welcome logo">
-                    <div class="top-spacer one"></div>
-                    <div class="top-spacer two"></div>
-                    <img src="img/slider/sonorama.png" alt='img' />
-                    <div class="spacer-box"></div>
+                    <!-- <div class="top-spacer one"></div>
+                    <div class="top-spacer two"></div> -->
+                    <img src="img/slider/main_text.png" alt='img' />
+                    <!-- <div class="spacer-box"></div> -->
                     <ul>
-                        <li class="t-current"><span>Sonorama</span> is a theme for music bands, deejays, singers and any artist related with the music industry that want to show his <span>talent and sounds</span> to the world.</li>
-                        <li class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. <span>Lorem Ipsum</span> has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</li>
+                        <li class="t-current">R&D Asia is a platform development company building Q&A community, AI Test, Mentoring and Meta-verse Learning app & web for 21C students.</li>
+                        <!-- <li class="t-current"><span>Sonorama</span> is a theme for music bands, deejays, singers and any artist related with the music industry that want to show his <span>talent and sounds</span> to the world.</li>
+                        <li class="">Lorem Ipsum is simply dummy text of the printing and typesetting industry. <span>Lorem Ipsum</span> has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</li> -->
                     </ul>
                 </div>
             </div>
@@ -130,83 +188,50 @@
         <div class="main-wrapper">
             <section id="about-us" class="full-wrapper parallax-wrapper about-us">
                 <div class="parallax" data-velocity="-.3" data-fit="0">
-                    <h1>ABOUT US</h1>
-                    <h2 class="mid">STORY</h2>
-                    <div class="spacer"></div>
-                    <div class="sec-content">
-                        <p>
-                            현재 글로벌 교육과 한국 교육의 문제점은 산업과 교육이 따로! 따로! 움직인다는 것입니다.<br />
-                            19세기의 커리큘럼과 교육환경 속에서 20세기의 교사가 21세기의 아이들을 가르치고 있는 것이 우리의 현실입니다.<br />
-                            그리고 Educational Myopia 오직 대학입시만을 위해 아이들을 채찍질 하는 어른들!<br /><br />
-                            알앤디아시아와 알앤디글로벌(미국 지사)은 향후 5년 내에 교육계에서 넷플릭스와 같은 플랫폼을 만들어 이런 부조리한 현실을 바꾸어 놓을 것입니다.<br /><br />
-                            전 세계 모든 아이들에게 합리적인 금액으로 리얼월드와 메타버스에서 교육받을 수 있도록 하여, 21세기에 꼭 필요한 인재로 커가는 수 없이 많은 성공 스토리를 전 세계 부모들에게 선사하고 싶습니다.
-                        </p>
-                    </div>
-                    <h2 class="mid">MISSION, GOAL, VISION & POTENTIAL</h2>
-                    <div class="spacer"></div>
-                    <div class="sec-content">
-                        <p class="center">
-                            - MISSION : Paradigm Shift in Education - <br ><br >
-                            Teaching ➡ Learning ➡ Sharing<br><br>
-                            GOAL : 2024년까지 1억 명, 2028년까지 10억 명의 유저를 확보한다.
-                        </p>
-                        <br><br>
-                        <p class="center">
-                            - VISION : 전 세계의 10대와 20대의 생각과 스토리 - <br><br>
-                            데이터들을 가치 있는 정보로 전환하여, 모든 아이들이 함께 공유하면서<br>
-                            21세기 산업 생태계를 전부 바꾸어 놓을 수 있는 인재로 성장하도록 만든다.
-                        </p>
-                        <br><br>
-                        <p class="center">
-                            - POTENTIAL : -<br /><br />
-                            1. 스탠포드 스마일의 권위있는 교육 브랜드와 <br />
-                            2. 지난 11년 동안 검증된 로컬 파트너를 확보,<br />
-                            3. 인공지능과 빅데이터에 기반한 새로운 차원의 교육 서비스를 제공
+                    
+                    <img class="subtitle" src="./img/menu/t_a.png" alt="">
+                    <!-- <h1>ABOUT US</h1> -->
+                    <div class="menuslide">
+                        <div class="wrapper">
+                            <div class="inner">
+                                <div class="item">
+                                    <img src="./img/Contents/story.png" alt="">
+                                </div>
+                                <div class="item">
+                                    <img src="./img/Contents/mission.png" alt="">
+                                </div>
+                                <div class="item">
+                                    <img src="./img/Contents/goal.png" alt="">
+                                </div>
+                                <div class="item">
+                                    <img src="./img/Contents/vision.png" alt="">
+                                </div>
+                                <div class="item">
+                                    <img src="./img/Contents/company_sum.png" alt="">
+                                </div>
+                                <div class="item">
+                                    <img src="./img/Contents/branch.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-nav">
+                            <div class="menu-next"></div>
+                            <div class="menu-prev"></div>
+                        </div>
 
-                        </p>
-                        <br><br>
-                        
                     </div>
-                    <h2 class="mid">Company summary</h2>
-                    <div class="spacer"></div>
-                    <div class="sec-content">
-                        <p>
-                            
-                        </p>
-                        <br><br>
-                    </div>
-                    <h2 class="mid">Business Area</h2>
-                    <div class="spacer"></div>
-                    <div class="sec-content">
-                        <p>
-                            
-                        </p>
-                        <br><br>
-                    </div>
-                    <h2 class="mid">Company organization</h2>
-                    <div class="spacer"></div>
-                    <div class="sec-content">
-                        <p>
-                            
-                        </p>
-                        <br><br>
-                    </div>
-                    <h2 class="mid">Global Branch</h2>
-                    <div class="spacer"></div>
-                    <div class="sec-content">
-                        <p>
-                            
-                        </p>
-                        <br><br>
-                    </div>
-    
+                    
                 </div>
             </section>
+            <script src="./move.js"></script>
             <div class="clear"></div>
             <div id="anchor02"></div>
             <section class="section"><!-- Last News -->
-                <h1>PLATFORMS</h1>
-                <div class="spacer"></div>
+                <div class="center">
+                    <img class="subtitle" src="./img/menu/t_p.png" alt="">
+                </div>
+                
+                <!-- <h1>PLATFORMS</h1> -->
                 <div class="last-news-wrapper">
                     <div class="last-news-container">
                         <div class="news-nav">
@@ -282,8 +307,11 @@
         <div id="anchor03"></div>
         <div class="main-wrapper">
             <section id="discography" class="section"><!-- Discography -->
-                <h1>OUR TEAM</h1>
-                <div class="spacer"></div>
+                <div class="center">
+                    <img class="subtitle" src="./img/menu/t_t.png" alt="">
+                </div>
+               
+                <!-- <h1>OUR TEAM</h1> -->
                 <div class="disc-container">
                 	<ul>
 
@@ -335,8 +363,10 @@
         </div>
         <div id="anchor04"></div>
         <section class="social-footer">
-            <h1>Social Networks</h1>
-            <div class="spacer"></div>
+            <div class="center">
+                <img class="subtitle" src="./img/menu/t_s.png" alt="">
+            </div>
+            <!-- <h1>Social Networks</h1> -->
             <div class="footer-container">
                 <div class="social-ico s-facebook"></div>
                 <div class="social-ico s-youtube"></div>
@@ -352,8 +382,11 @@
         	<div class="parallax" data-velocity="-.3" data-fit="0">
             	<div id="anchor05"></div>
                 <div class="front-content contact">
-                    <h1>Contact Us</h1>
-                    <div class="spacer"></div>
+                    <div class="center">
+                        <img class="subtitle" src="./img/menu/t_c.png" alt="">
+                    </div>
+                    
+                    <!-- <h1>Contact Us</h1> -->
 
                     <form method="post" id="contact" class="peThemeContactForm form" action="mail.php">
                         <div id="personal" class="bay form-horizontal">
@@ -407,7 +440,7 @@
         <script src="js/jquery-1.11.0.min.js"></script>
         <script src="js/superslides-0.6.2/dist/jquery.superslides.js" type="text/javascript" charset="utf-8"></script>
         <script src="js/jquery.isotope.min.js"></script>
-	  <script type="text/javascript" src="js/player/audio.js"></script> <!-- Audio Player -->
+	    <script type="text/javascript" src="js/player/audio.js"></script> <!-- Audio Player -->
         <script type="text/javascript" src="js/jquery.hoverdir.js"></script>
         <script type="text/javascript" src="js/jquery.nav.js"></script>
         <script src="js/news.js"></script>

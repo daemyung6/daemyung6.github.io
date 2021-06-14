@@ -52,7 +52,7 @@
 @media only screen and (max-width: 976px) {
 	.main-menu{display: none;}
 	.header {height: 100px;}
-	.main-logo {margin-top: 40px;}
+	.main-logo {margin-top: 15px;}
 	#nav2 {display: block;}
 	.audio-player {width: 700px;}
 	.player-right {width: 580px;}
