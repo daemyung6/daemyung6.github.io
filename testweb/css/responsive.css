@@ -5,6 +5,7 @@
 	.last-news-container {width: 900px;}
 	.slides-navigation a.next {right: -40px;}
 	.slides-navigation a.prev {left: -40px;}
+	.menuslide { height: 1330px; }
 }
 
 /* Smaller than 1215 (devices and browsers) */
@@ -25,6 +26,7 @@
 	.main-menu {margin-right: 50px;}
 	.main-logo {margin-left: 50px;}
 	.slides-navigation{display: none;}
+	.menuslide { height: 1040px; }
 }
 
 /* Smaller than 1085 (devices and browsers) */
@@ -46,6 +48,7 @@
 	.close-btn {right: -50px;}
 	.sell-platforms {position: relative;left: 0; margin-top: 30px;}
 	.sell-platforms span{margin-top: 18px;}
+	.menuslide { height: 790px; }
 }
 
 /* Smaller than standard 976 (devices and browsers) */
@@ -96,6 +99,11 @@
 	.pdate {left: 20px;top: -25px;position:relative;}
 	article {padding-left: 0px;padding-bottom: 20px;margin-bottom: 80px;position: relative;line-height: 39px;font-family:Roboto;}
 	.page-wrap {display: block;}
+	.menuslide { height: 730px }
+	.menuslide .news-nav div { top: 310px; }
+	.menuslide .menu-next { right: 5px; }
+	.menuslide .menu-prev { left: 5px; }
+
 }
 
 /* All Mobile Sizes (devices and browser) */
@@ -183,7 +191,7 @@
 	.disc-date {font-size: 17px; margin-bottom: 25px;}
 	.comment-form input {width: 84.5%;}
 	.comment-form textarea {width: 84.5%;}
-
+	.menuslide { height: 460px; }
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
