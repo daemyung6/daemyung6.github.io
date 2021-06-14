@@ -238,7 +238,7 @@ section h1 {
 }
 .slides-navigation .prev:hover, .slides-navigation .next:hover {background-position-y: -108px;}
 .overlay {
-	background: transparent url("../img/overlays/overlay-01.png"); /* Select your Overlay: overlay-01, overlay-02, overlay-03... */
+	background: transparent url("../img/slider/slider-01.jpg"); /* Select your Overlay: overlay-01, overlay-02, overlay-03... */
 	opacity: 0.5;
 	z-index: 0;
 	width: 100%;
@@ -246,6 +246,7 @@ section h1 {
 	position: absolute;
 	z-index: 3;
 	top: 0;
+	background-position: center;
 	
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -509,11 +510,11 @@ section h1 {
 }.news-nav div:hover{background-color: #c3121c;}
 .last-news-prev{
 	left: -85px;
-	background: url(../img/icons/prev-news.png) #838282;
+	background: url(../img/icons/prev-news.png);
 }
 .last-news-next{
 	right: -85px;
-	background: url(../img/icons/next-news.png) #838282;
+	background: url(../img/icons/next-news.png);
 }
 .news-box ul li{
 	float: left;
@@ -833,7 +834,7 @@ button.btn-play:hover, button.btn-pause:hover{background-color: #000000;}
 	-o-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 }
-.disc-img:hover .overlay{opacity: 0.9;}
+/* .disc-img:hover .overlay{opacity: 0.9;} */
 .disc-info-wrap {
     max-width: 975px;
     display: block;
@@ -1260,8 +1261,31 @@ p.user, p.timePosted, p.interact{display: none;}
 .footer-container .social-ico.s-facebook:after{background-position: -5px -5px;}
 .footer-container .social-ico.s-twitter:after{background-position: -125px -5px;}
 .footer-container .social-ico.s-youtube:after{background-position: -255px -5px;}
-.footer-container .social-ico.s-soundcloud:after{background-position: -5px -135px;}
-.footer-container .social-ico.s-plus:after{background-position: -252px -131px;}
+.footer-container .social-ico.s-soundcloud:after{
+	background : unset;
+	
+}
+.footer-container .social-ico.s-soundcloud {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.footer-container .social-ico.s-soundcloud img {
+	width: 50px;
+    transform: rotate(-45deg);
+}
+.footer-container .social-ico.s-plus:after{
+	background : unset;
+}
+.footer-container .social-ico.s-plus {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.footer-container .social-ico.s-plus img {
+	width: 50px;
+    transform: rotate(-45deg);
+}
 
 /* Discography Xtras */
 

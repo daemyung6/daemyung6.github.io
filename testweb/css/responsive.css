@@ -5,7 +5,16 @@
 	.last-news-container {width: 900px;}
 	.slides-navigation a.next {right: -40px;}
 	.slides-navigation a.prev {left: -40px;}
-	.menuslide { height: 1330px; }
+	.menuslide { height: 730px; }
+	.menuslide .news-nav div {
+		top: 330px;
+	}
+	.menuslide .menu-next {
+		right: 5px;
+	}
+	.menuslide .menu-prev {
+		left: 5px;
+	}
 }
 
 /* Smaller than 1215 (devices and browsers) */
@@ -26,7 +35,9 @@
 	.main-menu {margin-right: 50px;}
 	.main-logo {margin-left: 50px;}
 	.slides-navigation{display: none;}
-	.menuslide { height: 1040px; }
+	.menuslide { height: 820px; }
+	.menuslide .inner .item img { width: 63%; }
+	.menuslide .news-nav div {top: 480px; }
 }
 
 /* Smaller than 1085 (devices and browsers) */
@@ -48,7 +59,8 @@
 	.close-btn {right: -50px;}
 	.sell-platforms {position: relative;left: 0; margin-top: 30px;}
 	.sell-platforms span{margin-top: 18px;}
-	.menuslide { height: 790px; }
+	.menuslide { height: 790px }
+	.menuslide .inner .item img { width: 83%; }
 }
 
 /* Smaller than standard 976 (devices and browsers) */
@@ -99,8 +111,8 @@
 	.pdate {left: 20px;top: -25px;position:relative;}
 	article {padding-left: 0px;padding-bottom: 20px;margin-bottom: 80px;position: relative;line-height: 39px;font-family:Roboto;}
 	.page-wrap {display: block;}
-	.menuslide { height: 730px }
-	.menuslide .news-nav div { top: 310px; }
+	.menuslide { height: 790px; }
+	.menuslide .news-nav div { top: 490px; }
 	.menuslide .menu-next { right: 5px; }
 	.menuslide .menu-prev { left: 5px; }
 
@@ -191,7 +203,12 @@
 	.disc-date {font-size: 17px; margin-bottom: 25px;}
 	.comment-form input {width: 84.5%;}
 	.comment-form textarea {width: 84.5%;}
-	.menuslide { height: 460px; }
+	.menuslide { height: 550px }
+	.menuslide .inner .item img { width : 100%}
+	.menuslide .news-nav div { top: 350px; }
+	.menuslide .menu-next { right: -25px; }
+	.menuslide .menu-prev { left: -25px; }
+
 }
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
@@ -202,7 +219,7 @@
 	.news-box {overflow: hidden;width: 200px;position: relative;margin: 0 auto;}
 	.news-thumb {background-color: #111;background: #ff0000;width: 200px;overflow: hidden;}
 	.news-info {width: 160px;height: 240px;background: #2b2b2b;padding: 30px 20px;position: relative;}
-	.main-wrapper {width: 300px;}
+	.main-wrapper {width: 340px;}
 	.title-container {width: 300px;}
 	.title-container .logo img {width: 300px;}
 	.audio-player {width: 300px;}
