@@ -1,0 +1,528 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+    color: white;
+}
+
+* {
+    transition: all 500ms;
+}
+
+#header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 99;
+}
+#header .main-icon {
+    position: absolute;
+    top: 36px;
+    left: 46px;
+}
+#header .menu {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+#header .menu .item {
+    display: inline-flex;
+
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    /* identical to box height */
+
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: #E0E0E0;
+
+    padding: calc(53px / 2);
+    padding-bottom: 7px;
+    padding-top: 37px;
+
+    /* border-bottom: 1px solid; */
+
+    cursor: pointer;
+}
+#header .menu .item:last-child {
+    padding-right: 53px;
+}
+#header .menu .item.active {
+    font-weight: bold;
+    border-bottom: 3px solid #FFC702;
+    color: white;
+}
+#header .menu .border {
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #FFC702;
+    box-shadow: 0px 0px 16px #ffc702;
+    filter: blur(1.5px);
+}  
+.main-page {
+    background-image: 
+        linear-gradient(
+            to right, 
+            rgba(0, 0, 0, 0.4), 
+            rgba(0, 0, 0, 0.4)
+        ),
+        url(./images/main-bg.png);
+    background-position: center;
+    background-size: cover;
+}
+.main-page .inner {
+    position: relative;
+    text-align: center;
+}
+.full-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main-page .main-title {
+    width: 100%;
+    height: 243px;
+    background-image: url(./images/main-title.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 21px;
+}
+.main-page .description {
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    
+    letter-spacing: 0.01em;
+    margin-bottom: 50px;
+}
+.main-page .bt {
+    display: inline-flex;
+    width: 340px;
+    height: 64px;
+    background: rgba(16, 16, 16, 0.6);
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.main-page .bt:hover {
+    background-color: rgba(255, 199, 2, 0.6);
+}
+.main-page .down-icon {
+    position: absolute;
+    bottom: 10px;
+    width: 53px;
+    height: 53px;
+    background-image: url(./images/main-down-icon.png);
+    cursor: pointer;
+}
+
+.story-page {
+    position: relative;
+    background-image: 
+        url(./images/story-bg.png);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.story-page .description {
+    width: 505px;
+    position: absolute;
+    left: 0px;
+    top: calc(100% * 2 / 5);
+}
+.story-page .description .title {
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 71px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    text-align: right;
+    /* White */
+
+    color: #FFFFFF;
+}
+.story-page .description .box {
+    display: flex;
+    width: 100%;
+    min-height: 100px;
+    background: rgba(0, 0, 0, 0.5);
+    flex-direction: row;
+    align-items: flex-start;
+
+}
+.story-page .description .box .menu {
+    width: calc(155px - (20px) * 2);
+    padding: 15px 20px 15px 20px;
+}
+.story-page .description .box .menu .item {
+    width: 100%;
+    height: 20px;
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin: 20px 0px 20px 0px;
+    opacity: 0.4;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.story-page .description .box .menu .item .icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #FFFFFF;
+    margin: 0px 9px 0px 12px;
+}
+.story-page .description .box .menu .item.active {
+    opacity: 1;
+    height: 26px;
+
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 26px;
+    /* identical to box height */
+
+    text-transform: uppercase;
+
+    color: #FFC702;
+}
+.story-page .description .box .menu .item.active .icon {
+    width: 20px;
+    height: 20px;
+    background: #FFC702;
+    margin: 0px 9px 0px 0px;
+}
+.story-page .description .box .text {
+    width: 323px;
+    padding: 23px 27px 23px 0px;
+
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: justify;
+    letter-spacing: 0.01em;
+
+    /* White */
+
+    color: #FFFFFF;
+
+}
+.story-page .bottom-icon {
+    width: 173px;
+    height: 133px;
+    background-image: url(./images/story-bottom-icon.png);
+    position: absolute;
+    bottom: 17px;
+}
+.choice-page {
+    background-image: 
+        linear-gradient(
+            to right, 
+            rgba(0, 0, 0, 0.4), 
+            rgba(0, 0, 0, 0.4)
+        ),
+        url(./images/choice-bg.png);
+    background-position: center;
+    background-size: cover;
+}
+.choice-page .title {
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 71px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+
+    /* White */
+
+    color: #FFFFFF;
+}
+.choice-page .subtitle {
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 33px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    
+    color: #FFFFFF;
+    
+    opacity: 0.7;
+
+    margin-bottom: 20px;
+}
+.choice-page .description {
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    opacity: 0.7;
+    margin-bottom: 53px;
+}
+.choice-page .list {
+    position: relative;
+    width: 1508px;
+    height: 377px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 63px;
+}
+.choice-page .scroll {
+    position: relative;
+    width: 1384px;
+}
+.choice-page .scroll .item {
+    display: inline-block;
+    width: 340px;
+    height: 377px;
+
+    background: rgb(16, 16, 16, 0.5);
+}
+.choice-page .scroll .item .art {
+    width: 100%;
+    height: 280px;
+    background-image: url(./images/choice-item.png);
+    background-position: center;
+}
+.choice-page .scroll .item .item-title {
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 36px;
+    /* identical to box height */
+
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    /* White */
+
+    color: #FFFFFF;
+
+    margin: 0px 0px 0px 23px;
+}
+.choice-page .scroll .item .item-description {
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 14px;
+    /* or 87% */
+    
+    letter-spacing: 0.03em;
+    
+    /* White */
+    
+    color: #FFFFFF;
+    
+    opacity: 0.5;
+
+    margin: 0px 0px 0px 23px;
+}
+.choice-page .list .arrow {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url(./images/choice-bt.png);
+    cursor: pointer;
+}
+
+.choice-page .list .right {
+    right: 0px;
+    top: calc((100% + -50px) / 2);
+    transform: rotate(180deg);
+}
+.choice-page .list .left {
+    left: 0px;
+    top: calc((100% + -50px) / 2);
+}
+.choice-page .get-bt {
+    width: 340px;
+    height: 64px;
+    background: rgba(255, 199, 2, 0.6);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    /* White */
+
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.choice-page .get-bt:hover {
+    background: rgba(255, 199, 2, 1);
+}
+.center {
+    text-align: center;
+}
+.view-360-page {
+    position: relative;
+    background-image: 
+        url(./images/view-360-bg.png);
+    background-position: center;
+    background-size: cover;
+}
+.view-360-page .title-box {
+    width: 1126px;
+    height: 146px;
+    text-align: center;
+    position: absolute;
+    top: 100px;
+    background: rgba(0,0,0,0.5);
+}
+.view-360-page .title-box .title {
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 71px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+
+    /* White */
+
+    color: #FFFFFF;
+    margin-top: 17px;
+}
+.view-360-page .title-box .subtitle {
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 33px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    
+    color: #FFFFFF;
+    
+    opacity: 0.7;
+
+}
+.view-360-page .data-box {
+    position: absolute;
+    width: 474px;
+    height: 645px;
+
+}
+.view-360-page .data-box {
+    position: absolute;
+    right: 123px;
+    width: 474px;
+    height: 645px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+.view-360-page .data-box .art {
+    height: 328px;
+    width: 100%;
+    background-image: url(./images/view-360-art.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.view-360-page .data-box .title {
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+    margin-left: 25px;
+}
+.view-360-page .data-box .description {
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+
+    /* White */
+
+    color: #FFFFFF;
+    margin-left: 25px;
+
+    margin-bottom: 20px;
+}
+.view-360-page .data-box .get-bt {
+    width: 340px;
+    height: 64px;
+    background: rgba(255, 199, 2, 0.6);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Rajdhani;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    /* White */
+
+    color: #FFFFFF;
+    cursor: pointer;
+}
