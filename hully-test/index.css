@@ -166,7 +166,7 @@ html, body {
     position: sticky;
     width: 505px;
     left: 0px;
-    top: calc((100%) * 2 / 5);
+    top: calc((100% - 470px) / 2);
     margin: 150px 0px 150px 0px;
 }
 .story-page canvas {

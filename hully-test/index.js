@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', function () {
   ]
   for (let i = 0; i < menuItems.length; i++) {
     const id = i;
-    menuItems[id].onclick = function() {
+    menuItems[id].onclick = function () {
       view(menuClickLink[id], true);
     }
   }
@@ -34,16 +34,20 @@ window.addEventListener('DOMContentLoaded', function () {
     return false;
   }
 
+  const storyPageMenuItems = document.getElementById("story-page-menu").getElementsByClassName("item");
+  let lastStoryPageMenuItem = storyPageMenuItems[0];
+  const storyPageText = document.getElementById("story-page-text");
+
   const pageList = [
     {
       id: "main-page",
-      onClick : function() {
+      onClick: function () {
         selectMenuItem(0);
-        onScroll = function(e) {
-          if(e.wheelDeltaY < 0) {
+        onScroll = function (e) {
+          if (e.wheelDeltaY < 0) {
             view('story-page-1', true);
           }
-          
+
           scrollBlock(e);
           return false;
         }
@@ -51,10 +55,10 @@ window.addEventListener('DOMContentLoaded', function () {
     },
     {
       id: "story-page-1",
-      onClick : function() {
+      onClick: function () {
         selectMenuItem(1);
-        onScroll = function(e) {
-          if(e.wheelDeltaY > 0) {
+        onScroll = function (e) {
+          if (e.wheelDeltaY > 0) {
             view('main-page', true);
           }
           else {
@@ -63,14 +67,24 @@ window.addEventListener('DOMContentLoaded', function () {
           scrollBlock(e);
           return false;
         }
+
+        lastStoryPageMenuItem.classList.remove("active");
+        storyPageMenuItems[0].classList.add("active");
+        lastStoryPageMenuItem = storyPageMenuItems[0];
+        storyPageText.innerText =
+          `As the COVID-18 pandemic spread on the Earth in 2019,
+people are dying at an alarming rate. Humanity had failed to develop
+a treatment for COVID-18. Nations all around the world are helplessly collapsing
+The one’s who survived scattered to try to live another day, leaving the cities that is rampant and ruined by the (infectious) disease.
+The world’s social functions are now lost.`
       }
     },
     {
       id: "story-page-2",
-      onClick : function() {
+      onClick: function () {
         selectMenuItem(1);
-        onScroll = function(e) {
-          if(e.wheelDeltaY > 0) {
+        onScroll = function (e) {
+          if (e.wheelDeltaY > 0) {
             view('story-page-1', true);
           }
           else {
@@ -79,14 +93,23 @@ window.addEventListener('DOMContentLoaded', function () {
           scrollBlock(e);
           return false;
         }
+
+        lastStoryPageMenuItem.classList.remove("active");
+        storyPageMenuItems[1].classList.add("active");
+        lastStoryPageMenuItem = storyPageMenuItems[1];
+        storyPageText.innerText =
+          `It seems like there is no hope for humanity. But suddenly on October 2021,
+few of the survivors finds an enormous tree that has a special berry with mysterious energy.
+The few who found this, lured by its mysterious energy, takes a bite. What’s this?
+The people who took the berries felt they were loaded with powerful energy for the first time in their lives.`
       }
     },
     {
       id: "story-page-3",
-      onClick : function() {
+      onClick: function () {
         selectMenuItem(1);
-        onScroll = function(e) {
-          if(e.wheelDeltaY > 0) {
+        onScroll = function (e) {
+          if (e.wheelDeltaY > 0) {
             view('story-page-2', true);
           }
           else {
@@ -95,14 +118,23 @@ window.addEventListener('DOMContentLoaded', function () {
           scrollBlock(e);
           return false;
         }
+
+        lastStoryPageMenuItem.classList.remove("active");
+        storyPageMenuItems[2].classList.add("active");
+        lastStoryPageMenuItem = storyPageMenuItems[2];
+        storyPageText.innerText =
+          `They were now tired of fear and hunger. They took a bite at the berry and shouted “HULL SHIT!”
+Several days have passed, and their appearance started to change. They were given with new abilities.
+They did not look like a human being anymore, but their abilities were beyond normal, without any limitations.
+Including the first few who took the berry, the total number of berry reached 10,000.`
       }
     },
     {
       id: "story-page-4",
-      onClick : function() {
+      onClick: function () {
         selectMenuItem(1);
-        onScroll = function(e) {
-          if(e.wheelDeltaY > 0) {
+        onScroll = function (e) {
+          if (e.wheelDeltaY > 0) {
             view('story-page-3', true);
           }
           else {
@@ -111,14 +143,26 @@ window.addEventListener('DOMContentLoaded', function () {
           scrollBlock(e);
           return false;
         }
+
+        lastStoryPageMenuItem.classList.remove("active");
+        storyPageMenuItems[3].classList.add("active");
+        lastStoryPageMenuItem = storyPageMenuItems[3];
+        storyPageText.innerText =
+          `They are able to do whatever they want.
+Nothing is impossible because they overcame the limitations of normal human capabilities.
+They are amazed of themselves, and started to call themselves ‘HULLY’.
+HULLY appears in front of the dying humanity. The hell for mankind is a playground for HULLY HULLY are invulnerable even in front of virus carriers.
+HULLY shares the information about the HULLY TREE and HULLY BERRY.
+The believers of this information, the ones who took and ate the berry becomes a HULLY.
+They are now free from everything.`
       }
     },
     {
       id: "story-page-5",
-      onClick : function() {
+      onClick: function () {
         selectMenuItem(1);
-        onScroll = function(e) {
-          if(e.wheelDeltaY > 0) {
+        onScroll = function (e) {
+          if (e.wheelDeltaY > 0) {
             view('story-page-4', true);
           }
           else {
@@ -127,14 +171,23 @@ window.addEventListener('DOMContentLoaded', function () {
           scrollBlock(e);
           return false;
         }
+
+        lastStoryPageMenuItem.classList.remove("active");
+        storyPageMenuItems[4].classList.add("active");
+        lastStoryPageMenuItem = storyPageMenuItems[4];
+        storyPageText.innerText =
+          `The world is destroyed and cannot recover.
+Now, there are no more berry left. Only Hully is a survivor.
+Now people can be Hully for a short time
+only if they get Hullyshot that Hully made`
       }
     },
     {
       id: "story-page-6",
-      onClick : function() {
+      onClick: function () {
         selectMenuItem(1);
-        onScroll = function(e) {
-          if(e.wheelDeltaY > 0) {
+        onScroll = function (e) {
+          if (e.wheelDeltaY > 0) {
             view('story-page-5', true);
           }
           else {
@@ -143,14 +196,23 @@ window.addEventListener('DOMContentLoaded', function () {
           scrollBlock(e);
           return false;
         }
+
+        lastStoryPageMenuItem.classList.remove("active");
+        storyPageMenuItems[5].classList.add("active");
+        lastStoryPageMenuItem = storyPageMenuItems[5];
+        storyPageText.innerText =
+          `Hully gives information to desperate people,
+and the people have a chance to go back to the time.
+Do they decide to be Hully and enjoy all the freedom?
+Or do they decide to remain as human beings and die?`
       }
     },
     {
       id: "choice-page",
-      onClick : function() {
+      onClick: function () {
         selectMenuItem(2);
-        onScroll = function(e) {
-          if(e.wheelDeltaY > 0) {
+        onScroll = function (e) {
+          if (e.wheelDeltaY > 0) {
             view('story-page-6', true);
           }
           else {
@@ -163,10 +225,10 @@ window.addEventListener('DOMContentLoaded', function () {
     },
     {
       id: "view-360-page",
-      onClick : function() {
+      onClick: function () {
         selectMenuItem(3);
-        onScroll = function(e) {
-          if(e.wheelDeltaY > 0) {
+        onScroll = function (e) {
+          if (e.wheelDeltaY > 0) {
             view('choice-page', true);
           }
           else {
@@ -179,27 +241,27 @@ window.addEventListener('DOMContentLoaded', function () {
     },
     {
       id: "character-page",
-      onClick : function() {
+      onClick: function () {
         selectMenuItem(4);
-        onScroll = function(e) {
-          if(e.wheelDeltaY > 0) {
+        onScroll = function (e) {
+          if (e.wheelDeltaY > 0) {
             view('view-360-page', true);
             scrollBlock(e);
           }
           else {
             view('city-page', true);
           }
-          
+
           return false;
         }
       }
     },
     {
       id: "city-page",
-      onClick : function() {
+      onClick: function () {
         selectMenuItem(5);
-        onScroll = function(e) {
-          if(e.wheelDeltaY > 0) {
+        onScroll = function (e) {
+          if (e.wheelDeltaY > 0) {
             view('character-page', true);
             scrollBlock(e);
             return false;
@@ -211,17 +273,24 @@ window.addEventListener('DOMContentLoaded', function () {
       }
     },
   ];
-  for (let i = 0; i < pageList.length; i++) {
-
-
-
-  }
+  const io = new IntersectionObserver((entries) => {
+    for (let i = 0; i < entries.length; i++) {
+      if (entries[i].intersectionRatio !== 0) {
+        view(entries[i].target.id, false);
+        return;
+      }
+    }
+  }, {
+    rootMargin: "-50px -50px -50px -50px",
+    threshold: 0
+  });
 
   let pages = {};
 
   function Page(data) {
     let element = document.getElementById(data.id);
     this.element = element;
+    io.observe(element);
     this.onClick = data.onClick;
   }
 
@@ -242,7 +311,7 @@ window.addEventListener('DOMContentLoaded', function () {
       clickElement.setAttribute("href", '#' + id);
       clickElement.click();
     }
-    if(flag) {
+    if (flag) {
       move();
       return;
     }
@@ -251,9 +320,9 @@ window.addEventListener('DOMContentLoaded', function () {
   window.addEventListener("mousewheel", onScrollEvent, { passive: false });
   window.addEventListener("scroll", onScrollEvent, { passive: false });
 
-  function onScroll() {}
+  function onScroll() { }
   function onScrollEvent(e) {
-    if(new Date() - lastMoveTime < 800) {
+    if (new Date() - lastMoveTime < 800) {
       return scrollBlock(e);
     }
     else {
@@ -268,20 +337,20 @@ window.addEventListener('DOMContentLoaded', function () {
   for (let i = 0; i < 738; i++) {
     let name = String(i + 1);
     name = (name.length === 1) ? '000' + name :
-           (name.length === 2) ? '00' + name :
-           (name.length === 3) ? '0' + name :
-           (name.length === 4) ? name : name;
+      (name.length === 2) ? '00' + name :
+        (name.length === 3) ? '0' + name :
+          (name.length === 4) ? name : name;
     let img = new Image();
     stepImgs.push(img);
     img.onload = stepImgOnloadCheck;
-    img.src = './images/step/' + name + ".jpg";
+    img.src = './images/step/' + name + ".jpg?ver=2022-01-07-1";
   }
 
   function stepImgOnloadCheck() {
     stepImgLoadCount++;
-    if(stepImgLoadCount >= stepImgFrameNum) {
+    if (stepImgLoadCount >= stepImgFrameNum) {
+
       console.log("load done");
-      console.log(stepImgs[0])
       draw()
     }
   }
@@ -291,15 +360,33 @@ window.addEventListener('DOMContentLoaded', function () {
   canvas.height = 1080;
   const ctx = canvas.getContext('2d');
 
+  const storyPageOutter = document.getElementById("story-page-outter");
+  let storyPageOutterTop = storyPageOutter.offsetTop;
+  window.pages = pages;
+  let stepStartTop;
+  let stepEndTop;
+  let stepHeightLength;
 
-  let stepStartHeight = pages['story-page-1'].element.offsetTop;
+  function setStepContents() {
+    stepStartTop = pages['story-page-1'].element.offsetTop + storyPageOutterTop;
+    stepEndTop = pages['story-page-6'].element.offsetTop + storyPageOutterTop;
+    stepHeightLength = stepEndTop - stepStartTop;
+  }
+  window.addEventListener('resize', setStepContents);
+  setStepContents()
 
   function draw() {
-    
-    ctx.drawImage(stepImgs[0], 0, 0);
-    setTimeout(draw, 60);
+    let top = window.scrollY - stepStartTop;
+    top = top <= 0 ? 0 : top;
+
+    let ratio = top / stepHeightLength;
+    ratio = ratio <= 1 ? ratio : 1;
+
+    let num = parseInt(stepImgFrameNum * ratio);
+    num = stepImgFrameNum <= num ? stepImgFrameNum - 1 : num;
+    ctx.drawImage(stepImgs[num], 0, 0, canvas.width, canvas.height);
+    setTimeout(draw, 1000 / 60);
   }
-  
 
   menuItems[0].click();
 })
