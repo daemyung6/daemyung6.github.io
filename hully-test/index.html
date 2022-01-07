@@ -5,31 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hully Web</title>
-    <link rel="stylesheet" href="./index.css?2022-01-05">
+    <link rel="stylesheet" href="./index.css?2022-01-07">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="./set-mobile-viewport.js?ver=2022-01-07"></script>
 </head>
 <body>
     <div id="header">
-        <div class="main-icon">
+        <div class="main-icon" id="main-icon">
             <img src="./images/main-icon.png" alt="">
         </div>
-        <div class="menu">
+        <div class="menu" id="menu">
             <div class="border"></div>
             <!--  
-            --><div class="item active">
+            --><div class="item">
                 story
             </div><!--
             --><div class="item">
-                mint
+               mint
             </div><!--
             --><div class="item">
                 collection
             </div><!--
-            --><div class="item">
-                roadmap
-            </div><!--
+
             --><div class="item">
                 pioneer hully
             </div><!--
@@ -39,16 +38,20 @@
             -->
         </div>
     </div>
-    <div class="full-page main-page">
+    <div class="full-page main-page" id="main-page">
         <div class="inner">
             <div class="main-title"></div>
             <div class="description">
-                As the COVID-18 pandemic spread on the Earth in 2019,<br />
-                people are dying at an alarming rate. Humanity had failed to develop a treatment for<br />
-                COVID-18. Nations all around the world are helplessly collapsing The one’s who survived<br />
-                scattered to try to live another day, leaving the cities that is rampant and ruined by the<br />
-                (infectious) disease.<br />
-                The world’s social functions are now lost.
+                <div class="item">
+                    People are struggling to live in a polluted world.<br />
+                    A time comes where one of the few discovers the first mysterious fruit ‘HULLY Berry’.<br />
+                    You have the choice to take the fruit and become a ‘HULLY’.<br />
+                    As a HULLY, you will be evolved and ready for a new world.<br />
+                    HULLY opens a new world in a Metaverse.<br />
+                    HULLY is giving out information to desperate people and humanity is given a chance to go back in time.<br />
+                    Will you choose to be a HULLY, be granted with all the freedom and adventure?<br />
+                    Or will you just remain as a normal human and be left to die*?
+                </div>
             </div>
             <div>
                 <div class="bt">Be the hully</div>
@@ -57,40 +60,51 @@
         </div>
         <div class="down-icon"></div>
     </div>
-    <div class="full-page story-page">
-        <div class="description">
-            <div class="title">
-                Story of Hully
-            </div>
-            <div class="box">
-                <div class="menu">
-                    <div class="item">
-                        <span class="icon"></span> Openning
-                    </div>
-                    <div class="item">
-                        <span class="icon"></span> title2
-                    </div>
-                    <div class="item active">
-                        <span class="icon"></span> title3
-                    </div>
-                    <div class="item">
-                        <span class="icon"></span> title4
-                    </div>
-                    <div class="item">
-                        <span class="icon"></span> title5
-                    </div>
+    <div class="story-page">
+        <div class="inner" id="story-page-1"></div>
+        <div class="inner" id="story-page-2"></div>
+        <div class="inner" id="story-page-3"></div>
+        <div class="inner" id="story-page-4"></div>
+        <div class="inner" id="story-page-5"></div>
+        <div class="inner" id="story-page-6"></div>
+        <div class="front">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="front"><div class="bottom-icon"></div></div>
+        <div class="front">
+            <div class="description">
+                <div class="title">
+                    Story of Hully
                 </div>
-                <div class="text">
-                    They were now tired of fear and hunger. They took a bite at the berry and shouted “HULL SHIT!”<br />
-                    Several days have passed, and their appearance started to change. They were given with new abilities.<br />
-                    They did not look like a human being anymore, but their abilities were beyond normal, without any limitations.<br />
-                    Including the first few who took the berry, the total number of berry reached 10,000.
+                <div class="box">
+                    <div class="menu">
+                        <div class="item">
+                            <span class="icon"></span> Openning
+                        </div>
+                        <div class="item">
+                            <span class="icon"></span> title2
+                        </div>
+                        <div class="item active">
+                            <span class="icon"></span> title3
+                        </div>
+                        <div class="item">
+                            <span class="icon"></span> title4
+                        </div>
+                        <div class="item">
+                            <span class="icon"></span> title5
+                        </div>
+                    </div>
+                    <div class="text">
+                        They were now tired of fear and hunger. They took a bite at the berry and shouted “HULL SHIT!”<br />
+                        Several days have passed, and their appearance started to change. They were given with new abilities.<br />
+                        They did not look like a human being anymore, but their abilities were beyond normal, without any limitations.<br />
+                        Including the first few who took the berry, the total number of berry reached 10,000.
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="bottom-icon"></div>
     </div>
-    <div class="full-page choice-page">
+    <div class="full-page choice-page" id="choice-page">
         <div class="inner">
             <div class="title">
                 choice hollyberry
@@ -149,7 +163,7 @@
             </div>
         </div>
     </div>
-    <div class="full-page view-360-page">
+    <div class="full-page view-360-page" id="view-360-page">
         <div class="title-box">
             <div class="title">
                 Welcome to the Hully Universe
@@ -176,7 +190,7 @@
         </div>
         <div class="bottom-icon"></div>
     </div>
-    <div class="full-page character-page">
+    <div class="full-page character-page" id="character-page">
         <div class="title-box">
             <div class="title">
                 PIONEER HULLY
@@ -187,7 +201,7 @@
         </div>
         <div class="character"></div>
     </div>
-    <div class="full-page city-page">
+    <div class="full-page city-page" id="city-page">
         <div class="title-box">
             <div class="title">
                 with HULLY
