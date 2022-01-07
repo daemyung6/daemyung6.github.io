@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hully Web</title>
-    <link rel="stylesheet" href="./index.css?2022-01-07?ver=2022-01-07-3">
+    <link rel="stylesheet" href="./index.css?2022-01-07?ver=2022-01-07-4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="./set-mobile-viewport.js?ver=2022-01-07-3"></script>
+    <script src="./set-mobile-viewport.js?ver=2022-01-07-4"></script>
+    <script src="https://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
+
 </head>
 <body>
     <div id="header">
@@ -130,6 +132,7 @@
         </div>
     </div>
     <div class="full-page view-360-page" id="view-360-page">
+        <div id="vrview"></div>
         <div class="title-box">
             <div class="title">
                 Welcome to the Hully Universe
@@ -138,7 +141,7 @@
                 The HULLY berry is the first and last vera found on Earth from the HULLY tree.
             </div>
         </div>
-        <div class="data-box">
+        <!-- <div class="data-box">
             <div class="art"></div>
             <div class="title">Hully Berry</div>
             <div class="description">
@@ -153,19 +156,120 @@
             <div class="center">
                 <div class="get-bt">Get berry</div>
             </div>
-        </div>
+        </div> -->
         <div class="bottom-icon"></div>
     </div>
     <div class="full-page character-page" id="character-page">
+        
         <div class="title-box">
             <div class="title">
                 PIONEER HULLY
             </div>
             <div class="subtitle">
-                Detail TextDetail TextDetail TextDetail TextDetail TextDetail Text
+
             </div>
         </div>
-        <div class="character"></div>
+        <div class="box" id="character-page-box">
+            <div class="item">
+                <div class="inner">
+                    <div class="description">
+                        <h1>SEAN</h1>
+                        Crazy about hip hop<br />
+                        Addocted to stream
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <div class="description">
+                        <h1>ZOON1</h1>
+                        Until they see me,<br />
+                        Everyone has a plausible plan.
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <div class="description">
+                        <h1>PHILO</h1>
+                        We want to break all the<br />
+                        common sense around the world.<br />
+                        Let’s go with us
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <div class="description">
+                        <h1>HAPPY : D</h1>
+                        DUCK ! DUCK !<br />
+                        Duck is always happy.<br />
+                        DUCK ! DUCK !
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <div class="description">
+                        <h1>SAKIROO</h1>
+                        Giftless people will talk about the talent.<br />
+                        Talented people will talk about the fun.
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <div class="description">
+                        <h1>ZUZOO</h1>
+                        I am a tattoolist. I am in charge of<br />
+                        HULLY Styling and Tattoo design.<br />
+                        NWA, I love you !
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <div class="description">
+                        <h1>DAB</h1>
+                        Put your hands up !
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <div class="description">
+                        <h1>TEDDY</h1>
+                        Underdog fanatics.<br />
+                        Live underground
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="inner">
+                    <div class="description">
+                        <h1>NOAH</h1>
+                        Team supporter, planning to<br />
+                        Nurse costume play.<br />
+                        I’m man
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+        </div>
+        <div class="player">
+            <video id="ch-player" controlsList="nodownload" controls src="./sound/hullyshit.wav"></video><br />
+            <div class="text">
+                Zior Park - Hully Shit
+            </div>
+        </div>
     </div>
     <div class="full-page city-page" id="city-page">
         <div class="title-box">
@@ -173,12 +277,15 @@
                 with HULLY
             </div>
             <div class="subtitle">
-                Detail TextDetail TextDetail TextDetail TextDetail TextDetail Text
+
             </div>
+            
         </div>
     </div>
     <div class="full-page footer">
-
+        <div class="bt">
+            join in
+        </div>
     </div>
     <div class="full-page footer-text">
         <div>

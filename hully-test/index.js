@@ -254,6 +254,11 @@ Or do they decide to remain as human beings and die?`
 
           return false;
         }
+        if(!isChPlayerPlay) {
+          chPlayer.currentTime = 0;
+          chPlayer.play();
+          isChPlayerPlay = true;
+        }
       }
     },
     {
@@ -273,6 +278,15 @@ Or do they decide to remain as human beings and die?`
       }
     },
   ];
+
+  const chPlayer = document.getElementById("ch-player");
+  let isChPlayerPlay = false;
+  chPlayer.onended = function() {
+    chPlayer.currentTime = 0;
+    chPlayer.play();
+  }
+
+
   // const io = new IntersectionObserver((entries) => {
   //   for (let i = 0; i < entries.length; i++) {
   //     if (entries[i].intersectionRatio !== 0) {
@@ -322,7 +336,7 @@ Or do they decide to remain as human beings and die?`
 
   function onScroll() { }
   function onScrollEvent(e) {
-    console.log(e)
+    // console.log(e)
     if (new Date() - lastMoveTime < 800) {
       return scrollBlock(e);
     }
@@ -457,7 +471,6 @@ Or do they decide to remain as human beings and die?`
   fruitDataList.sort(function(a, b) {
     return Math.random() - 0.5;
   })
-  console.log(fruitDataList);
   
 
   for (let i = 0; i < 48; i++) {
@@ -465,6 +478,71 @@ Or do they decide to remain as human beings and die?`
     
   }
 
+  const characterPageBox = document.getElementById("character-page-box");
+  const chItems = characterPageBox.getElementsByClassName("item");
+  for (let i = 0; i < chItems.length; i++) {
+    const id = i;
+    chItems[id].onmouseover = function() {
+      characterPageBox.style.backgroundImage = "url(./images/character/" + (id + 1) + ".png)";
+    }
+  }
+
 
   menuItems[0].click();
-})
+});
+
+;(function() {
+  var vrView;
+
+  var scenes = {
+      petra: {
+          image: 'images/CastleWithTree360.png',
+          preview: 'images/CastleWithTree360.png'
+      }
+  }
+  
+  function onLoad() {
+      vrView = new VRView.Player('#vrview', {
+          width: '100%',
+          height: '100%',
+          image: 'images/blank.png',
+          is_stereo: false,
+          is_autopan_off: true
+      });
+  
+      vrView.on('ready', onVRViewReady);
+      vrView.on('modechange', onModeChange);
+      vrView.on('getposition', onGetPosition);
+      vrView.on('error', onVRViewError);
+  }
+  
+  
+  function loadScene(id) {
+      console.log('loadScene', id);
+      // Set the image
+      vrView.setContent({
+          image: scenes[id].image,
+          preview: scenes[id].preview,
+          is_autopan_off: true
+      });
+  }
+  
+  function onVRViewReady(e) {
+      console.log('onVRViewReady');
+      loadScene('petra');
+  }
+  
+  function onModeChange(e) {
+      console.log('onModeChange', e.mode);
+  }
+  
+  function onVRViewError(e) {
+      console.log('Error! %s', e.message);
+  }
+  
+  function onGetPosition(e) {
+      console.log(e)
+  }
+  
+  window.addEventListener('load', onLoad);
+})();
