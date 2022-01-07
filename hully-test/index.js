@@ -495,9 +495,9 @@ Or do they decide to remain as human beings and die?`
   var vrView;
 
   var scenes = {
-      petra: {
+      CastleWithTree360: {
           image: 'images/CastleWithTree360.png',
-          preview: 'images/CastleWithTree360.png'
+          preview: 'images/blank.png'
       }
   }
   
@@ -526,11 +526,12 @@ Or do they decide to remain as human beings and die?`
           is_autopan_off: true,
           default_yaw: 180,
       });
+      console.log(vrView);
   }
   
   function onVRViewReady(e) {
       console.log('onVRViewReady');
-      loadScene('petra');
+      loadScene('CastleWithTree360');
   }
   
   function onModeChange(e) {
