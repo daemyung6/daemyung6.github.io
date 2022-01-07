@@ -273,24 +273,24 @@ Or do they decide to remain as human beings and die?`
       }
     },
   ];
-  const io = new IntersectionObserver((entries) => {
-    for (let i = 0; i < entries.length; i++) {
-      if (entries[i].intersectionRatio !== 0) {
-        view(entries[i].target.id, false);
-        return;
-      }
-    }
-  }, {
-    rootMargin: "-50px -50px -50px -50px",
-    threshold: 0
-  });
+  // const io = new IntersectionObserver((entries) => {
+  //   for (let i = 0; i < entries.length; i++) {
+  //     if (entries[i].intersectionRatio !== 0) {
+  //       view(entries[i].target.id, false);
+  //       return;
+  //     }
+  //   }
+  // }, {
+  //   rootMargin: "-50px -50px -50px -50px",
+  //   threshold: 0
+  // });
 
   let pages = {};
 
   function Page(data) {
     let element = document.getElementById(data.id);
     this.element = element;
-    io.observe(element);
+    // io.observe(element);
     this.onClick = data.onClick;
   }
 
@@ -322,6 +322,7 @@ Or do they decide to remain as human beings and die?`
 
   function onScroll() { }
   function onScrollEvent(e) {
+    console.log(e)
     if (new Date() - lastMoveTime < 800) {
       return scrollBlock(e);
     }
@@ -387,6 +388,83 @@ Or do they decide to remain as human beings and die?`
     ctx.drawImage(stepImgs[num], 0, 0, canvas.width, canvas.height);
     setTimeout(draw, 1000 / 60);
   }
+
+  const fruitList = document.getElementById("fruit-list");
+  fruitList.style.left = 0;
+  const fruitArrowLeft = document.getElementById("fruit-arrow-left");
+  const fruitArrowRight = document.getElementById("fruit-arrow-right");
+
+  fruitArrowLeft.onclick = function() {
+    fruitListMove(false);
+  }
+  fruitArrowRight.onclick = function() {
+    fruitListMove(true);
+  }
+
+  function fruitListMove(flag) {
+    let returnNum = (fruitList.offsetLeft + (flag ? -500 : 500));
+    if(returnNum < (-(fruitList.offsetWidth - 1300))) {
+      returnNum = -(fruitList.offsetWidth - 1300);
+    }
+    else if(returnNum > 0) {
+      returnNum = 0;
+    }
+    fruitList.style.left = (returnNum) + "px";
+  }
+
+
+  function FruitBlock(data) {
+    let div = document.createElement("div");
+    div.classList.add("item");
+    div.appendChild((function() {
+      let div = document.createElement("div");
+      div.classList.add("art");
+      let stlye = "url(./images/fruit/detail/" + (data[0] + 1) + ".png),";
+      stlye += "url(./images/fruit/fruit/" + (data[1] + 1) + ".png),";
+      stlye += "url(./images/fruit/tail/" + (data[2] + 1) + ".png)";
+      div.style.backgroundImage = stlye;
+      return div;
+    })());
+
+    div.appendChild((function() {
+      let div = document.createElement("div");
+      div.classList.add("item-title");
+      div.innerText = "Hully Berry";
+      return div;
+    })());
+
+    div.appendChild((function() {
+      let div = document.createElement("div");
+      div.classList.add("item-description");
+      div.innerText = "Mysterious Fruit";
+      return div;
+    })());
+    return div;
+  }
+  let fruitdetailNum = 4;
+  let fruitMainNum = 10;
+  let fruittailNum = 9;
+
+
+  let fruitDataList = [];
+  for (let i = 0; i < fruitdetailNum; i++) {
+    for (let j = 0; j < fruitMainNum; j++) {
+      for (let k = 0; k < fruittailNum; k++) {
+        fruitDataList.push([i, j, k])
+      }
+    }
+  }
+  fruitDataList.sort(function(a, b) {
+    return Math.random() - 0.5;
+  })
+  console.log(fruitDataList);
+  
+
+  for (let i = 0; i < 48; i++) {
+    fruitList.appendChild(FruitBlock(fruitDataList[i]));
+    
+  }
+
 
   menuItems[0].click();
 })

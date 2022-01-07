@@ -166,8 +166,8 @@ html, body {
     position: sticky;
     width: 505px;
     left: 0px;
-    top: calc((100% - 470px) / 2);
-    margin: 150px 0px 150px 0px;
+    top: calc(100% - 460px);
+    margin: 150px 0px 0px 0px;
 }
 .story-page canvas {
     position: -webkit-sticky;
@@ -187,9 +187,8 @@ html, body {
     letter-spacing: 0.01em;
     text-transform: uppercase;
     text-align: right;
-    /* White */
-
     color: #FFFFFF;
+    text-shadow: 0 2px 12px black;
 }
 .story-page .description .box {
     display: flex;
@@ -198,7 +197,7 @@ html, body {
     background: rgba(0, 0, 0, 0.5);
     flex-direction: row;
     align-items: flex-start;
-
+    height: 390px;
 }
 .story-page .description .box .menu {
     width: calc(155px - (20px) * 2);
@@ -257,7 +256,7 @@ html, body {
     font-family: Rajdhani;
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 26px;
     text-align: justify;
     letter-spacing: 0.01em;
@@ -341,19 +340,22 @@ html, body {
 .choice-page .scroll {
     position: relative;
     width: 1384px;
+    overflow: hidden;
 }
 .choice-page .scroll .item {
     display: inline-block;
     width: 340px;
     height: 377px;
+    white-space: normal;
 
     background: rgb(16, 16, 16, 0.5);
+    margin: 0px 5px 0px 5px;
 }
 .choice-page .scroll .item .art {
     width: 100%;
     height: 280px;
-    background-image: url(./images/choice-item.png);
     background-position: center;
+    background-size: cover;
 }
 .choice-page .scroll .item .item-title {
     font-family: Rajdhani;
@@ -389,6 +391,7 @@ html, body {
     opacity: 0.5;
 
     margin: 0px 0px 0px 23px;
+    
 }
 .choice-page .list .arrow {
     position: absolute;
@@ -676,4 +679,8 @@ html, body {
 a {
     text-decoration: unset;
     color: unset;
+}
+#fruit-list {
+    white-space: nowrap;
+    position: absolute;
 }
