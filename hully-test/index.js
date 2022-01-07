@@ -523,7 +523,8 @@ Or do they decide to remain as human beings and die?`
       vrView.setContent({
           image: scenes[id].image,
           preview: scenes[id].preview,
-          is_autopan_off: true
+          is_autopan_off: true,
+          default_yaw: 180,
       });
   }
   
