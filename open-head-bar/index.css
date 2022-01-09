@@ -14,15 +14,22 @@ header .item {
 }
 header .detail-box {
     width: 100%;
-    height: 130px;
+    height: 0px;
     position: absolute;
     top: 50px;
     left: -1px;
     border: 1px solid;
-    display: none;
+    display: block;
+    transition: height 500ms, opacity 500ms;
+    overflow: hidden;
+    background-color: white;
+    z-index: 0;
+    opacity: 0;
 }
 header .detail-box.active {
-    display: block;
+    height: 130px;
+    z-index: 1;
+    opacity: 1;
 }
 header .detail-box .close-bt {
     position: absolute;
