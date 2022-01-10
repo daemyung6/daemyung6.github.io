@@ -12,6 +12,8 @@ html, body {
     transition: all 500ms;
 }
 
+
+
 #header {
     position: fixed;
     top: 0px;
@@ -80,6 +82,25 @@ html, body {
         url(./images/main-bg.png?ver=2022-01-10);
     background-position: center;
     background-size: cover;
+}
+.main-page .sns {
+    display: inline-flex;
+    align-items: center;
+    width: 100px;
+    background-color: #000;
+    border-radius: 2rem;
+    padding: 15px 80px;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.main-page .sns .fab:hover  {
+    filter: brightness(0.8);
+}
+.fab {
+    font-family: "Font Awesome 5 Brands";
+    font-size: 30px;
+    margin: 0px 10px 0px 10px;
 }
 .main-page .inner {
     position: relative;
@@ -685,10 +706,9 @@ html, body {
 }
 .footer {
     position: relative;
-    background-image: url(./images/footer.png?ver=2022-01-10);
+    /* background-image: url(./images/footer.png?ver=2022-01-10); */
     background-position: center;
     background-size: cover;
-    height: 571px;
 }
 .footer .bt {
     position: absolute;
@@ -717,6 +737,11 @@ html, body {
 .footer-text {
     height: 120px;
     text-align: center;
+}
+.footer video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 a {
     text-decoration: unset;
