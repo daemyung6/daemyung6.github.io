@@ -1,4 +1,11 @@
 window.addEventListener('DOMContentLoaded', function () {
+  let allDownloadCount = 0;
+  let donwloadCountNum = 0;
+  function donwloadCount() {
+    ++donwloadCountNum;
+    
+  }
+
   const menuDiv = document.getElementById("menu");
   const menuItems = [
     document.getElementById("main-icon")
@@ -38,6 +45,13 @@ window.addEventListener('DOMContentLoaded', function () {
   let lastStoryPageMenuItem = storyPageMenuItems[0];
   const storyPageText = document.getElementById("story-page-text");
 
+  for (let i = 0; i < storyPageMenuItems.length; i++) {
+    const id = i;
+    storyPageMenuItems[id].onclick = function() {
+      view('story-page-' + (id + 1), true);
+    }
+  }
+
   const pageList = [
     {
       id: "main-page",
@@ -60,11 +74,11 @@ window.addEventListener('DOMContentLoaded', function () {
         onScroll = function (e) {
           if (e.wheelDeltaY > 0) {
             view('main-page', true);
+            scrollBlock(e);
           }
           else {
-            view('story-page-2', true);
+            // view('story-page-2', true);
           }
-          scrollBlock(e);
           return false;
         }
 
@@ -84,13 +98,6 @@ The world’s social functions are now lost.`
       onClick: function () {
         selectMenuItem(1);
         onScroll = function (e) {
-          if (e.wheelDeltaY > 0) {
-            view('story-page-1', true);
-          }
-          else {
-            view('story-page-3', true);
-          }
-          scrollBlock(e);
           return false;
         }
 
@@ -109,13 +116,6 @@ The people who took the berries felt they were loaded with powerful energy for t
       onClick: function () {
         selectMenuItem(1);
         onScroll = function (e) {
-          if (e.wheelDeltaY > 0) {
-            view('story-page-2', true);
-          }
-          else {
-            view('story-page-4', true);
-          }
-          scrollBlock(e);
           return false;
         }
 
@@ -134,13 +134,6 @@ Including the first few who took the berry, the total number of berry reached 10
       onClick: function () {
         selectMenuItem(1);
         onScroll = function (e) {
-          if (e.wheelDeltaY > 0) {
-            view('story-page-3', true);
-          }
-          else {
-            view('story-page-5', true);
-          }
-          scrollBlock(e);
           return false;
         }
 
@@ -162,13 +155,7 @@ They are now free from everything.`
       onClick: function () {
         selectMenuItem(1);
         onScroll = function (e) {
-          if (e.wheelDeltaY > 0) {
-            view('story-page-4', true);
-          }
-          else {
-            view('story-page-6', true);
-          }
-          scrollBlock(e);
+
           return false;
         }
 
@@ -188,12 +175,12 @@ only if they get Hullyshot that Hully made`
         selectMenuItem(1);
         onScroll = function (e) {
           if (e.wheelDeltaY > 0) {
-            view('story-page-5', true);
+
           }
           else {
             view('choice-page', true);
+            scrollBlock(e);
           }
-          scrollBlock(e);
           return false;
         }
 
@@ -246,12 +233,11 @@ Or do they decide to remain as human beings and die?`
         onScroll = function (e) {
           if (e.wheelDeltaY > 0) {
             view('view-360-page', true);
-            scrollBlock(e);
           }
           else {
             view('city-page', true);
           }
-
+          scrollBlock(e);
           return false;
         }
         if(!isChPlayerPlay) {
@@ -269,11 +255,11 @@ Or do they decide to remain as human beings and die?`
           if (e.wheelDeltaY > 0) {
             view('character-page', true);
             scrollBlock(e);
-            return false;
           }
           else {
-            return true;
+
           }
+          return true;
         }
       }
     },
@@ -305,7 +291,7 @@ Or do they decide to remain as human beings and die?`
     let element = document.getElementById(data.id);
     this.element = element;
     // io.observe(element);
-    this.onClick = data.onClick;
+    this.onClick = data.onClick;           
   }
 
   for (let i = 0; i < pageList.length; i++) {
@@ -321,27 +307,27 @@ Or do they decide to remain as human beings and die?`
     document.title = "HULLY - " + id;
     pages[id].onClick();
     function move() {
-      lastMoveTime = new Date();
+      
       clickElement.setAttribute("href", '#' + id);
       clickElement.click();
     }
     if (flag) {
-      move();
+      lastMoveTime = new Date();
+      setTimeout(function() {
+        move();
+      }, 200)
       return;
     }
   }
 
   window.addEventListener("mousewheel", onScrollEvent, { passive: false });
-  window.addEventListener("scroll", onScrollEvent, { passive: false });
 
   function onScroll() { }
   function onScrollEvent(e) {
-    // console.log(e)
-    if (new Date() - lastMoveTime < 800) {
-      return scrollBlock(e);
-    }
-    else {
+    if(typeof e.wheelDeltaY === 'undefined') { return }
 
+    if (new Date() - lastMoveTime < 1000) {
+      return scrollBlock(e);
     }
     return onScroll(e);
   }
@@ -352,19 +338,20 @@ Or do they decide to remain as human beings and die?`
   for (let i = 0; i < 738; i++) {
     let name = String(i + 1);
     name = (name.length === 1) ? '000' + name :
-      (name.length === 2) ? '00' + name :
-        (name.length === 3) ? '0' + name :
-          (name.length === 4) ? name : name;
+           (name.length === 2) ? '00' + name :
+           (name.length === 3) ? '0' + name :
+           (name.length === 4) ? name : name;
     let img = new Image();
     stepImgs.push(img);
     img.onload = stepImgOnloadCheck;
-    img.src = './images/step/' + name + ".jpg?ver=2022-01-07-1";
+    img.src = './images/step/' + name + ".jpg?ver=2022-01-10";
   }
 
   function stepImgOnloadCheck() {
     stepImgLoadCount++;
     if (stepImgLoadCount >= stepImgFrameNum) {
-
+      
+      donwloadCount();
       console.log("load done");
       draw()
     }
@@ -376,19 +363,26 @@ Or do they decide to remain as human beings and die?`
   const ctx = canvas.getContext('2d');
 
   const storyPageOutter = document.getElementById("story-page-outter");
-  let storyPageOutterTop = storyPageOutter.offsetTop;
-  window.pages = pages;
+  let storyPageOutterTop;
   let stepStartTop;
   let stepEndTop;
   let stepHeightLength;
 
   function setStepContents() {
+    storyPageOutterTop = storyPageOutter.offsetTop;
     stepStartTop = pages['story-page-1'].element.offsetTop + storyPageOutterTop;
     stepEndTop = pages['story-page-6'].element.offsetTop + storyPageOutterTop;
     stepHeightLength = stepEndTop - stepStartTop;
   }
   window.addEventListener('resize', setStepContents);
   setStepContents()
+
+  let nowSeePage = pageList[0].id;
+  function onChangeNowSeePage(id) {
+    nowSeePage = id;
+    console.log(id);
+    pages[id].onClick();
+  }
 
   function draw() {
     let top = window.scrollY - stepStartTop;
@@ -400,6 +394,27 @@ Or do they decide to remain as human beings and die?`
     let num = parseInt(stepImgFrameNum * ratio);
     num = stepImgFrameNum <= num ? stepImgFrameNum - 1 : num;
     ctx.drawImage(stepImgs[num], 0, 0, canvas.width, canvas.height);
+
+    for (let i = 0; i < pageList.length; i++) {
+      if(
+        (new Date() - lastMoveTime > 1000) && 
+        (
+          pages[pageList[i].id].element.offsetTop + 
+          (pageList[i].id.substring(0, 5) === 'story' ? storyPageOutterTop : 0) < window.scrollY
+        ) &&
+        (window.scrollY <
+          pages[pageList[i].id].element.offsetTop + 
+          pages[pageList[i].id].element.offsetHeight + 
+          (pageList[i].id.substring(0, 5) === 'story' ? storyPageOutterTop : 0) - 
+          10
+        ) &&
+        (nowSeePage !== pageList[i].id)
+      ) {
+        onChangeNowSeePage(pageList[i].id);
+        break;
+      }
+    }
+
     setTimeout(draw, 1000 / 60);
   }
 
@@ -433,9 +448,9 @@ Or do they decide to remain as human beings and die?`
     div.appendChild((function() {
       let div = document.createElement("div");
       div.classList.add("art");
-      let stlye = "url(./images/fruit/detail/" + (data[0] + 1) + ".png),";
-      stlye += "url(./images/fruit/fruit/" + (data[1] + 1) + ".png),";
-      stlye += "url(./images/fruit/tail/" + (data[2] + 1) + ".png)";
+      let stlye = "url(./images/fruit/detail/" + (data[0] + 1) + ".png?ver=2022-01-10),";
+      stlye += "url(./images/fruit/fruit/" + (data[1] + 1) + ".png?ver=2022-01-10),";
+      stlye += "url(./images/fruit/tail/" + (data[2] + 1) + ".png?ver=2022-01-10)";
       div.style.backgroundImage = stlye;
       return div;
     })());
@@ -471,11 +486,12 @@ Or do they decide to remain as human beings and die?`
   fruitDataList.sort(function(a, b) {
     return Math.random() - 0.5;
   })
+
+
   
 
   for (let i = 0; i < 48; i++) {
     fruitList.appendChild(FruitBlock(fruitDataList[i]));
-    
   }
 
   const characterPageBox = document.getElementById("character-page-box");
@@ -483,7 +499,7 @@ Or do they decide to remain as human beings and die?`
   for (let i = 0; i < chItems.length; i++) {
     const id = i;
     chItems[id].onmouseover = function() {
-      characterPageBox.style.backgroundImage = "url(./images/character/" + (id + 1) + ".png)";
+      characterPageBox.style.backgroundImage = "url(./images/character/" + (id + 1) + ".png?ver=2022-01-10)";
     }
   }
 
@@ -496,8 +512,8 @@ Or do they decide to remain as human beings and die?`
 
   var scenes = {
       CastleWithTree360: {
-          image: 'images/CastleWithTree360.png',
-          preview: 'images/blank.png'
+          image: 'images/CastleWithTree360.png?ver=2022-01-10',
+          preview: 'images/blank.png?ver=2022-01-10'
       }
   }
   
@@ -505,7 +521,7 @@ Or do they decide to remain as human beings and die?`
       vrView = new VRView.Player('#vrview', {
           width: '100%',
           height: '100%',
-          image: 'images/blank.png',
+          image: 'images/blank.png?ver=2022-01-10',
           is_stereo: false,
           is_autopan_off: true
       });

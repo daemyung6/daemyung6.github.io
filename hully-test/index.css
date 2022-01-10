@@ -77,7 +77,7 @@ html, body {
             rgba(0, 0, 0, 0.4), 
             rgba(0, 0, 0, 0.4)
         ),
-        url(./images/main-bg.png);
+        url(./images/main-bg.png?ver=2022-01-10);
     background-position: center;
     background-size: cover;
 }
@@ -96,7 +96,7 @@ html, body {
 .main-page .main-title {
     width: 100%;
     height: 243px;
-    background-image: url(./images/main-title.png);
+    background-image: url(./images/main-title.png?ver=2022-01-10);
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 21px;
@@ -137,7 +137,7 @@ html, body {
     bottom: 10px;
     width: 53px;
     height: 53px;
-    background-image: url(./images/main-down-icon.png);
+    background-image: url(./images/main-down-icon.png?ver=2022-01-10);
     cursor: pointer;
 }
 .story-page {
@@ -270,7 +270,7 @@ html, body {
 .story-page .bottom-icon {
     width: 173px;
     height: 133px;
-    background-image: url(./images/story-bottom-icon.png);
+    background-image: url(./images/story-bottom-icon.png?ver=2022-01-10);
     position: sticky;
     top: calc(100% - 173px);
     left: calc((100% - 173px) / 2);
@@ -283,7 +283,7 @@ html, body {
             rgba(0, 0, 0, 0.4), 
             rgba(0, 0, 0, 0.4)
         ),
-        url(./images/choice-bg.png);
+        url(./images/choice-bg.png?ver=2022-01-10);
     background-position: center;
     background-size: cover;
 }
@@ -398,7 +398,7 @@ html, body {
     position: absolute;
     width: 50px;
     height: 50px;
-    background: url(./images/choice-bt.png);
+    background: url(./images/choice-bt.png?ver=2022-01-10);
     cursor: pointer;
 }
 
@@ -505,7 +505,7 @@ html, body {
 .view-360-page .data-box .art {
     height: 328px;
     width: 100%;
-    background-image: url(./images/view-360-art.png);
+    background-image: url(./images/view-360-art.png?ver=2022-01-10);
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -565,7 +565,7 @@ html, body {
 .view-360-page .bottom-icon {
     width: 111px;
     height: 112px;
-    background-image: url(./images/view-360-bottom-icon.png);
+    background-image: url(./images/view-360-bottom-icon.png?ver=2022-01-10);
 
     position: absolute;
     bottom: 26px;
@@ -622,7 +622,7 @@ html, body {
 .character-page .character {
     width: 1501px;
     height: 701px;
-    background-image: url(./images/character.png);
+    background-image: url(./images/character.png?ver=2022-01-10);
 }
 .character-page .box {
     position: absolute;
@@ -632,7 +632,7 @@ html, body {
     flex-direction: row;
     justify-content: space-between;
     align-content: space-around;
-    background-image: url(./images/character/5.png);
+    background-image: url(./images/character/5.png?ver=2022-01-10);
 
 }
 .character-page .box .item {
@@ -641,7 +641,7 @@ html, body {
 }
 .city-page {
     position: relative;
-    background-image: url(./images/city.png);
+    background-image: url(./images/city.jpg?ver=2022-01-10);
     background-position: center;
     background-size: cover;
 }
@@ -685,7 +685,7 @@ html, body {
 }
 .footer {
     position: relative;
-    background-image: url(./images/footer.png);
+    background-image: url(./images/footer.png?ver=2022-01-10);
     background-position: center;
     background-size: cover;
     height: 571px;
@@ -710,6 +710,9 @@ html, body {
     bottom: 21px;
 
     cursor: pointer;
+}
+.footer .bt:hover {
+    background: rgba(255, 199, 2, 1);
 }
 .footer-text {
     height: 120px;
