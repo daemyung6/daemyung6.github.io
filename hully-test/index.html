@@ -52,7 +52,7 @@
                     HULLY opens a new world in a Metaverse.<br />
                     HULLY is giving out information to desperate people and humanity is given a chance to go back in time.<br />
                     Will you choose to be a HULLY, be granted with all the freedom and adventure?<br />
-                    Or will you just remain as a normal human and be left to die*?
+                    Or will you just remain as a normal human and be left to die?
                 </div>
             </div>
             <div>
@@ -77,6 +77,8 @@
         <div class="inner" id="story-page-4"></div>
         <div class="inner" id="story-page-5"></div>
         <div class="inner" id="story-page-6"></div>
+        <div class="inner" id="story-page-7"></div>
+        <div class="inner" id="story-page-8"></div>
         <div class="front">
             <canvas id="canvas"></canvas>
         </div>
@@ -84,7 +86,7 @@
         <div class="front">
             <div class="description">
                 <div class="title">
-                    Story of Hully
+                    Story of Hully <span id="ratio"></span>
                 </div>
                 <div class="box">
                     <div class="menu" id="story-page-menu">
@@ -125,17 +127,29 @@
                 Or can you be HULLY and free yourself from everything?
             </div>
             <div class="list">
-                <div class="arrow left" id="fruit-arrow-left"></div>
+                <!-- <div class="arrow left" id="fruit-arrow-left"></div> -->
                 <div class="scroll">
                     <div id="fruit-list">
-
+                        <div class="item">
+                            <div class="art" style="
+                                background-image: 
+                                    url(./images/fruit/detail/2.png?ver=2022-01-10), 
+                                    url(./images/fruit/fruit/4.png?ver=2022-01-10), 
+                                    url(./images/fruit/tail/1.png?ver=2022-01-10);">
+                            </div>
+                        </div>
                     </div>
-                    
                 </div>
-                <div class="arrow right" id="fruit-arrow-right"></div>
+                <!-- <div class="arrow right" id="fruit-arrow-right"></div> -->
             </div>
             <div class="center">
                 <div class="get-bt"><a href="https://mint.hullyuniverse.io/Hully/FDB8F69BCB8C4CE1AA5CCC98ACD564E7" target="_blank">get berry</a></div>
+            </div>
+        </div>
+        <div class="player">
+            <video id="ch-player" controlsList="nodownload" controls src="./sound/hullyshit.wav"></video><br />
+            <div class="text">
+                Zior Park - Hully Shit
             </div>
         </div>
     </div>
@@ -165,6 +179,9 @@
                 <div class="get-bt">Get berry</div>
             </div>
         </div> -->
+        <div class="bt">
+            <a href="https://opensea.io/collection/hullyuniverse" target="_blank">JOIN IN</a>
+        </div>
         <div class="bottom-icon"></div>
     </div>
     <div class="full-page character-page" id="character-page">
@@ -272,12 +289,7 @@
                 </div>
             </div>
         </div>
-        <div class="player">
-            <video id="ch-player" controlsList="nodownload" controls src="./sound/hullyshit.wav"></video><br />
-            <div class="text">
-                Zior Park - Hully Shit
-            </div>
-        </div>
+
     </div>
     <div class="full-page city-page" id="city-page">
         <div class="title-box">
@@ -293,14 +305,29 @@
     <div class="full-page footer" id="footer">
         <video src="./images/footer.mp4" muted autoplay loop></video>
         <div class="bt">
-            JOIN IN
+            <a href="https://opensea.io/collection/hullyuniverse" target="_blank">JOIN IN</a>
         </div>
     </div>
     <div class="full-page footer-text">
-        <div>
-            <a href="./"><img src="./images/main-icon.png?2022-01-10" alt=""></a><br />
-            ©HULLY Universe, 2021. All Rights Reversed
-        </div>
+        <div class="footer-wrap">
+            <div class="footer-info one">
+              <div class="logo">
+                <img src="./images/logo_marvel_black.png" alt="">
+              </div>
+              <div class="contact">
+                <a target="_blank" href="https://etherscan.io/address/0xb8b6cb37c0968f72c6d37dc3074c80ad73521024">HULLY Universe Smart Contract</a>
+              </div>
+            </div>
+            <div class="footer-info two">
+              <p>©HULLY Universe, 2021. All Rights Reversed</p>
+              <div class="sns">
+                <a href="https://twitter.com/hullyuniverse"><i class="fab fa-twitter"></i></a>
+                <a href="https://discord.gg/y6fjx6rQfU"><i class="fab fa-discord"></i></a>
+                <a href="https://medium.com/@hullyuniverse"><i class="fab fa-medium-m"></i></a>
+                <a href="https://www.instagram.com/hullyuniverse/"><i class="fab fa-instagram"></i></a>
+             </div>
+            </div>
+          </div>
     </div>
 </body>
 <script src="./index.js?2022-01-10"></script>
