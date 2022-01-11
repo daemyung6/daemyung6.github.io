@@ -380,23 +380,23 @@ window.addEventListener('DOMContentLoaded', function () {
   //   let img = new Image();
   //   stepImgs.push(img);
   //   img.onload = stepImgOnloadCheck;
-  //   img.src = './images/step/' + name + ".jpg?ver=2022-01-10";
+  //   img.src = './images/step/' + name + ".jpg?ver=2022-01-11";
   // }
 
   let stepImgIDs = [
-    '1.png',
-    '2.png',
-    '3.png',
-    '4.png',
-    '5.png',
-    '6.png',
+    '1.png?ver=2022-01-11',
+    '2.png?ver=2022-01-11',
+    '3.png?ver=2022-01-11',
+    '4.png?ver=2022-01-11',
+    '5.png?ver=2022-01-11',
+    '6.png?ver=2022-01-11',
   ];
 
   for (let i = 0; i < stepImgIDs.length; i++) {
     let img = new Image();
     stepImgs.push(img);
     img.onload = stepImgOnloadCheck;
-    img.src = './images/step2/' + stepImgIDs[i] + "?ver=2022-01-10";
+    img.src = './images/step2/' + stepImgIDs[i] + "?ver=2022-01-11";
   }
   for (let i = 0; i < 5; i++) {
     let img = new Image();
@@ -415,7 +415,7 @@ window.addEventListener('DOMContentLoaded', function () {
       console.log(1)
       stepImgOnloadCheck();
     };
-    img.src = "./images/step2/loop.png?ver=2022-01-10";
+    img.src = "./images/step2/loop.png?ver=2022-01-11";
   }
 
   function stepImgOnloadCheck() {
@@ -836,9 +836,9 @@ window.addEventListener('DOMContentLoaded', function () {
   //   div.appendChild((function () {
   //     let div = document.createElement("div");
   //     div.classList.add("art");
-  //     let stlye = "url(./images/fruit/detail/" + (data[0] + 1) + ".png?ver=2022-01-10),";
-  //     stlye += "url(./images/fruit/fruit/" + (data[1] + 1) + ".png?ver=2022-01-10),";
-  //     stlye += "url(./images/fruit/tail/" + (data[2] + 1) + ".png?ver=2022-01-10)";
+  //     let stlye = "url(./images/fruit/detail/" + (data[0] + 1) + ".png?ver=2022-01-11),";
+  //     stlye += "url(./images/fruit/fruit/" + (data[1] + 1) + ".png?ver=2022-01-11),";
+  //     stlye += "url(./images/fruit/tail/" + (data[2] + 1) + ".png?ver=2022-01-11)";
   //     div.style.backgroundImage = stlye;
   //     return div;
   //   })());
@@ -887,7 +887,7 @@ window.addEventListener('DOMContentLoaded', function () {
   for (let i = 0; i < chItems.length; i++) {
     const id = i;
     chItems[id].onmouseover = function () {
-      characterPageBox.style.backgroundImage = "url(./images/character/" + (id + 1) + ".png?ver=2022-01-10)";
+      characterPageBox.style.backgroundImage = "url(./images/character/" + (id + 1) + ".png?ver=2022-01-11)";
     }
   }
 
@@ -900,8 +900,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
   var scenes = {
     CastleWithTree360: {
-      image: 'images/CastleWithTree360.png?ver=2022-01-10',
-      preview: 'images/blank.png?ver=2022-01-10'
+      image: 'images/CastleWithTree360.png?ver=2022-01-11',
+      preview: 'images/blank.png?ver=2022-01-11'
     }
   }
 
@@ -909,7 +909,7 @@ window.addEventListener('DOMContentLoaded', function () {
     vrView = new VRView.Player('#vrview', {
       width: '100%',
       height: '100%',
-      image: 'images/blank.png?ver=2022-01-10',
+      image: 'images/blank.png?ver=2022-01-11',
       is_stereo: false,
       is_autopan_off: true
     });
