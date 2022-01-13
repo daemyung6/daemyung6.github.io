@@ -1,0 +1,527 @@
+/*초기화*/
+:root {
+    --fileBarWidth: 256px;
+    --sceneBarWidth: 230px;
+    --editBoxHeight: 437px;
+    --progress: 50%;
+    --trackLength: 200px;
+    --trackRatio: 100;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #3C4156;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    font-family: DM Sans;
+}
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #9C9C9C;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+*::-webkit-scrollbar-track {
+    background: #ffffff2d;
+    border-radius: 10px;
+}
+* {
+    user-select: none;
+}
+#file-bar {
+    position: absolute;
+    width: var(--fileBarWidth);
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: #1F1D2B;
+}
+
+.click-bt {
+    cursor: pointer;
+    user-select: none;
+}
+.click-bt:active {
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5);
+}
+#file-bar .add-story-board {
+    margin-top: 10px;
+}
+#file-bar .add-story-board-outter {
+    height: 100px;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+#file-bar .file-list {
+    height: calc(100% - 100px);
+    position: absolute;
+    top: 100px;
+    width: 100%;
+}
+#file-bar .plus-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url(./images/plus.png);
+    margin-right: 11px;
+}
+#file-bar .file-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url(./images/file-icon.png);
+    margin-right: 11px;
+}
+#file-bar .click-bt {
+    width: calc(100% - 16px - 16px - 16px - 16px);
+    padding: 16px;
+    height: calc(56px - 16px - 16px);
+    display: flex;
+    margin-left: 16px;
+    
+    color: #92929D;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#file-bar .file-list .click-bt.active {
+    background: #EE952D;
+
+}
+#file-bar .file-list .click-bt.active .name {
+    color: white;
+}
+
+#file-bar .click-bt .name {
+    width: calc(100% - 24px - 11px);
+
+    color: #92929D;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#scene-bar {
+    position: absolute;
+    width: var(--sceneBarWidth);
+    height: 100%;
+    left: var(--fileBarWidth);
+    overflow: auto;
+}
+#scene-bar .item {
+    width: calc(100% - 14px - 14px);
+    height: 240px;
+    background: #1F1D2B;
+    border-radius: 8px;
+    margin: 11px 14px 0px 14px;
+    position: relative;
+    cursor: pointer;
+}
+#scene-bar .item.active {
+    background: linear-gradient(90deg, #FCC966 0%, #F2870D 100%);
+}
+#scene-bar .item .preview {
+    width: calc(100% - 20px - 20px);
+    height: 160px;
+    background: #2E354B;
+    border-radius: 8px;
+    position: absolute;
+    top: 22px;
+    left: 20px;
+}
+#scene-bar .item .name {
+    top: 182px;
+    width: 100%;
+    position: absolute;
+    border-width: 0px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#scene-bar .item .name input {
+    text-align: center;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%;
+    /* identical to box height, or 29px */
+
+    letter-spacing: 0.005em;
+
+    /* Dark/Text Color/Title */
+
+    color: #FFFFFF;
+    border: 0px;
+    background-color: rgba(0, 0, 0, 0);
+}
+#edit-box {
+    width: calc(100% - var(--fileBarWidth) - var(--sceneBarWidth) - 15px);
+    height: var(--editBoxHeight);
+    background-color: #1F1D2B;
+    position: absolute;
+    bottom: 15px;
+    left: calc(var(--fileBarWidth) + var(--sceneBarWidth));
+    overflow: hidden;
+}
+#edit-box .bt-line {
+    position: relative;
+    margin-top: 34px;
+    margin-left: 52px;
+    width: calc(100% - 52px - 52px);
+    height: 46px;
+    display: flex;
+    overflow-x: auto;
+}
+#edit-box .bt-line .click-bt {
+    width: 145px;
+    height: 46px;
+
+    background: #EE952D;
+    border-radius: 28px;
+
+    margin-right: 29px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+#edit-box .bt-line .cancel-bt {
+    background-image: url(./images/cancel.png);
+}
+#edit-box .bt-line .repeat-bt {
+    background-image: url(./images/repeat.png);
+}
+#edit-box .bt-line .delete-bt {
+    background-image: url(./images/delete.png);
+}
+#edit-box .bt-line .upload-bt {
+    background-image: url(./images/upload.png);
+    position: absolute;
+    right: 0px;
+    margin: 0px;
+}
+
+#edit-box .track-box {
+    margin-top: 23px;
+    margin-left: 52px;
+    width: calc(100% - 52px - 52px);
+    height: calc(100% - 80px - 23px - 28px);
+    overflow: auto;
+}
+#edit-box .track-box .track {
+    height: 100%;
+    min-height: 306px;
+    position: relative;
+    width: calc(var(--trackLength) * var(--trackRatio) / 100);
+}
+#edit-box .track-box .track .line {
+    margin-top: 16px;
+    width: 100%;
+    height: calc(50% - 8px);
+    background: #2E354B;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+#edit-box .track-box .track .line:first-child {
+    margin-top: 0px
+}
+
+#edit-box .track-box .track .item {
+    position: absolute;
+    top: 13px;
+    height: calc(100% - 13px - 13px);
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+#edit-box .track-box .track .item .art {
+    position: absolute;
+    top:  6px;
+    left: 6px;
+    width: calc(100% - 6px - 6px);
+    height: calc(100% - 6px - 6px);
+    background-color: rgb(155, 155, 155);
+}
+
+
+#main-box {
+    position: absolute;
+    top: 19px;
+    left: calc(var(--fileBarWidth) + var(--sceneBarWidth));
+    border: 10px solid #FCC966;
+    box-sizing: border-box;
+    border-radius: 19px;
+    width: calc(100% - (var(--fileBarWidth) + var(--sceneBarWidth)) - 176px);
+    height: calc(100% - var(--editBoxHeight) - 60px);
+    overflow: hidden;
+}
+#edit-mode-bt {
+    position: absolute;
+    top: 19px;
+    right: 13px;
+    width: 145px;
+    height: 46px;
+    background: #EE952D;
+    border-radius: 28px;
+    cursor: pointer;
+    background-image: url(./images/view-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#edit-mode-bt.active {
+    background-image: url(./images/list-icon.png);
+}
+#player-bar {
+    position: absolute;
+    width: calc(100% - 56px - 56px);
+    height: 67px;
+    left: 56px;
+    bottom: 16px;
+}
+#player-bar .progress-back {
+    position: absolute;
+    top: 0px;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(127.27deg, #3B3D4B 19.37%, #272934 82.83%), #2C2E3A;
+    border: 2px solid rgba(32, 34, 44, 0.3);
+    box-shadow: -6px -6px 15px #303240, 5px 5px 15px #14151D;
+    border-radius: 16px;
+}
+#player-bar .progress-bar {
+    width: var(--progress);
+    height: 3px;
+    top: 0px;
+    position: absolute;
+    background: linear-gradient(127.27deg, #3B3D4B 19.37%, #272934 82.83%), #2C2E3A;
+    border: 2px solid #FFD800;
+    box-shadow: -6px -6px 15px #303240, 8px 8px 15px #14151D;
+    border-radius: 16px;
+}
+#player-bar .progress-bt {
+    background: linear-gradient(127.27deg, #B97208 19.37%, #FFD800 82.83%), #2C2E3A;
+    border: 2px solid #FFD800;
+    box-shadow: -6px -6px 15px #303240, 8px 8px 15px #14151d;
+    border-radius: 16px;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: -6px;
+    left: calc(var(--progress) - 8px);
+}
+#player-bar .progress-box {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 7px;
+    cursor: pointer;
+}
+#player-bar .start-point,
+#player-bar .end-point {
+    top: 10px;
+    position: absolute;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 26px;
+    color: #FFFFFF;
+}
+#player-bar .end-point {
+    right: 0px;
+}
+#player-bar .control-box {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#player-bar .control-box .play {
+    width: 43px;
+    height: 43px;
+
+    background: url(./images/pause.png), linear-gradient(127.27deg, #B97208 19.37%, #FFD800 82.83%), #2C2E3A;
+    border: 2px solid #FFD800;
+    box-shadow: -6px -6px 15px #303240, 8px 8px 15px #14151D;
+    border-radius: 100%;
+    margin: 13px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#player-bar .control-box .play.active {
+    background: url(./images/play.png), linear-gradient(127.27deg, #B97208 19.37%, #FFD800 82.83%), #2C2E3A;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#player-bar .control-box .next,
+#player-bar .control-box .pre {
+    width: 31.68px;
+    height: 31.68px;
+
+    background: url(./images/play-arrow.png), linear-gradient(127.27deg, #3B3D4B 19.37%, #272934 82.83%), #2C2E3A;
+    border: 2px solid rgba(32, 34, 44, 0.3);
+    box-shadow: -6px -6px 15px #303240, 8px 8px 15px #14151D;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#player-bar .control-box .next {
+    background: url(./images/play-arrow2.png), linear-gradient(127.27deg, #3B3D4B 19.37%, #272934 82.83%), #2C2E3A;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#shot-list {
+    position: absolute;
+    top: 32px;
+    left: 47px;
+    height: calc(100% - 140px);
+    width: calc(100% - 47px - 47px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: auto;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+#shot-list .item {
+    width: 282px;
+    height: 206px;
+    background: linear-gradient(180deg, #A7A7A7 0%, #6D6D6D 100%);
+    border-radius: 8px;
+    position: relative;
+    display: inline-block;
+    margin: 5px 22px 5px 22px;
+}
+#shot-list .item.active {
+    background: linear-gradient(180deg, #FCC966 0%, #F2870D 100%);
+}
+#shot-list .item .inner {
+    width: calc(100% - (8.6px * 2));
+    height: calc(100% - (8.6px * 2));
+    top: 8.6px;
+    left: 8.6px;
+    background: #2E354B;
+    position: absolute;
+}
+#shot-list .item input {
+    position: absolute;
+    width: calc(100% - 14px - 14px - 10px);
+    height: 33px;
+    bottom: 16px;
+    left: 14px;
+    border: 0px;
+    background: #3B3D4B;
+    border-radius: 5px;
+    text-align: center;
+    font-family: Noto Sans CJK KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 100px;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    text-overflow: ellipsis;
+    padding: 0px 5px 0px 5px;
+}
+#file-bar-size {
+    position: absolute;
+    top: 0px;
+    left: var(--fileBarWidth);
+    width: 5px;
+    height: 100%;
+    cursor: e-resize;
+    transition: background-color 500ms;
+}
+#file-bar-size:hover {
+    background-color: rgb(105, 105, 105);
+}
+#scene-bar-size {
+    position: absolute;
+    top: 0px;
+    left: calc(var(--fileBarWidth) + var(--sceneBarWidth));
+    width: 5px;
+    height: 100%;
+    cursor: e-resize;
+    transition: background-color 500ms;
+}
+#scene-bar-size:hover {
+    background-color: rgb(105, 105, 105);
+}
+#edit-box-size {
+    position: absolute;
+    top: calc(100% - var(--editBoxHeight) - 17px);
+    left: calc(var(--fileBarWidth) + var(--sceneBarWidth) - 0px);
+    width: calc(100% - var(--fileBarWidth) - var(--sceneBarWidth) - 15px);
+    height: 5px;
+    cursor: n-resize;
+    transition: background-color 500ms;
+}
+#edit-box-size:hover {
+    background-color: rgb(105, 105, 105);
+}
+#track-length-control {
+    position: absolute;
+    top: 0px;
+    right: -5px;
+    width: 5px;
+    height: 100%;
+    cursor: e-resize;
+    transition: background-color 500ms;
+}
+#track-length-control:hover {
+    background-color: rgb(105, 105, 105);
+}
+.track-box .item .start-control,
+.track-box .item .end-control {
+    position: absolute;
+    top: 0px;
+    width: 5px;
+    height: 100%;
+    transition: background-color 500ms;
+    cursor: e-resize;
+}
+.track-box .item .start-control {
+    left: 0px;
+}
+.track-box .item .end-control {
+    right: 0px;
+}
+.track-box .item .start-control:hover,
+.track-box .item .end-control:hover {
+    background-color: rgb(105, 105, 105);
+}
+
+
+canvas {
+    width: 100%;
+    height: 100%;
+    background: black;
+}

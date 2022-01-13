@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ailving prototype</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'khn3rur',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+
+    <link rel="stylesheet" href="./index.css">
+    <script type="module" src="./index.js"></script>
+</head>
+<body>
+    <div id="file-bar">
+        <div class="add-story-board-outter">
+            <div class="add-story-board click-bt">
+                <span class="plus-icon"></span><div class="name">스토리보드생성</div>
+            </div>
+        </div>
+        <div class="file-list" id="file-list">
+            <!-- import -->
+        </div>
+    </div>
+    <div id="scene-bar">
+        <div class="item click-bt active">
+            <div class="preview"></div>
+            <div class="name">
+                <input value="scene 1">
+            </div>
+        </div>
+        <div class="item click-bt">
+            <div class="preview"></div>
+            <div class="name">
+                <input value="scene 1">
+            </div>
+        </div>
+        <div class="item click-bt">
+            <div class="preview"></div>
+            <div class="name">
+                <input value="scene 1">
+            </div>
+        </div>
+        <div class="item click-bt">
+            <div class="preview"></div>
+            <div class="name">
+                <input value="scene 1">
+            </div>
+        </div>
+    </div>
+    <div id="main-box">
+        <div id="shot-list">
+            <!-- import -->
+        </div>
+
+        <canvas id="canvas"></canvas>
+
+        <div id="player-bar">
+            <div class="progress-box">
+                <div class="progress-back"></div>
+                <div class="progress-bar"></div>
+                <div class="progress-bt"></div>
+            </div>
+            <div class="start-point">0:00</div>
+            <div class="end-point">0:00</div>
+            <div class="control-box">
+                <div class="pre click-bt"></div>
+                <div class="play click-bt"></div>
+                <div class="next click-bt"></div>
+            </div>
+        </div>
+    </div>
+    <div id="edit-box">
+        <div class="bt-line">
+            <div class="click-bt cancel-bt"></div>
+            <div class="click-bt repeat-bt"></div>
+            <div class="click-bt delete-bt"></div>
+            <div class="click-bt upload-bt"></div>
+        </div>
+        <div class="track-box" id="track-box">
+            <div class="track">
+                <div class="line subtitle"></div>
+                <div id="track-video" class="line video">
+                    <!-- import -->
+                </div>
+                <div id="track-length-control"></div>
+            </div>
+        </div>
+    </div>
+    <div id="edit-mode-bt" class="click-bt"></div>
+    <div id="file-bar-size"></div>
+    <div id="scene-bar-size"></div>
+    <div id="edit-box-size"></div>
+</body>
+</html>
