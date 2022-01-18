@@ -1,6 +1,8 @@
 const canvas = document.getElementById('canvas');
 const shotList = document.getElementById('shot-list');
 const editModeBt = document.getElementById('edit-mode-bt');
+import * as app from './app.js';
+import * as util from './util.js';
 
 function Layout() {
     const that = this;
@@ -37,22 +39,16 @@ function Layout() {
     this.setTrackLength = function(w) {
         that.trackLength = w;
         update();
+        
     }
 
     this.progress = 50;
-    this.setTrackLength = function(percent) {
+    this.setProgress = function(percent) {
         that.progress = percent;
         update();
     }
 
-
-    this.trackLength = 200;
-    this.setTrackLength = function(w) {
-        that.trackLength = w;
-        update();
-    }
-
-    this.trackRatio = 100;
+    this.trackRatio = 500;
     this.setTrackRatio = function(w) {
         that.trackRatio = w;
         update();
@@ -174,6 +170,8 @@ window.addEventListener('DOMContentLoaded', function() {
             layout.setTrackLength(
                 layout.trackLength + (e.x - lastX) * (100 / layout.trackRatio)
             );
+
+            app.project.length = util.sec2str(layout.trackLength + (e.x - lastX) * (100 / layout.trackRatio));
             lastX = e.x;
         })
     
@@ -199,7 +197,7 @@ window.addEventListener('DOMContentLoaded', function() {
         const box = document.getElementById('track-box');
         box.addEventListener('wheel', function(e) {
             if(isControlPress) {
-                let num = layout.trackRatio + (e.deltaY > 0 ? 5 : -5);
+                let num = layout.trackRatio + (e.deltaY > 0 ? 25 : -25);
                 num < 0 ? 0.01 : num;
                 layout.setTrackRatio(num);
             }

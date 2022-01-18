@@ -1,119 +1,9 @@
 import layout from './layout.js';
 const sceneListDiv = document.getElementById('scene-bar');
 const shotList = document.getElementById('shot-list');
-
-/*
-
-*/
-export function TrackItem(id, start, length, trackStart, trackPoint, tracklength) {
-    const that = this;
-    this.trackStart = trackStart;
-    this.trackLength = tracklength;
-    this.trackPoint = trackPoint ? trackPoint : 0;
-
-    let div = document.createElement('div');
-    div.classList.add('item');
-    this.element = div;
-
-    this.isgrab = false;
-
-    (function() {
-        let ispress = false;
-        let lastX;
-        that.element.addEventListener('mousedown', function(e) {
-            ispress = true;
-            that.isgrab = true;
-            lastX = e.x;
-            update();
-        })
-        window.addEventListener('mouseup', function() {
-            ispress = false;
-            that.isgrab = false;
-
-            update();
-        })
-        window.addEventListener('mousemove', function(e) {
-            if(!ispress || endControlPress || startControlPress) { 
-                return 
-            }
-            that.trackStart = that.trackStart + (e.x - lastX) * (100 / layout.trackRatio);
-            lastX = e.x;
-            e.stopPropagation();
-            update();
-        })
-    })();
-
-    let art;
-    div.appendChild((function() {
-        art = document.createElement('div');
-        art.classList.add('art');
-
-        return art;
-    })())
-
-    let startControl;
-    let startControlPress = false;
-    div.appendChild((function() {
-        startControl = document.createElement('div');
-        startControl.classList.add('start-control');
-
-        let lastX;
-        startControl.addEventListener('mousedown', function(e) {
-            startControlPress = true;
-            lastX = e.x;
-        })
-        window.addEventListener('mouseup', function() {
-            startControlPress = false;
-        })
-        window.addEventListener('mousemove', function(e) {
-            if(!startControlPress) { return }
-            let movement = (e.x - lastX) * (100 / layout.trackRatio);
-            that.trackPoint += movement;
-            that.trackStart += movement;
-            that.trackLength -= movement;
-            lastX = e.x;
-
-            update();
-        })
-
-        return startControl;
-    })())
-
-    let endControl;
-    let endControlPress = false;
-    div.appendChild((function() {
-        endControl = document.createElement('div');
-        endControl.classList.add('end-control');
-
-        let lastX;
-        endControl.addEventListener('mousedown', function(e) {
-            endControlPress = true;
-            lastX = e.x;
-        })
-        window.addEventListener('mouseup', function() {
-            endControlPress = false;
-        })
-        window.addEventListener('mousemove', function(e) {
-            if(!endControlPress) { return }
-            that.trackLength = that.trackLength + (e.x - lastX) * (100 / layout.trackRatio);
-            lastX = e.x;
-
-            update();
-        })
-
-        return endControl;
-    })())
-    
-    function update() {
-        div.style.cssText = `
-            width: calc(${that.trackLength}px * var(--trackRatio) / 100);
-            left: calc(${that.trackStart}px * var(--trackRatio) / 100);
-            cursor: ${that.isgrab ? 'grabbing' : 'grab'};
-        `
-    }
-    update();
-}
-
+import * as getPreview from './getPreview.js';
+import * as util from './util.js';
+import * as app from './app.js';
 
 /*
 <div class="click-bt active">
@@ -123,10 +13,15 @@ export function TrackItem(id, start, length, trackStart, trackPoint, tracklength
 */
 
 let lastClickFileItem;
-export function FileItem(id, name, scenes) {
+export function FileItem(DATA) {
+    let {id, name, scenes, url} = DATA;
+
     const that = this;
     this.id = id;
     this.name = name;
+
+    this.video = document.createElement('video');
+    this.video.src = url;
 
     let div = document.createElement('div');
     div.classList.add('click-bt');
@@ -160,11 +55,8 @@ export function FileItem(id, name, scenes) {
     this.scenes = [];
     
     for (let i = 0; i < scenes.length; i++) {
-        let sceneItem = new SceneItem(
-            scenes[i].id,
-            scenes[i].name,
-            scenes[i].shots
-        );
+        scenes[i].parent = that;
+        let sceneItem = new SceneItem(scenes[i]);
         this.scenes.push(sceneItem);
     }
 
@@ -196,10 +88,29 @@ export function FileItem(id, name, scenes) {
 */
 
 let lastClicSceneItem;
-export function SceneItem(id, name, shots) {
+export function SceneItem(DATA) {
+    let {id, name, shots, start, length, parent} = DATA
     const that = this;
     this.id = id;
     this.name = name;
+    this.start = start;
+    this.length = length;
+    this.parent = parent;
+
+    let previewDiv;
+
+    getPreview.add(
+        parent.video, 
+        util.getSec(start),
+        function(imgData) {
+            let img = new Image();
+            img.draggable = false;
+            img.onload = function() {
+                previewDiv.appendChild(img);
+            }
+            img.src = imgData;
+        }
+    );
 
     let div = document.createElement('div');
     div.classList.add('click-bt');
@@ -208,6 +119,7 @@ export function SceneItem(id, name, shots) {
 
     div.appendChild((() => {
         let div = document.createElement('div');
+        previewDiv = div;
         div.classList.add('preview');
         return div;
     })());
@@ -238,10 +150,8 @@ export function SceneItem(id, name, shots) {
 
     this.shots = [];
     for (let i = 0; i < shots.length; i++) {
-        let shot = new ShotItem(
-            shots[i].id,
-            shots[i].name,
-        );
+        shots[i].parent = that;
+        let shot = new ShotItem(shots[i]);
         this.shots.push(shot);
     }
     
@@ -266,12 +176,34 @@ export function SceneItem(id, name, shots) {
     <input type="text">
 </div>
 */
-export function ShotItem(id, name) {
+export function ShotItem(DATA) {
+    let { id, name, start, length, parent } = DATA;
     const that = this;
+    app.shots.push(that);
+
     this.id = id;
     this.name = name;
+    this.start = start;
+    this.length = length;
+    this.parent = parent;
+
+    let previewDiv;
+
+    getPreview.add(
+        parent.parent.video, 
+        util.getSec(start) + util.getSec(parent.start),
+        function(imgData) {
+            let img = new Image();
+            img.draggable = false;
+            img.onload = function() {
+                previewDiv.appendChild(img);
+            }
+            img.src = imgData;
+        }
+    );
 
     let div = document.createElement('div');
+    div.draggable = true;
     this.element = div;
     div.classList.add('item');
     div.classList.add('click-bt');
@@ -279,6 +211,7 @@ export function ShotItem(id, name) {
     div.appendChild((()=> {
         let div = document.createElement('div');
         div.classList.add('inner');
+        previewDiv = div;
         return div;
     })());
     div.appendChild((()=> {
@@ -286,4 +219,193 @@ export function ShotItem(id, name) {
         input.setAttribute('type', 'text');
         return input;
     })());
+}
+
+export function TrackItem(DATA) {
+    const that = this;
+    let { id, shotID, trackStart, trackPoint, tracklength, shot } = DATA;
+
+    this.id = id;
+    this.shotID = shotID;
+    this.trackStart = util.getSec(trackStart);
+    this.trackLength = util.getSec(tracklength);
+    this.trackPoint = util.getSec(trackPoint ? trackPoint : 0);
+    this.shot = shot;
+
+    let div = document.createElement('div');
+    div.classList.add('item');
+    this.element = div;
+
+    this.isgrab = false;
+
+    (function() {
+        let ispress = false;
+        let lastX;
+        that.element.addEventListener('mousedown', function(e) {
+            ispress = true;
+            that.isgrab = true;
+            lastX = e.x;
+            update();
+        })
+        window.addEventListener('mouseup', function() {
+            if(that.isgrab) { mouseUp(); }
+            ispress = false;
+            that.isgrab = false;
+
+            update();
+        })
+        window.addEventListener('mousemove', function(e) {
+            if(!ispress || endControlPress || startControlPress) { 
+                return 
+            }
+            that.trackStart = that.trackStart + (e.x - lastX) * (100 / layout.trackRatio);
+            lastX = e.x;
+            e.stopPropagation();
+            update();
+        })
+    })();
+
+    let art;
+    getPreview.add(
+        shot.parent.parent.video,
+        util.getSec(shot.start) + util.getSec(shot.parent.start),
+        function(imgData) {
+            let img = new Image();
+            img.draggable = false;
+            img.onload = function() {
+                art.appendChild(img);
+            }
+            img.src = imgData;
+        }
+    );
+    div.appendChild((function() {
+        art = document.createElement('div');
+        art.classList.add('art');
+
+        return art;
+    })())
+
+    let startControl;
+    let startControlPress = false;
+    div.appendChild((function() {
+        startControl = document.createElement('div');
+        startControl.classList.add('start-control');
+
+        let lastX;
+        startControl.addEventListener('mousedown', function(e) {
+            startControlPress = true;
+            lastX = e.x;
+        })
+        window.addEventListener('mouseup', function() {
+            if(startControlPress) { mouseUp() }
+            startControlPress = false;
+        })
+        window.addEventListener('mousemove', function(e) {
+            if(!startControlPress) { return }
+            let movement = (e.x - lastX) * (100 / layout.trackRatio);
+
+            if(
+                (that.trackPoint + movement < 0) ||
+                (that.trackLength - movement < 1) ||
+                (that.trackLength - movement > util.getSec(shot.length))
+            ) { return; }
+
+            
+            that.trackPoint += movement;
+            that.trackStart += movement;
+            that.trackLength -= movement;
+            lastX = e.x;
+
+            update();
+        })
+
+        return startControl;
+    })())
+
+    let endControl;
+    let endControlPress = false;
+    div.appendChild((function() {
+        endControl = document.createElement('div');
+        endControl.classList.add('end-control');
+
+        let lastX;
+        endControl.addEventListener('mousedown', function(e) {
+            endControlPress = true;
+            lastX = e.x;
+        })
+        window.addEventListener('mouseup', function() {
+            if(endControlPress) { mouseUp(); }
+            endControlPress = false;
+        })
+        window.addEventListener('mousemove', function(e) {
+            if(!endControlPress) { return }
+            let movement = (e.x - lastX) * (100 / layout.trackRatio);
+            if(
+                (that.trackLength + movement < 1) ||
+                (that.trackLength + movement > util.getSec(shot.length))
+            ) { return; }
+
+            that.trackLength += movement;
+            lastX = e.x;
+
+            update();
+        })
+
+        return endControl;
+    })())
+    
+    function update() {
+        div.style.cssText = `
+            width: calc(${that.trackLength}px * var(--trackRatio) / 100);
+            left: calc(${that.trackStart}px * var(--trackRatio) / 100);
+            cursor: ${that.isgrab ? 'grabbing' : 'grab'};
+            ${that.isgrab ? 'z-index: 1;' : null}
+        `
+    }
+    this.update = update;
+    function mouseUp() {
+        let thisStart = that.trackStart;
+        let thisEnd = that.trackStart + that.trackLength;
+
+        for (let i = 0; i < app.tracks.length; i++) {
+            if(app.tracks[i].id == that.id) continue;
+
+            let start = app.tracks[i].trackStart;
+            let end = app.tracks[i].trackStart + app.tracks[i].trackLength;
+
+            if(
+                (thisStart < start) &&
+                (end < thisEnd)
+            ) {
+                console.log(3);
+                break;
+            }
+
+            if(
+                (start < thisStart) &&
+                (thisEnd < end)
+            ) {
+                console.log(4);
+                break;
+            }
+            
+            if(
+                (start < thisStart) &&
+                (thisStart < end)
+            ) {
+                console.log(1);
+                break;
+            }
+
+            if(
+                (start < thisEnd) &&
+                (thisStart < end)
+            ) {
+                console.log(2);
+                break;
+            }
+        }
+    }
+    
+    update();
 }
