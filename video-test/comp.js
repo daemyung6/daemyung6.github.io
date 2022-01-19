@@ -1,6 +1,8 @@
 import layout from './layout.js';
 const sceneListDiv = document.getElementById('scene-bar');
 const shotList = document.getElementById('shot-list');
+const trackVideoDiv = document.getElementById('track-video');
+const trackVideo = document.getElementById('track-video');
 import * as getPreview from './getPreview.js';
 import * as util from './util.js';
 import * as app from './app.js';
@@ -219,17 +221,60 @@ export function ShotItem(DATA) {
         input.setAttribute('type', 'text');
         return input;
     })());
+
+    div.addEventListener('dblclick', function() {
+        let lastTime = 0;
+        for (let i = 0; i < app.tracks.length; i++) {
+            if(lastTime < app.tracks[i].trackStart + app.tracks[i].trackLength) {
+                lastTime = app.tracks[i].trackStart + app.tracks[i].trackLength;
+            }
+        }
+
+        app.addTrackIndexNum();
+        let newTrack = new TrackItem({
+            id : app.trackIndexNum,
+            shotID : that.id,
+            trackStart : util.sec2str(lastTime),
+            tracklength : that.length,
+            shot : that,
+        });
+        console.log(that.length);
+        app.tracks.push(newTrack);
+        trackVideoDiv.appendChild(newTrack.element);
+    })
+
+    ;(function() {
+        let ispress = false;
+
+        div.addEventListener('dragend', function(e) {
+            
+            console.log(layout.lastDragX);
+
+            app.addTrackIndexNum();
+            let newTrack = new TrackItem({
+                id : app.trackIndexNum,
+                shotID : that.id,
+                trackStart : util.sec2str(Math.round(layout.lastDragX / (layout.trackRatio / 100))),
+                tracklength : that.length,
+                shot : that,
+            });
+
+            console.log(newTrack);
+            app.tracks.push(newTrack);
+            trackVideoDiv.appendChild(newTrack.element);
+        })
+    })();
 }
 
+export let lastClickTrackItem;
 export function TrackItem(DATA) {
     const that = this;
-    let { id, shotID, trackStart, trackPoint, tracklength, shot } = DATA;
+    let { id, shotID, trackStart, tracklength, shot } = DATA;
 
     this.id = id;
     this.shotID = shotID;
     this.trackStart = util.getSec(trackStart);
     this.trackLength = util.getSec(tracklength);
-    this.trackPoint = util.getSec(trackPoint ? trackPoint : 0);
     this.shot = shot;
 
     let div = document.createElement('div');
@@ -237,6 +282,35 @@ export function TrackItem(DATA) {
     this.element = div;
 
     this.isgrab = false;
+
+    div.addEventListener('click', function() {
+        if(typeof lastClickTrackItem !== 'undefined') {
+            lastClickTrackItem.setSelect(false);
+        }
+        that.setSelect(true);
+        lastClickTrackItem = that;
+    });
+
+
+
+    this.setSelect = function(flag) {
+        if(flag) {
+            div.classList.add('select');
+        }
+        else {
+            div.classList.remove('select');
+        }
+    };
+
+    this.delete = function() {
+        for (let i = 0; i < app.tracks.length; i++) {
+            if(app.tracks[i].id == that.id) {
+                app.tracks.splice(i, 1);
+                break;
+            }
+        }
+        that.element.remove();
+    };
 
     (function() {
         let ispress = false;
@@ -258,7 +332,9 @@ export function TrackItem(DATA) {
             if(!ispress || endControlPress || startControlPress) { 
                 return 
             }
-            that.trackStart = that.trackStart + (e.x - lastX) * (100 / layout.trackRatio);
+            let movement = (e.x - lastX) * (100 / layout.trackRatio);
+            if(that.trackStart + movement < 0) { return; }
+            that.trackStart += movement;
             lastX = e.x;
             e.stopPropagation();
             update();
@@ -355,6 +431,10 @@ export function TrackItem(DATA) {
     })())
     
     function update() {
+        if(that.trackLength < 1) {
+            that.delete();
+            return;
+        }
         div.style.cssText = `
             width: calc(${that.trackLength}px * var(--trackRatio) / 100);
             left: calc(${that.trackStart}px * var(--trackRatio) / 100);
@@ -377,7 +457,8 @@ export function TrackItem(DATA) {
                 (thisStart < start) &&
                 (end < thisEnd)
             ) {
-                console.log(3);
+                app.tracks[i].element.remove();
+                app.tracks.splice(i, 1);
                 break;
             }
 
@@ -385,7 +466,32 @@ export function TrackItem(DATA) {
                 (start < thisStart) &&
                 (thisEnd < end)
             ) {
-                console.log(4);
+                
+                let shot;
+                for (let i1 = 0; i < app.shots.length; i1++) {
+                    if(app.shots[i1].id === app.tracks[i].shotID) {
+                        shot = app.shots[i1];
+                        break;
+                    }
+                }
+                if(typeof shot === 'undefined') {
+                    alert('잘못된 shot id');
+                    return;
+                }
+                app.addTrackIndexNum();
+                let newTrack = new TrackItem({
+                    id : app.trackIndexNum,
+                    shotID : app.tracks[i].shotID,
+                    trackStart : util.sec2str(Math.round(thisEnd)),
+                    tracklength : util.sec2str(Math.round(app.tracks[i].trackLength - (thisEnd - start))),
+                    shot : shot,
+                });
+                app.tracks.push(newTrack);
+                trackVideoDiv.appendChild(newTrack.element);
+                
+                app.tracks[i].trackLength = Math.round(thisStart - start);
+                app.tracks[i].update();
+
                 break;
             }
             
@@ -393,7 +499,9 @@ export function TrackItem(DATA) {
                 (start < thisStart) &&
                 (thisStart < end)
             ) {
-                console.log(1);
+                app.tracks[i].trackLength -= end - thisStart;
+                app.tracks[i].trackLength = Math.round(app.tracks[i].trackLength);
+                app.tracks[i].update();
                 break;
             }
 
@@ -401,10 +509,19 @@ export function TrackItem(DATA) {
                 (start < thisEnd) &&
                 (thisStart < end)
             ) {
-                console.log(2);
+                app.tracks[i].trackStart += thisEnd - start;
+                app.tracks[i].trackLength -= thisEnd - start;
+
+                app.tracks[i].trackStart = Math.round(app.tracks[i].trackStart);
+                app.tracks[i].trackLength = Math.round(app.tracks[i].trackLength);
+                app.tracks[i].update();
                 break;
             }
         }
+
+        that.trackStart = Math.round(that.trackStart);
+        that.trackLength = Math.round(that.trackLength);
+        update();
     }
     
     update();

@@ -1,8 +1,12 @@
 const canvas = document.getElementById('canvas');
 const shotList = document.getElementById('shot-list');
 const editModeBt = document.getElementById('edit-mode-bt');
+const loadingDiv = document.getElementById('loading');
+const trackVideo = document.getElementById('track-video');
+const editBox = document.getElementById('edit-box');
 import * as app from './app.js';
 import * as util from './util.js';
+import * as comp from './comp.js';
 
 function Layout() {
     const that = this;
@@ -73,10 +77,35 @@ function Layout() {
         }
     }
 
+    this.setLoading = function(flag) {
+        if(flag) {
+            loadingDiv.classList.add('active');
+        }
+        else {
+            loadingDiv.classList.remove('active');
+        }
+    }
+    this.setLoadingPercent = function(per) {
+        that.loadingPercent = per;
+        update();
+    }
+
     editModeBt.addEventListener('click', function() {
         that.setViewMain(!that.isViewMain);
     })
-    
+
+    this.lastDragX = 0;
+    trackVideo.addEventListener("dragover", function(e) {
+        that.lastDragX = e.x - 52 - that.sceneBarWidth - that.fileBarWidth + trackVideo.scrollLeft;
+        e.preventDefault();
+    }, false);
+
+    this.trackBarPercent = 0;
+    this.setTrackBarPercent = function(per) {
+        that.trackBarPercent = per;
+        update();
+    }
+  
     function update() {
         style.innerHTML = /*css*/`
             :root {
@@ -86,6 +115,8 @@ function Layout() {
                 --progress: ${that.progress}%;
                 --trackLength: ${that.trackLength}px;
                 --trackRatio: ${that.trackRatio};
+                --loadingPercent: ${that.loadingPercent}%;
+                --trackBarPercent: ${that.trackBarPercent}%;
             }
         `;
     }
@@ -209,6 +240,52 @@ window.addEventListener('DOMContentLoaded', function() {
         }, false);
     })();
 
+    (function() {
+        const deleteBt = document.getElementById('delete-bt');
+        deleteBt.addEventListener('click', del);
+        window.addEventListener('keydown', function(e) {
+            if(e.code === "Delete") {
+                del();
+            }
+        })
+        function del() {
+            if(typeof comp.lastClickTrackItem === 'undefined') { return }
+            comp.lastClickTrackItem.delete();    
+        }
+    })();
+
+    (function() {
+        const trackBar = document.getElementById('track-bar');
+        let ispress = false;
+        let lastX;
+        trackBar.addEventListener('mousedown', function(e) {
+            ispress = true;
+            lastX = e.x;
+        })
+        window.addEventListener('mouseup', function() {
+            ispress = false;
+        })
+    
+        window.addEventListener('mousemove', function(e) {
+            if(!ispress) { return }
+        
+            let movement = ((e.x - lastX) / (layout.trackLength * layout.trackRatio / 100)) * 100;
+            if(layout.trackBarPercent + movement <= 0) { 
+                layout.setTrackBarPercent(0);
+                return; 
+            }
+            if(layout.trackBarPercent + movement >= 100) { 
+                layout.setTrackBarPercent(100);
+                return; 
+            }
+
+            layout.setTrackBarPercent(layout.trackBarPercent + movement);
+
+            lastX = e.x;
+        })
+
+
+
+    })();
+
 })  
-
-

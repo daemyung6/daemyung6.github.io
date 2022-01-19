@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script type="module">
+    import * as getPreview from './getPreview.js';
+
+    const video = document.createElement('video');
+    video.src = './videos/2.mp4';
+
+    for (let i = 0; i < 10; i += (1 / 30)) {
+        getPreview.add(
+            video, 
+            i,
+            function(imgData) {
+                let img = new Image();
+                img.src = imgData;
+                list.push(img);
+            }
+        );
+    }
+
+    let list = [];
+    window.list = list;
+
+</script>
+</html>

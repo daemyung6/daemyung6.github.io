@@ -17,12 +17,7 @@
                         {
                             "id" : 1,
                             "start" : "00:00:00",
-                            "length" : "00:00:02"
-                        },
-                        {
-                            "id" : 2,
-                            "start" : "00:00:02",
-                            "length" : "00:00:01"
+                            "length" : "00:00:03"
                         }
                     ]
                 }
@@ -97,26 +92,18 @@
             "length" : "00:00:10"
         }
     ],
+    "trackIndexNum" : 2,
     "tracks" : [
         {
             "id" : 1,
             "shotID" : 1,
             "trackStart" : "00:00:00",
-            "trackPoint" : "00:00:00",
-            "tracklength" : "00:00:02"
+            "tracklength" : "00:00:03"
         },
         {
             "id" : 2,
-            "shotID" : 2,
-            "trackStart" : "00:00:05",
-            "trackPoint" : "00:00:00",
-            "tracklength" : "00:00:01"
-        },
-        {
-            "id" : 3,
             "shotID" : 3,
             "trackStart" : "00:00:10",
-            "trackPoint" : "00:00:00",
             "tracklength" : "00:00:15"
         }
     ]

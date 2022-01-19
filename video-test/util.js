@@ -1,5 +1,7 @@
 export function getSec(time) {
+    if(typeof time !== 'string') { console.error('string이 아닙니다.'); return; }
     time = time.split(':');
+    if(time.length !== 3) { console.error('올바른 형식이 아닙니다.'); return; }
 
     let returnTime = 0;
     returnTime += Number(time[0]) * 60 * 60;
@@ -10,6 +12,7 @@ export function getSec(time) {
 }
 
 export function sec2str(time) {
+    if(typeof time !== 'number') { console.error('number가 아닙니다.'); return; }
     let hour = parseInt(time / (60 * 60));
     hour = hour < 10 ? '0' + hour : hour;
     time -= hour * 60 * 60;

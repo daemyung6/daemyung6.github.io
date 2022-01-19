@@ -1,6 +1,15 @@
-let workList = [];
+export function setOnEnd(func) {
+    onEnd = func;
+}
+export function setOnProgress(func) {
+    onProgress = func;
+}
+
+function onEnd() { }
+function onProgress() { }
 
 let isWorking = false;
+let workList = [];
 export function add(video, time, callback) {
     workList.push({
         video, time, callback
@@ -21,6 +30,7 @@ function work(indexNum) {
 
     video.onseeked = function(e) {
         done();
+        video.onseeked = undefined;
     }
     function done() {
         canvas.width = video.videoWidth / 4;
@@ -33,14 +43,22 @@ function work(indexNum) {
         callback(dataURL);
         indexNum++;
         if(workList.length !== indexNum) {
+            onProgress(indexNum / workList.length);
             setTimeout(() => {
+                if(!isWorking) { return; }
                 work(indexNum);
-            }, 0);
+            }, 10);
         }
         else {
-            isWorking = false;
+            workDone();
+            onEnd();
         }
     }
     
     video.currentTime = time <= 0 ? 0.01 : time;
+}
+function workDone() {
+    isWorking = false;
+    workList = [];
+    indexNum = 0;
 }
