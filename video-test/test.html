@@ -12,23 +12,30 @@
 <script type="module">
     import * as getPreview from './getPreview.js';
 
-    const video = document.createElement('video');
-    video.src = './videos/2.mp4';
+    fetch('./videos/2.mp4', {
+        method: "GET"
+    })
+    .then(blob => blob.blob())
+    .then(blob => {
+        blob = URL.createObjectURL(blob);
+        console.log(blob)
 
-    for (let i = 0; i < 10; i += (1 / 30)) {
-        getPreview.add(
-            video, 
-            i,
-            function(imgData) {
-                let img = new Image();
-                img.src = imgData;
-                list.push(img);
-            }
-        );
-    }
+        const video = document.createElement('video');
+        video.src = blob;
 
-    let list = [];
-    window.list = list;
-
+        for (let i = 0; i < 10; i += (1 / 30)) {
+            getPreview.add(
+                video, 
+                i,
+                function(imgData) {
+                    let img = new Image();
+                    img.onload = function() {
+                        document.body.appendChild(img);
+                    }
+                    img.src = imgData;
+                }
+            );
+        }
+    })
 </script>
 </html>

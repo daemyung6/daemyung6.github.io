@@ -3,9 +3,12 @@ const sceneListDiv = document.getElementById('scene-bar');
 const shotList = document.getElementById('shot-list');
 const trackVideoDiv = document.getElementById('track-video');
 const trackVideo = document.getElementById('track-video');
+const testDiv = document.getElementById('test');
+const playBT = document.getElementById('play-bt')
 import * as getPreview from './getPreview.js';
 import * as util from './util.js';
 import * as app from './app.js';
+import * as player from './player.js';
 
 /*
 <div class="click-bt active">
@@ -23,7 +26,14 @@ export function FileItem(DATA) {
     this.name = name;
 
     this.video = document.createElement('video');
-    this.video.src = url;
+    fetch(url, {
+        method: "GET"
+    })
+    .then(blob => blob.blob())
+    .then(blob => {
+        that.video.src = URL.createObjectURL(blob);
+        console.log('file load done')
+    })
 
     let div = document.createElement('div');
     div.classList.add('click-bt');
@@ -76,6 +86,7 @@ export function FileItem(DATA) {
 
         if(layout.defaultSceneBarWidth > layout.sceneBarWidth) {
             layout.setSceneBarWidth(layout.defaultSceneBarWidth);
+            
         }
     })
 }
@@ -98,14 +109,17 @@ export function SceneItem(DATA) {
     this.start = start;
     this.length = length;
     this.parent = parent;
+    this.gridElement = new gridSceneItem(this);
 
     let previewDiv;
 
     getPreview.add(
         parent.video, 
-        util.getSec(start),
+        start,
         function(imgData) {
             let img = new Image();
+            that.gridElement.setPreview(imgData);
+
             img.draggable = false;
             img.onload = function() {
                 previewDiv.appendChild(img);
@@ -156,7 +170,7 @@ export function SceneItem(DATA) {
         let shot = new ShotItem(shots[i]);
         this.shots.push(shot);
     }
-    
+
     div.addEventListener('click', function() {
         shotList.innerHTML = null;
         if(typeof lastClicSceneItem !== 'undefined') {
@@ -164,11 +178,55 @@ export function SceneItem(DATA) {
         }
         lastClicSceneItem = that;
         that.element.classList.add('active');
-        for (let i = 0; i < that.shots.length; i++) {
-            shotList.appendChild(that.shots[i].element);
+
+
+        shotList.innerHTML = null;
+        for (let i = 0; i < that.parent.scenes.length; i++) {
+            shotList.appendChild(that.parent.scenes[i].gridElement.element);
         }
-        layout.setViewMain(false);
+
+        player.stop();
+        player.setScenePreview(that);
+        player.setMod('scenePreview');
+        player.draw();
+        
+        layout.setProgress(0);
+        layout.setPlayBT(false);
+
+        layout.set
     })
+
+    
+}
+
+function gridSceneItem(DATA) {
+    this.setPreview = function(imgData) {
+        let img = new Image();
+        img.onload = function() {
+            innerDiv.appendChild(img);
+        }
+        img.src = imgData;
+    }
+    let div = document.createElement('div');
+    div.draggable = true;
+    this.element = div;
+    div.classList.add('item');
+    div.classList.add('click-bt');
+
+    let innerDiv;
+
+    div.appendChild((()=> {
+        let div = document.createElement('div');
+        innerDiv = div;
+        div.classList.add('inner');
+        
+
+        return div;
+    })());
+
+    this.element = div;
+
+
 }
 
 
@@ -193,7 +251,7 @@ export function ShotItem(DATA) {
 
     getPreview.add(
         parent.parent.video, 
-        util.getSec(start) + util.getSec(parent.start),
+        start + parent.start,
         function(imgData) {
             let img = new Image();
             img.draggable = false;
@@ -234,7 +292,7 @@ export function ShotItem(DATA) {
         let newTrack = new TrackItem({
             id : app.trackIndexNum,
             shotID : that.id,
-            trackStart : util.sec2str(lastTime),
+            trackStart : lastTime,
             tracklength : that.length,
             shot : that,
         });
@@ -244,8 +302,6 @@ export function ShotItem(DATA) {
     })
 
     ;(function() {
-        let ispress = false;
-
         div.addEventListener('dragend', function(e) {
             
             console.log(layout.lastDragX);
@@ -254,7 +310,7 @@ export function ShotItem(DATA) {
             let newTrack = new TrackItem({
                 id : app.trackIndexNum,
                 shotID : that.id,
-                trackStart : util.sec2str(Math.round(layout.lastDragX / (layout.trackRatio / 100))),
+                trackStart : Math.round(layout.lastDragX / (layout.trackRatio / 100)),
                 tracklength : that.length,
                 shot : that,
             });
@@ -273,8 +329,8 @@ export function TrackItem(DATA) {
 
     this.id = id;
     this.shotID = shotID;
-    this.trackStart = util.getSec(trackStart);
-    this.trackLength = util.getSec(tracklength);
+    this.trackStart = trackStart;
+    this.trackLength = tracklength;
     this.shot = shot;
 
     let div = document.createElement('div');
@@ -344,7 +400,7 @@ export function TrackItem(DATA) {
     let art;
     getPreview.add(
         shot.parent.parent.video,
-        util.getSec(shot.start) + util.getSec(shot.parent.start),
+        shot.start + shot.parent.start,
         function(imgData) {
             let img = new Image();
             img.draggable = false;
@@ -383,7 +439,7 @@ export function TrackItem(DATA) {
             if(
                 (that.trackPoint + movement < 0) ||
                 (that.trackLength - movement < 1) ||
-                (that.trackLength - movement > util.getSec(shot.length))
+                (that.trackLength - movement > shot.length)
             ) { return; }
 
             
@@ -418,7 +474,7 @@ export function TrackItem(DATA) {
             let movement = (e.x - lastX) * (100 / layout.trackRatio);
             if(
                 (that.trackLength + movement < 1) ||
-                (that.trackLength + movement > util.getSec(shot.length))
+                (that.trackLength + movement > shot.length)
             ) { return; }
 
             that.trackLength += movement;
@@ -482,8 +538,8 @@ export function TrackItem(DATA) {
                 let newTrack = new TrackItem({
                     id : app.trackIndexNum,
                     shotID : app.tracks[i].shotID,
-                    trackStart : util.sec2str(Math.round(thisEnd)),
-                    tracklength : util.sec2str(Math.round(app.tracks[i].trackLength - (thisEnd - start))),
+                    trackStart : Math.round(thisEnd),
+                    tracklength : Math.round(app.tracks[i].trackLength - (thisEnd - start)),
                     shot : shot,
                 });
                 app.tracks.push(newTrack);
@@ -525,4 +581,24 @@ export function TrackItem(DATA) {
     }
     
     update();
+}
+
+export function copyItemToLast(that) {
+    let lastTime = 0;
+    for (let i = 0; i < app.tracks.length; i++) {
+        if(lastTime < app.tracks[i].trackStart + app.tracks[i].trackLength) {
+            lastTime = app.tracks[i].trackStart + app.tracks[i].trackLength;
+        }
+    }
+
+    app.addTrackIndexNum();
+    let newTrack = new TrackItem({
+        id : app.trackIndexNum,
+        shotID : that.shotID,
+        trackStart : lastTime,
+        tracklength : that.trackLength,
+        shot : that.shot,
+    });
+    app.tracks.push(newTrack);
+    trackVideoDiv.appendChild(newTrack.element);
 }

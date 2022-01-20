@@ -47,7 +47,7 @@ function work(indexNum) {
             setTimeout(() => {
                 if(!isWorking) { return; }
                 work(indexNum);
-            }, 10);
+            }, 0);
         }
         else {
             workDone();

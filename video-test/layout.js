@@ -4,9 +4,12 @@ const editModeBt = document.getElementById('edit-mode-bt');
 const loadingDiv = document.getElementById('loading');
 const trackVideo = document.getElementById('track-video');
 const editBox = document.getElementById('edit-box');
+const trackBox = document.getElementById('track-box');
+const playBT = document.getElementById('play-bt');
 import * as app from './app.js';
 import * as util from './util.js';
 import * as comp from './comp.js';
+import * as player from './player.js';
 
 function Layout() {
     const that = this;
@@ -46,7 +49,7 @@ function Layout() {
         
     }
 
-    this.progress = 50;
+    this.progress = 0;
     this.setProgress = function(percent) {
         that.progress = percent;
         update();
@@ -105,6 +108,29 @@ function Layout() {
         that.trackBarPercent = per;
         update();
     }
+
+    this.setPlayBT = function(flag) {
+        if(flag) {
+            playBT.classList.add('active');
+        }
+        else {
+            playBT.classList.remove('active');
+        }
+    };
+
+    (function() {
+        playBT.onclick = function() {
+            if(!player.isPlaying) {
+                player.play();
+                playBT.classList.add('active');
+            }
+            else {
+                player.stop();
+                playBT.classList.remove('active');
+            }
+            
+        }
+    })();
   
     function update() {
         style.innerHTML = /*css*/`
@@ -202,29 +228,27 @@ window.addEventListener('DOMContentLoaded', function() {
                 layout.trackLength + (e.x - lastX) * (100 / layout.trackRatio)
             );
 
-            app.project.length = util.sec2str(layout.trackLength + (e.x - lastX) * (100 / layout.trackRatio));
+            app.project.length = layout.trackLength + (e.x - lastX) * (100 / layout.trackRatio);
             lastX = e.x;
+
+            player.draw();
         })
     
     })();
 
-
-    let isControlPress = false;
-
-    window.addEventListener('keydown', function(e) {
-        if(e.key == "Control") {
-            isControlPress = true;
-        }
-        
-    });
-    window.addEventListener('keyup', function(e) {
-        if(e.key == "Control") {
-            isControlPress = false;
-        }
-        
-    });
-
     (function() {
+        let isControlPress = false;
+        window.addEventListener('keydown', function(e) {
+            if(e.key == "Control") {
+                isControlPress = true;
+            }
+        });
+        window.addEventListener('keyup', function(e) {
+            if(e.key == "Control") {
+                isControlPress = false;
+            }
+        });
+
         const box = document.getElementById('track-box');
         box.addEventListener('wheel', function(e) {
             if(isControlPress) {
@@ -261,6 +285,7 @@ window.addEventListener('DOMContentLoaded', function() {
         trackBar.addEventListener('mousedown', function(e) {
             ispress = true;
             lastX = e.x;
+            player.stop();
         })
         window.addEventListener('mouseup', function() {
             ispress = false;
@@ -268,6 +293,7 @@ window.addEventListener('DOMContentLoaded', function() {
     
         window.addEventListener('mousemove', function(e) {
             if(!ispress) { return }
+            if(player.isPlaying) { return; }
         
             let movement = ((e.x - lastX) / (layout.trackLength * layout.trackRatio / 100)) * 100;
             if(layout.trackBarPercent + movement <= 0) { 
@@ -281,11 +307,104 @@ window.addEventListener('DOMContentLoaded', function() {
 
             layout.setTrackBarPercent(layout.trackBarPercent + movement);
 
+            if(player.mod === 'track') {
+                layout.setProgress(layout.trackBarPercent + movement);
+                player.draw();
+            } 
+
+            player.draw();
             lastX = e.x;
         })
+    })();
+
+    (function() {
+        const trackBar = document.getElementById('progress-bt');
+        const trackBox = document.getElementById('progress-box');
+        let ispress = false;
+        let lastX;
+        trackBar.addEventListener('mousedown', function(e) {
+            ispress = true;
+            lastX = e.x;
+
+        })
+        window.addEventListener('mouseup', function() {
+            ispress = false;
+        })
+    
+        window.addEventListener('mousemove', function(e) {
+            if(!ispress) { return }
+            if(player.isPlaying) { return; }
+        
+            let movement = ((e.x - lastX) / trackBox.offsetWidth * 100);
+            if(layout.progress + movement <= 0) { 
+                layout.setProgress(0);
+                return; 
+            }
+            if(layout.progress + movement >= 100) { 
+                layout.setProgress(100);
+                return; 
+            }
+
+            layout.setProgress(layout.progress + movement);
 
 
+            if(player.mod === 'track') {
+                layout.setTrackBarPercent(layout.progress + movement);
+            }
+            player.draw();
+        
+            lastX = e.x;
+        })
+    })();
 
+    
+
+    (function() {
+        let isControlPress = false;
+        let is_C_Press = false;
+        let is_V_Press = false;
+
+        let copyItem = 
+
+        window.addEventListener('keydown', function(e) {
+            if(e.key == "Control") {
+                isControlPress = true;
+            }
+            if(e.key == "v") {
+                is_V_Press = true;
+            }
+            if(e.key == "c") {
+                is_C_Press = true;
+            }
+
+            if(isControlPress && is_C_Press) {
+                copyItem = comp.lastClickTrackItem;
+            }
+            if(isControlPress && is_V_Press && (typeof copyItem !== 'undefined')) {
+                comp.copyItemToLast(copyItem);
+            }
+        });
+        window.addEventListener('keyup', function(e) {
+            if(e.key == "Control") {
+                isControlPress = false;
+            }
+            if(e.key == "v") {
+                is_V_Press = false;
+            }
+            if(e.key == "c") {
+                is_C_Press = false;
+            }
+        });
+
+    })();
+
+    (function() {
+        trackBox.addEventListener('click', function() {
+            player.setMod('track');
+
+            player.stop();
+            player.draw();
+        })
     })();
 
 })  

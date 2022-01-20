@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', function() {
     })
     .then(json => json.json())
     .then(json => {
-        init(json);
+        projectInit(json);
     })
 })
 
@@ -28,7 +28,7 @@ export function addTrackIndexNum() {
 
 export let fileList = [];
 
-function init(projectdata) {
+function projectInit(projectdata) {
     layout.setLoading(true);
     layout.setLoadingPercent(0);
     getPreview.setOnProgress(function(per) {

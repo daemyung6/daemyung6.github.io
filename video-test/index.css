@@ -377,8 +377,8 @@ img {
 #player-bar .control-box .play {
     width: 43px;
     height: 43px;
-
-    background: url(./images/pause.png), linear-gradient(127.27deg, #B97208 19.37%, #FFD800 82.83%), #2C2E3A;
+    background: url(./images/play.png), linear-gradient(127.27deg, #B97208 19.37%, #FFD800 82.83%), #2C2E3A;
+    
     border: 2px solid #FFD800;
     box-shadow: -6px -6px 15px #303240, 8px 8px 15px #14151D;
     border-radius: 100%;
@@ -387,7 +387,7 @@ img {
     background-position: center;
 }
 #player-bar .control-box .play.active {
-    background: url(./images/play.png), linear-gradient(127.27deg, #B97208 19.37%, #FFD800 82.83%), #2C2E3A;
+    background: url(./images/pause.png), linear-gradient(127.27deg, #B97208 19.37%, #FFD800 82.83%), #2C2E3A;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -416,7 +416,7 @@ img {
     width: calc(100% - 47px - 47px);
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     overflow: auto;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -592,3 +592,13 @@ canvas {
     border-right: 8px solid transparent;
     border-top: 15px solid #F2870D;
   }
+  
+#test {
+    position: absolute;
+    width: 500px;
+    height: 620px;
+    overflow: auto;
+}
+#test video {
+    width: 100%;
+}
