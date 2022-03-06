@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const apiHost = 'https://api.github.com';
     const owner = 'cat-milk';
     const repo = 'Anime-Girls-Holding-Programming-Books';
-    const key = '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';
+    const key = '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';
     
     
     function getTree() {
