@@ -68,6 +68,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     imgload(json.tree[i].url)
                 }
             })
+            .catch(function() {
+                listDiv.appendChild((function() {
+                    let div = document.createElement('div');
+                    div.classList.add('desc');
+                    div.innerText = 'api 요청의 한도가 초과 되었습니다. 😥'
+                    return div;
+                })())
+            })
         }
 
         return div;
@@ -94,6 +102,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 })())
             }
             img.src = 'data:image/png;base64,' + json.content;
+        })
+        .catch(function() {
+            listDiv.appendChild((function() {
+                let div = document.createElement('div');
+                div.classList.add('desc');
+                div.innerText = 'api 요청의 한도가 초과 되었습니다. 😥'
+                return div;
+            })())
         })
     }
 })
