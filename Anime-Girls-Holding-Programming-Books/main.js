@@ -75,7 +75,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function imgload(url) {
         fetch(url, {
-            method: 'GET'
+            method: 'GET',
+            headers: {
+                Authorization: key
+            }
         })
         .then(json => json.json())
         .then(json => {
