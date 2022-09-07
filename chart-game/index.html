@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/ziy4vzb.css">
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.1/dist/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
+    <script src="./index.js"></script>
+    <script src="./mobile.js"></script>
+    <title>chart game</title>
+</head>
+<body>
+    <div id="fixed-menu">
+        <div class="mask"></div>
+        <div class="page-width">
+            <div class="logo">
+                Mu-Fi
+            </div>
+            <div class="mobile-menu-bt">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="mobile-menu">
+                <div class="link-items">
+                    <div class="item">DOCS</div>
+                    <div class="item">KO</div>
+                    <div class="item">solana/mainnet-beta</div>
+                </div>
+                <div class="right-items">
+                    <div class="normal">Swap</div>
+                    <div class="normal">Pool</div>
+                    <div class="normal">Stake</div>
+                    <div class="normal">Game</div>
+                    <div class="normal">Bridge</div>
+                    <div class="wallet">Connect Wallet</div>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    <header class="main mobile-page" data-page-name="main">
+        <div class="page-width">
+            <div class="big">
+                Banner<br >
+                Tect test<br >
+                <span class="gradient-text">Main Key Words</span><br >
+                Banner
+            </div>
+            <div class="description">
+                texttexttexttexttexttexttexttexttexttexttext<br >
+                texttexttexttexttexttexttexttext<br >
+                texttexttexttexttexttexttexttexttexttexttexttexttexttext<br >
+                texttexttexttexttexttexttexttexttext
+            </div>
+            <div class="data-items">
+                <div class="item">
+                    <div class="name">User</div>
+                    <div class="value">432K+</div>
+                </div>
+                <div class="item">
+                    <div class="name">Volume</div>
+                    <div class="value">200K+</div>
+                </div>
+                <div class="item">
+                    <div class="name"></div>
+                    <div class="value">10K+</div>
+                </div>
+            </div>
+            <div>
+                <div class="game-bt">Game</div>
+                <div class="chart-bt">Chart</div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="page-width">
+            <div class="main-title">
+                <span class="gradient-text">
+                    Trending NFTs
+                </span>
+            </div>
+            <div class="mobile-page" data-page-name="game">
+                <div class="graph widget">
+                    <div class="gradient-line"></div>
+                    <div class="contents">
+                        <img src="./images/Crypto-logo.png" alt="">
+                        <div class="title">
+                            <div class="title-name">
+                                BTC/USDT
+                            </div>
+                            <div class="value">
+                                <span>1H</span>
+                                <span>1D</span>
+                                <span>1W</span>
+                                <span>1M</span>
+                                <span>3M</span>
+                                <span>6M</span>
+                                <span>1Y</span>
+                            </div>
+                        </div>
+                        <canvas id="chart" ></canvas>
+                    </div>
+                </div>
+                <div class="game widget">
+                    <div class="gradient-line"></div>
+                    <div class="contents">
+                        <img src="./images/Crypto-logo.png" alt="">
+                        <div class="title">
+                            <div class="title-name">
+                                BTC/USDT
+                            </div>
+                            <div class="value">
+                                Lastest Result
+                                <span class="green">$ 21,045.42 +200.42</span>
+                                <span class="green percent">(+0.96%)</span>
+                                <span class="green big">LONG</span>
+                            </div>
+                        </div>
+                        <div class="progress-box">
+                            <div class="box LONG">
+                                <div class="name">
+                                    LONG
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="inner">
+                                        <div class="text">
+                                            x 1.53<br />
+                                            62.8%
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="iza">12,500,000 IZA</div>
+                            </div> 
+                            <div class="box SHORT">
+                                <div class="name">
+                                    SHORT
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="inner">
+                                        <div class="text">
+                                            x 2.52<br />
+                                            37.2%
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="iza">7,400,000 IZA</div>
+                            </div>
+                        </div>
+                        <div class="value-text-input">
+                            7,400,000 <span class="unit">IZA</span>
+                        </div>
+                        <div class="balance">
+                            Balance 123,562,121 IZA
+                        </div>
+                        <div class="percent-buttons">
+                            <div class="bt">
+                                10%
+                            </div>
+                            <div class="bt">
+                                25%
+                            </div>
+                            <div class="bt">
+                                50%
+                            </div>
+                            <div class="bt">
+                                max
+                            </div>
+                        </div>
+                        <div class="select-buttons">
+                            <div class="long bt">
+                                LONG
+                            </div>
+                            
+                            <div class="short bt">
+                                SHORT
+                            </div>
+                        </div>
+                        <div class="until-next">
+                            <div class="text gradient-text">
+                                59s until next
+                            </div>
+                            <div class="bt"></div>
+                        </div>
+                        <div class="game-widget-info widget">
+                            <div class="gradient-line"></div>
+                            <div class="contents">
+                                <div>
+                                    <div class="name">Current Position</div>
+                                    <div class="value">-</div>
+                                </div>
+                                <div>
+                                    <div class="name">Amount</div>
+                                    <div class="value">-IZA</div>
+                                </div>
+                                <div>
+                                    <div class="name">Estimate Reward</div>
+                                    <div class="value">-IZA</div>
+                                </div>
+                                <div>
+                                    <div class="name">Transaction</div>
+                                    <div class="value">-SEND / COMFIRM (DSJdsad...dsad)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-page" data-page-name="rank">
+                <div class="leader-board widget">
+                    <div class="gradient-line"></div>
+                    <div class="contents">
+                        <div class="title-name">Leader Board</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Rank</td>
+                                    <td>Account</td>
+                                    <td>Reward</td>
+                                    <td>Win%</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>ddsadsa...dsdsf</td>
+                                    <td>100M IZA</td>
+                                    <td>100.00%</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>ddsadsa...dsdsf</td>
+                                    <td>100M IZA</td>
+                                    <td>100.00%</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>ddsadsa...dsdsf</td>
+                                    <td>100M IZA</td>
+                                    <td>100.00%</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>ddsadsa...dsdsf</td>
+                                    <td>100M IZA</td>
+                                    <td>100.00%</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>ddsadsa...dsdsf</td>
+                                    <td>100M IZA</td>
+                                    <td>100.00%</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>ddsadsa...dsdsf</td>
+                                    <td>100M IZA</td>
+                                    <td>100.00%</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>ddsadsa...dsdsf</td>
+                                    <td>100M IZA</td>
+                                    <td>100.00%</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>ddsadsa...dsdsf</td>
+                                    <td>100M IZA</td>
+                                    <td>100.00%</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>ddsadsa...dsdsf</td>
+                                    <td>100M IZA</td>
+                                    <td>100.00%</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>ddsadsa...dsdsf</td>
+                                    <td>100M IZA</td>
+                                    <td>100.00%</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>ddsadsa...dsdsf</td>
+                                    <td>100M IZA</td>
+                                    <td>100.00%</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>ddsadsa...dsdsf</td>
+                                    <td>100M IZA</td>
+                                    <td>100.00%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-page" data-page-name="stats">
+                <div class="statistics widget">
+                    <div class="gradient-line"></div>
+                    <div class="contents">
+                        <div class="title-name">Statistics</div>
+                        <div class="recent-info">Recently 15 games</div>
+                        <div class="bar-graph-box">
+                            <div class="back-grid">
+                                <div class="grid"></div>
+                                <div class="grid"></div>
+                                <div class="grid"></div>
+                                <div class="grid"></div>
+                                <div class="grid"></div>
+                            </div>
+                            <div class="front">
+                                <!-- added -->
+                            </div>
+                        </div>
+                        <div class="info">
+                            <div class="date">
+                                2022-07-26 00:00
+                            </div>
+                            <div class="value">
+                                Volume 176.84 M
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="long">
+                                Long 12<br >
+                                X3.72
+                            </div>
+                            <div class="short">
+                                104 Short<br >
+                                WIN X3.72
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="history widget">
+                    <div class="gradient-line"></div>
+                    <div class="contents">
+                        <div class="title-name">Game History</div>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>1s ago</td>
+                                    <td>BetLONG</td>
+                                    <td>000,000,000 IZA</td>
+                                    <td>fdsfds....fdsff</td>
+                                </tr>
+                                <tr>
+                                    <td>1s ago</td>
+                                    <td>BetLONG</td>
+                                    <td>000,000,000 IZA</td>
+                                    <td>fdsfds....fdsff</td>
+                                </tr>
+                                <tr>
+                                    <td>1s ago</td>
+                                    <td>BetLONG</td>
+                                    <td>000,000,000 IZA</td>
+                                    <td>fdsfds....fdsff</td>
+                                </tr>
+                                <tr>
+                                    <td>1s ago</td>
+                                    <td>BetLONG</td>
+                                    <td>000,000,000 IZA</td>
+                                    <td>fdsfds....fdsff</td>
+                                </tr>
+                                <tr>
+                                    <td>1s ago</td>
+                                    <td>BetLONG</td>
+                                    <td>000,000,000 IZA</td>
+                                    <td>fdsfds....fdsff</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-page" data-page-name="my">
+                <div class="lastest-game widget">
+                    <div class="gradient-line"></div>
+                    <div class="contents">
+                        <div class="title-name">Lastest Game</div>
+                        <div class="time">2022-07-26 19:07:00 (USC +9)</div>
+                        <div class="list-info">
+                            <div class="item">
+                                <div class="name">Open Price</div>
+                                <div class="value">$000,000.000</div>
+                            </div>
+                            <div class="item">
+                                <div class="name">Close Price</div>
+                                <div class="value">$000,000.000</div>
+                            </div>
+                            <div class="item">
+                                <div class="name">Changed</div>
+                                <div class="value">+200.42 (+0.96%)</div>
+                            </div>
+                            <div class="item">
+                                <div class="name">Winner</div>
+                                <div class="value">Long</div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="title-name">Stats</div>
+                        <div class="list-info Stats-info">
+                            <div class="item">
+                                <div class="name">
+                                    Total Betted
+                                </div>
+                                <div class="value">
+                                    16.9M IZA
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="name">
+                                    Long Betted
+                                </div>
+                                <div class="value">
+                                    16.9M IZA<br />
+                                    00 Players
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="name">
+                                    Short Betted
+                                </div>
+                                <div class="value">
+                                    16.9M IZA<br >
+                                    00 Players
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="name">
+                                    Yield
+                                </div>
+                                <div class="value">
+                                    000%<br >
+                                    Avg 2,000,000 IZA<br >
+                                    <br >
+                                    MAX 2,000,000 IZA
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info widget">
+                    <div class="gradient-line"></div>
+                    <div class="contents">
+                        <div class="title-name">MY info</div>
+                        <div class="detail-subtitle">
+                            <span class="item">
+                                <span class="value">Total</span>
+                                <span class="value">362</span>
+                            </span>
+                            <span class="item">
+                                <span class="value">Win</span>
+                                <span class="value">152</span>
+                                <span class="value">70.00%</span>
+                            </span>
+                            <span class="item">
+                                <span class="value">Lose</span>
+                                <span class="value">152</span>
+                                <span class="value">70.00%</span>
+                            </span>
+                        </div>
+                        <div class="body">
+                            Total Claimed 000,000,000 IZA<br />
+                            Claimable 000,000,000 IZA
+                        </div>
+                        <div class="bt-claim">
+                            Claim
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main> 
+    <div id="mobile-bottom-menu">
+        <div class="item">
+            <div class="icon"></div>
+            <div class="name">Game</div>
+        </div>
+        <div class="item">
+            <div class="icon"></div>
+            <div class="name">Rank</div>
+        </div>
+        <div class="item">
+            <div class="icon"></div>
+            <div class="name">Stats</div>
+        </div>
+        <div class="item">
+            <div class="icon"></div>
+            <div class="name">My</div>
+        </div>
+    </div>
+</body>
+
+</html>

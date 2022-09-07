@@ -1,0 +1,1156 @@
+@import url('https://rsms.me/inter/inter.css');
+:root {
+    --page-width: 1720px;
+    color: white;
+    --transition-time: 250ms;
+}
+html, body {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #141943;
+}
+body {
+    width: calc(100% - 40px);
+    padding: 0px 20px 0px 20px;
+}
+.page-width {
+    max-width: var(--page-width);
+    width: 100%;
+    margin: 0 auto;
+    transition: width var(--transition-time), max-width var(--transition-time);
+}
+.gradient-text {
+    background: linear-gradient(90deg, #69EACB 0%, #EACCF8 48%, #6654F1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    padding: 5px 0px 3px 0px;
+}
+
+
+
+#fixed-menu {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: calc(100% - 40px);
+    padding: 0px 20px 0px 20px;
+    z-index: 99;
+}
+#fixed-menu .page-width {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    top: 70px;
+}
+#fixed-menu .mobile-menu-bt {
+    display: none;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    cursor: pointer;
+}
+#fixed-menu .mobile-menu-bt span {
+    width: 40px;
+    height: 4px;
+    background-color: white;
+    display: block;
+    margin: 10px;
+    position: relative;
+    top: 0px;
+    transition: transform var(--transition-time), top var(--transition-time);
+}
+#fixed-menu.active .mobile-menu-bt span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 14px;
+}
+#fixed-menu.active .mobile-menu-bt span:nth-child(2) {
+    transform: rotate(-45deg);
+}
+#fixed-menu.active .mobile-menu-bt span:nth-child(3) {
+    transform: rotate(45deg);
+    top: -14px;
+}
+#fixed-menu .mobile-menu {
+    height: 100%;
+}
+#fixed-menu .logo {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    text-shadow: 0 0 15px black;
+}
+#fixed-menu .right-items {
+    white-space: nowrap;
+    position: absolute;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+#fixed-menu .right-items .normal {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 18px;
+    cursor: pointer;
+}
+#fixed-menu .right-items .normal:first-child {
+    margin-left: 0px;
+}
+#fixed-menu .right-items .wallet {
+    width: 207px;
+    height: 60px;
+    background: #2F80ED;
+    border-radius: 60px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 18px;
+    cursor: pointer;
+}
+#fixed-menu .link-items {
+    position: absolute;
+    right: 0px;
+    top: -40px;
+}
+#fixed-menu .link-items .item {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 12px;
+    display: inline-block;
+    padding: 1px 12px 0px 12px;
+    border-left: 2px solid;
+    cursor: pointer;
+}
+#fixed-menu .link-items .item:first-child {
+    border-left: 0px
+}
+#fixed-menu .mask {
+    position: absolute;
+    width: 130%;
+    left: -10%;
+    height: 140px;
+    background: linear-gradient(0, transparent, #0000007a);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid #ffc20000;
+    -webkit-mask-image: linear-gradient(180deg, black 50%, transparent);
+}
+
+#mobile-bottom-menu {
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    bottom: -120px;
+    left: 0px;
+    background-color: #1a1a1a;
+    box-shadow: 0px 0px 12px #0000009e;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: bottom var(--transition-time);
+    z-index: 99;
+}
+@media screen and (max-width: 1140px) {
+    #mobile-bottom-menu {
+        bottom: 0px;
+    }
+}
+#mobile-bottom-menu .item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+#mobile-bottom-menu .item .icon {
+    width: 60px;
+    height: 60px;
+    background: #aaaaaa;
+}
+#mobile-bottom-menu .item .name {
+    font-family: 'poppins';
+    margin-top: 10px;
+    color: rgba(225, 225, 225, 0.7);
+}
+#mobile-bottom-menu .item.select .icon {
+    background: white;
+}
+#mobile-bottom-menu .item.select .name {
+    color: white;
+}
+
+
+
+header.main {
+    margin-bottom: 100px;
+}
+header.main .big {
+    margin-top: 232px;
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 87px;
+}
+
+header.main .description {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+}
+header.main .data-items .item {
+    display: inline-block;
+    position: relative;
+    height: 57.13px;
+    margin-left: 32px;
+}
+header.main .data-items .item:first-child {
+    margin-left: 0px;
+}
+header.main .data-items {
+    margin-top: 12px;
+}
+header.main .data-items .item .name {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+header.main .data-items .item .value {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 54px;
+}
+header.main .game-bt,
+header.main .chart-bt {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 204px;
+    height: 58px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    background: #2F80ED;
+    border-radius: 60px;
+    margin-right: 25px;
+    border: 2px solid #2F80ED;
+    cursor: pointer;
+    margin-top: 23px;
+}
+header.main .chart-bt {
+    background: unset;
+    border: 2px solid white;
+}
+
+main .main-title {
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 55px;
+    margin-bottom: 35px;
+}
+
+
+main {
+
+}
+main .page-width {
+    position: relative;
+    height: 1450px;
+}
+
+
+
+main .widget {
+    background: linear-gradient(155.14deg, rgba(255, 255, 255, 0) -2.13%, rgba(255, 255, 255, 0.15) 136.58%);
+    filter: drop-shadow(0px 4px 49px rgba(0, 7, 72, 0.12));
+    backdrop-filter: blur(25px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: top var(--transition-time), left var(--transition-time), width var(--transition-time), height var(--transition-time);
+}
+main .widget .gradient-line {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px; /*1*/
+    border: 2px solid transparent; /*2*/
+    background: linear-gradient(90deg, #69EACB 0%, #EACCF8 48%, #6654F1 100%) border-box; /*3*/
+    -webkit-mask: /*4*/
+       linear-gradient(#fff 0 0) padding-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; /*5'*/
+            mask-composite: exclude; /*5*/
+}
+main .widget .contents {
+    position: absolute;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+}
+
+main .contents .title-name {
+    display: inline-block;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    color: #6A58F1;
+}
+
+
+/* -------------------------- */
+main .graph.widget {
+    position: absolute;
+    top: 120px;
+    left: 0px;
+    width: 1158px;
+    height: 574px;
+    display: flex;
+}
+main .graph.widget .contents {
+    height: unset;
+}
+main .graph.widget .contents .title {
+    display: inline-block;
+    margin-bottom: 40px;
+}
+main .graph.widget .contents .title .text {
+
+}
+main .graph.widget .contents .title .value {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    opacity: 0.7;
+}
+main .graph.widget .contents .title span {
+    display: inline-block;
+    border-right: 1px solid;
+    padding: 0px 10px 0px 10px;
+    height: 10px;
+    line-height: 14px;
+}
+main .graph.widget .contents .title span:first-child {
+    padding-left: 0px;
+}
+main .graph.widget .contents .title span:last-child {
+    border: 0px;
+}
+
+main .game.widget {
+    position: absolute;
+    top: 120px;
+    right: 0px;
+    width: 534px;
+    height: 963px;
+}
+main .game.widget .contents .title {
+    display: inline-block;
+    margin-bottom: 20px
+}
+main .game.widget .contents .green {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #23E736;
+    opacity: 0.7;
+}
+main .game.widget .contents .green.percent {
+    font-weight: 700;
+    font-size: 15px;
+}
+main .game.widget .contents .green.big {
+    font-weight: 700;
+    font-size: 15px;
+}
+main .game.widget .contents .progress-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+main .game.widget .contents .progress-box .box {
+    width: 134px;
+    height: 354px;
+    margin: 0px 50px 0px 50px;
+}
+main .game.widget .contents .progress-box .box .name {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+
+    text-align: center;
+
+    /* 通用/白/60% */
+
+    color: rgba(255, 255, 255, 0.6);
+
+}
+main .game.widget .contents .progress-box .box .progress-bar {
+    background-color: #36f09724;
+    width: 100%;
+    height: 285px;
+    position: relative;
+}
+main .game.widget .contents .progress-box .box .progress-bar .inner {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #FFFFFF;
+}
+main .game.widget .contents .progress-box .box.LONG .progress-bar .inner {
+    background-color: #2cc67c;
+    height: 62.8%;
+}
+main .game.widget .contents .progress-box .box.SHORT .progress-bar .inner {
+    background-color: #F0364C;
+    height: 37.2%;
+}
+main .game.widget .contents .progress-box .box .iza {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 10px;
+    color: #ffffff9e;
+}
+main .game.widget .contents .value-text-input {
+    width: calc(412px - 40px);
+    height: 48px;
+    border: 1px solid #FFFFFF;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 0px 20px 0px 20px;
+    margin: 0 auto;
+}
+main .game.widget .contents .value-text-input .unit {
+    font-size: 16px;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+main .game.widget .contents .balance {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 13px;
+}
+main .game.widget .contents .percent-buttons {
+    text-align: center;
+}
+main .game.widget .contents .percent-buttons .bt {
+    width: 76px;
+    height: 32px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    align-items: center;
+    color: #FFFFFF;
+    background: #2F80ED;
+    border-radius: 60px;
+    display: inline-flex;
+    justify-content: center;
+    margin: calc(32px / 2);
+}
+main .game.widget .contents .percent-buttons .bt:first-child {
+    margin-left: 0px;
+}
+main .game.widget .contents .percent-buttons .bt:last-child {
+    margin-right: 0px;
+}
+main .game.widget .contents .select-buttons .bt {
+    width: 173px;
+    height: 50px;
+    border-radius: 50px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    justify-content: center;
+}
+main .game.widget .contents .select-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 404px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+main .game.widget .contents .select-buttons .bt.long {
+    background-color: #36F097;
+}
+main .game.widget .contents .select-buttons .bt.short {
+    background-color: #FA194F;
+}
+main .game.widget .contents .until-next {
+    width: 410px;
+    border: 1px solid white;
+    height: 58px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+}
+main .game.widget .contents .until-next .text {
+    font-style: normal;
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+main .game.widget .contents .until-next .bt {
+    position: absolute;
+    left: 0px;
+    width: 58px;
+    height: 58px;
+    background: linear-gradient(90deg, #69EACB 0%, #EACCF8 48%, #6654F1 100%);
+    border-radius: 100%;
+    cursor: grab;
+}
+main .game.widget .contents .until-next .bt:active {
+    cursor: grabbing;
+}
+main .game.widget .game-widget-info {
+    width: 410px;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 150px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    color: rgba(225, 225, 225, 0.7);
+}
+main .game.widget .game-widget-info .contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+}
+main .game.widget .game-widget-info .name {
+    width: 110px;
+    float: left;
+}
+main .game.widget .game-widget-info .value {
+    width: calc(100% - 130px);
+    float: left;
+    margin-left: 20px;
+}
+/* ----------------- */
+
+
+main .leader-board.widget {
+    position: absolute;
+    top: 720px;
+    left: 0px;
+    width: 470px;
+    height: 394px;
+}
+main .leader-board.widget .title-name {
+    margin-bottom: 10px;
+}
+main .leader-board.widget table {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(225, 225, 225, 0.7);
+    width: 100%;
+    text-align: center;
+    text-overflow: ellipsis;
+}
+main .leader-board.widget table thead tr {
+    top: -5px;
+    position: relative;
+}
+main .leader-board.widget table tbody tr {
+    line-height: 16px;
+}
+
+main .leader-board.widget table tbody tr:nth-child(1) td:first-child {
+    font-size: 25px;
+}
+main .leader-board.widget table tbody tr:nth-child(1) {
+    line-height: 31px;
+}
+
+main .leader-board.widget table tbody tr:nth-child(2) td:first-child {
+    font-size: 20px;
+}
+main .leader-board.widget table tbody tr:nth-child(2) {
+    line-height: 26px;
+}
+
+main .leader-board.widget table tbody tr:nth-child(3) td:first-child {
+    font-size: 16px;
+}
+main .leader-board.widget table tbody tr:nth-child(3) {
+    line-height: 21px;
+}
+/* --------------------- */
+
+main .history.widget {
+    position: absolute;
+    top: 1140px;
+    left: 0px;
+    width: 470px;
+    height: 210px;
+}
+main .history.widget table {
+    width: 100%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(225, 225, 225, 0.7);
+    text-align: center;
+}
+/* ----------------------- */
+
+main .lastest-game.widget {
+    position: absolute;
+    top: 720px;
+    left: 490px;
+    width: 295px;
+    height: 629px;
+}
+main .lastest-game.widget .time {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 30px;
+    color: rgba(225, 225, 225, 0.7);
+}
+main .lastest-game.widget .list-info {
+    width: 100%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(225, 225, 225, 0.7);
+}
+main .lastest-game.widget .list-info .item {
+    min-height: 20px;
+}
+main .lastest-game.widget .list-info .name {
+    width: 90px;
+    float: left;
+}
+main .lastest-game.widget .list-info .value {
+    width: calc(100% - 110px);
+    float: left;
+    margin-left: 20px;
+    text-align: right;
+    text-overflow: ellipsis;
+}
+
+main .lastest-game.widget .list-info.Stats-info .value  {
+    margin-bottom: 10px;
+}
+/* ------------------------ */
+
+main .statistics.widget {
+    position: absolute;
+    top: 720px;
+    left: 805px;
+    width: 357px;
+    height: 279px;
+}
+main .statistics.widget .recent-info {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    color: rgba(225, 225, 225, 0.7);
+}
+main .statistics.widget .bar-graph-box {
+    width: 100%;
+    height: 120px;
+    position: relative;
+    margin-top: 10px;
+}
+main .statistics.widget .back-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+main .statistics.widget .back-grid .grid {
+    width: 100%;
+    height: 0px;
+    border-top: 1px dashed #ffffff69;
+}
+main .statistics.widget .front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+main .statistics.widget .front .bar {
+    background-color: rgb(106 88 241 / 50%);
+    position: relative;
+}
+
+main .statistics.widget .front .bar .inner {
+    background-color: rgb(106 88 241);
+    width: 100%;
+    bottom: 0px;
+    position: absolute;
+}
+main .statistics.widget .info {
+    position: relative;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: white;
+    height: 28px;
+    margin-top: 20px;
+}
+main .statistics.widget .info .date {
+    position: absolute;
+    left: 0px;
+}
+main .statistics.widget .info .value {
+    position: absolute;
+    right: 0px;
+}
+main .statistics.widget .progress {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    width: 100%;
+    height: 36px;
+    position: relative;
+}
+main .statistics.widget .progress .long,
+main .statistics.widget .progress .short {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+main .statistics.widget .progress .long {
+    left: 0px;
+    background-color:#36F097;
+    width: 30%;
+}
+main .statistics.widget .progress .short {
+    right: 0px;
+    background-color:#FA194F;
+    width: 70%;
+}
+/* ------------------- */
+
+
+
+main .info.widget {
+    position: absolute;
+    top: 1110px;
+    left: 1182px;
+    width: 536px;
+    height: 245px;
+}
+main .info.widget .detail-subtitle {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: rgba(225, 225, 225, 0.7);
+    display: flex;
+}
+main .info.widget .detail-subtitle .item {
+    display: inline-flex;
+    border-right: 2px solid rgba(225, 225, 225, 0.7);
+    padding: 2px 10px 0px 10px;
+    align-items: center;
+    height: 9px;
+}
+main .info.widget .detail-subtitle .item:first-child {
+    padding-left: 0px;
+}
+main .info.widget .detail-subtitle .item:last-child {
+    padding-right: 0px;
+    border: 0px;
+}
+main .info.widget .detail-subtitle .item .value {
+    margin: 0px 5px 0px 5px;
+}
+main .info.widget .detail-subtitle .item .value:first-child {
+    margin: 0px 5px 0px 0px; 
+}
+main .info.widget .detail-subtitle .item .value:last-child {
+    margin: 0px 0px 0px 5px; 
+}
+main .info.widget .body {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: rgba(225, 225, 225, 0.7);
+    margin-top: 20px;
+}
+main .info.widget .bt-claim {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    border: 1px solid;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+/* --------------------- */
+
+@media screen and (max-width: 1780px) {
+    main .page-width {
+        height: 1970px;
+    }
+    :root {
+        --page-width: 1340px;
+    }
+    main .graph.widget {
+        position: absolute;
+        top: 120px;
+        left: 0px;
+        width: 1338px;
+        height: 574px;
+    }
+    main .game.widget {
+        position: absolute;
+        top: 720px;
+        right: 0px;
+        width: 534px;
+        height: 963px;
+    }
+    main .leader-board.widget {
+        position: absolute;
+        top: 720px;
+        left: 0px;
+        width: 470px;
+        height: 394px;
+    }
+    main .history.widget {
+        position: absolute;
+        top: 1140px;
+        left: 0px;
+        width: 470px;
+        height: 210px;
+    }
+    main .lastest-game.widget {
+        position: absolute;
+        top: 720px;
+        left: 490px;
+        width: 295px;
+        height: 629px;
+    }
+    main .statistics.widget {
+        position: absolute;
+        top: 1644px;
+        left: 0px;
+        width: 788px;
+        height: 279px;
+    }
+    main .info.widget {
+        position: absolute;
+        top: 1374px;
+        left: -1px;
+        width: 787px;
+        height: 245px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    main .page-width {
+        height: 2240px;
+    }
+    :root {
+        --page-width: 1080px;
+    }
+    main .graph.widget {
+        position: absolute;
+        top: 120px;
+        left: 0px;
+        width: 100%;
+        height: 474px;
+    }
+    main .game.widget {
+        position: absolute;
+        top: 621px;
+        right: 0px;
+        width: 534px;
+        height: 963px;
+    }
+    main .leader-board.widget {
+        position: absolute;
+        top: 622px;
+        left: 0px;
+        width: 526px;
+        height: 394px;
+    }
+    main .history.widget {
+        position: absolute;
+        top: 1045px;
+        left: 0px;
+        width: 524px;
+        height: 210px;
+    }
+    main .lastest-game.widget {
+        position: absolute;
+        top: 1287px;
+        left: 0px;
+        width: 525px;
+        height: 591px;
+    }
+    main .statistics.widget {
+        position: absolute;
+        top: 1906px;
+        left: 0px;
+        width: 1083px;
+        height: 279px;
+    }
+    main .info.widget {
+        position: absolute;
+        top: 1613px;
+        left: 547px;
+        width: 534px;
+        height: 264px;
+    }
+}
+@media screen and (max-width: 1140px) {
+    main .page-width {
+        height: unset;
+    }
+    #fixed-menu .page-width {
+        top: 20px;
+    }
+    #fixed-menu .mask {
+        height: 90px;
+    }
+    #fixed-menu .mobile-menu {
+        position: fixed;
+        width: 280px;
+        top: 0px;
+        right: -360px;
+        background: #00000075;
+        padding-top: 90px;
+        padding-left: 10px;
+        transition: right var(--transition-time);
+        backdrop-filter: blur(10px);
+    }
+    #fixed-menu.active .mobile-menu {
+        right: 0px;
+    }
+    #fixed-menu .link-items {
+        position: relative;
+        top: unset;
+        right: unset;
+        margin-bottom: 30px;
+    }
+    #fixed-menu .link-items .item {
+        display: block;
+        border: 0px;
+        margin: 20px;
+        padding: 0px;
+        font-size: 20px;
+    }
+    #fixed-menu .right-items {
+        position: relative;
+        right: unset;
+        display: block;
+    
+    }
+    #fixed-menu .right-items .normal {
+        margin: 20px;
+        font-size: 30px;
+    }
+    #fixed-menu .right-items .normal:first-child {
+        margin-left: 20px;
+    }
+    #fixed-menu .mobile-menu-bt {
+        display: flex;
+    }
+
+    .mobile-page {
+        position: fixed;
+        top: 0px;
+        padding: 100px 0px 100px 0px;
+        left: 0px;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity var(--transition-time);
+        width: 100%;
+        height: calc(100% - 320px);
+        overflow: hidden;
+        overflow-y: auto;
+    }
+    main .main-title {
+        display: none;
+    }
+
+
+
+    header.main {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
+    }
+    header.main .big {
+        margin-top: unset;
+    }
+    header.main .chart-bt {
+
+    }
+    header.main .big {
+        font-size: 54px;
+    }
+    header.main .game-bt,
+    header.main .chart-bt {
+        width: 170px;
+    }
+
+    main .mobile-page div.widget {
+        position: relative;
+        margin: 0 auto;
+        width: calc(100% - 40px);
+        left: unset;
+        top: unset;
+        right: unset;
+    }
+ 
+    main .mobile-page .graph.widget {
+        height: 280px;
+        margin-bottom: 60px;
+    }
+    main .mobile-page .game.widget {
+        height: 1050px;
+    }
+    main .mobile-page .leader-board.widget {
+        height: 100%;
+    }
+    main .mobile-page .history.widget {
+
+    }
+    main .mobile-page .lastest-game.widget {
+        height: 480px;
+        margin-bottom: 40px;
+    }
+    main .mobile-page .statistics.widget {
+        margin-bottom: 60px;
+    }
+    main .mobile-page .info.widget {
+
+    }
+}
