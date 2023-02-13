@@ -1,0 +1,28 @@
+#keyboardzone {
+    width: 800px;
+    height: 350px;
+    position: relative;
+    display: block;
+    background: #bfbfbf;
+}
+#keyboardzone * {
+    transition: all 0ms;
+}
+#keyboardzone table th {
+    border: 1px solid #2f2f2f3d;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #eeeeeec4;
+    transition: background-color 500ms;
+    box-shadow: 0 0 7px 0px #00000033;
+    border-radius: 5px;
+}
+#keyboardzone table th:active {
+    background-color: #ffffff;
+    transition: background-color 0ms;
+}
+input {
+    width: 800px;
+    height: 40px;
+    margin-bottom: 10px;
+}
