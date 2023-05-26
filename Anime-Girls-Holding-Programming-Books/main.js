@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 (typeof json.message === 'string')
             ) {
                 onError(json.message);
-                return
+                return {then: function() {}}
             }
             return fetch(`${apiHost}/repos/${owner}/${repo}/git/trees/${json.commit.sha}`, {
                 method: 'GET',
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 (typeof json.message === 'string')
             ) {
                 onError(json.message);
-                return
+                return {then: function() {}}
             }
 
             for (let i = 0; i < json.tree.length; i++) {
