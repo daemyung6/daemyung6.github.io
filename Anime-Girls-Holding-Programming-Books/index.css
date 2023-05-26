@@ -82,13 +82,13 @@ a {
     position: absolute;
     top: 2vw;
     right: 2vw;
-    font-size: 10vw;
+    font-size: 2vw;
     font-weight: bold;
     cursor: pointer;
     color: white;
     background: black;
-    padding: 0px 5vw 4px 5vw;
-    border-radius: 3vw;
+    padding: 0.5vw 2vw 0.7vw 2vw;
+    border-radius: 1vw;
     font-family: 'Noto Sans KR';
 }
 @media screen and (max-width: 900px) {
