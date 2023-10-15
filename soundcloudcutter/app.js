@@ -4,7 +4,7 @@ import init from './src/init.js?ver=1';
 import ImageInput from './src/ImageInput.js?ver=1';
 export let elements = {};
 import * as Alert from './src/comp/Alert.js?ver=1';
-import * as ErrorMsg from './src/errorMsg.js?ver=1';
+import * as ErrorMsg from './src/ErrorMsg.js?ver=1';
 import onfontList from './src/fontList.js?ver=1';
 
 
