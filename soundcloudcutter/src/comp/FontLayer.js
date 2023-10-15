@@ -1,4 +1,4 @@
-import Layer from "./layer.js?ver=1";
+import Layer from "./Layer.js?ver=1";
 import ValueButton from "./ValueButton.js?ver=1";
 import * as app from '../../app.js?ver=1';
 import ColorValue from "./ColorValue.js?ver=1";

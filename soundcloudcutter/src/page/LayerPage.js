@@ -1,5 +1,5 @@
 import ImageLayer from '../comp/ImageLayer.js?ver=1';
-import FontLayer from '../comp/fontLayer.js?ver=1';
+import FontLayer from '../comp/FontLayer.js?ver=1';
 import ColorValue from '../comp/ColorValue.js?ver=1';
 import Toggle from '../comp/Toggle.js?ver=1';
 
