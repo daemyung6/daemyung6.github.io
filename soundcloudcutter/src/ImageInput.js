@@ -1,4 +1,4 @@
-import * as ErrorMsg from "./ErrorMsg.js?ver=1";
+import * as ErrorMsg from "./errorMsg.js?ver=1";
 export default class ImageInput {
     constructor() {
         this.imageInput = document.createElement('input');
