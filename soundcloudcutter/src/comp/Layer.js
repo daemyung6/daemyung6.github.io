@@ -1,4 +1,4 @@
-import * as ErrorMsg from "../ErrorMsg.js";
+import * as ErrorMsg from "../ErrorMsg.js?ver=1";
 
 export default class Layer {
     constructor() {
