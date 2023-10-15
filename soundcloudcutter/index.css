@@ -1,0 +1,424 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: Inter, sans-serif;
+    font: Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+    overflow-y: hidden;
+}
+
+:root {
+    --input-item-background-color: #00000012;
+    --border-color: #00000021;
+    --sc-orange: #f50;
+    --bright-green: #00e308;
+    --unactive: #00000026;
+    --mainPageHeightSub: 364px;
+}
+
+.root {
+    width: 1240px;
+    padding: 10px;
+    margin: 0px auto;
+    height: calc(100% - 20px);
+}
+.root .mainCanvasBox {
+    width: 1240px;
+    height: 260px;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+}
+.root .mainCanvasBox .mainCanvas {
+    width: 1240px;
+    height: 260px;
+    /* border: 1px solid black; */
+    cursor: grab;
+}
+
+.root .mainCanvasBox .profile {
+    width: 196px;
+    height: 196px;
+    position: absolute;
+    top: calc((260px - 200px) / 2);
+    left: calc((260px - 200px) / 2);
+    border: dotted;
+    border-width: 2px;
+    border-color: #00000000;
+    border-radius: 100%;
+}
+.root .mainCanvasBox .profile.showBorder {
+    border-color: #00000078;
+
+}
+.root .mainCanvasBox .info {
+    position: absolute;
+    top: calc((260px - 200px) / 2);
+    left: calc((260px - 200px) / 2 + 200px + 30px);
+}
+.root .mainCanvasBox .info .name {
+    padding: 4px 7px;
+    color: #fff;
+    background-color: rgba(0,0,0,.8);
+    font: 12px/1.4 Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+    font-size: 24px;
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    min-height: 34px;
+    min-width: 10px;
+}
+.root .mainCanvasBox .info .name input {
+    border: unset;
+    background: unset;
+    color: #fff;
+    background-color: rgb(0 0 0 / 0%);
+    font: 12px/1.4 Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+    font-size: 24px;
+    width: 100%;
+    position: absolute;
+    top: 3px;
+    left: 5px;
+}
+.root .mainCanvasBox .info .name .text {
+    color: rgba(0, 0, 0, 0);
+}
+
+
+.root .mainCanvasBox .info .country {
+    padding: 2px 7px 3px;
+    color: #fff;
+    background-color: rgba(0,0,0,.8);
+    font: 12px/1.4 Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+    font-size: 14px;
+    position: relative;
+    margin-top: 4px;
+    display: inline-block;
+    white-space: nowrap;
+    min-width: 10px;
+    min-height: 22px;
+}
+.root .mainCanvasBox .info .country input {
+    border: unset;
+    background: unset;
+    color: #ccc;
+    background-color: rgb(0 0 0 / 0%);
+    font: 12px/1.4 Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+    padding: 2px 7px 3px;
+    font-size: 14px;
+    line-height: 1.2;
+    width: 100%;
+    position: absolute;
+    top: 2px;
+    left: 0px;
+}
+.root .mainCanvasBox .info .country .text {
+    color: rgba(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+
+.root .header {
+    padding-top: 15px;
+    border-bottom: 1px solid var(--border-color);
+    height: 40px;
+}
+
+.root .header .header-item {
+    font-size: 22px;
+    margin: 0 12px -1px;
+    display: inline-block;
+    cursor: pointer;
+    height: 38px;
+    border-bottom: unset;
+}
+
+.root .header .header-item.select {
+    border-bottom: 2px solid var(--sc-orange);
+    color: var(--sc-orange);
+}
+.root .mainPage  {
+    height: calc(100% - var(--mainPageHeightSub));
+    overflow-y: scroll;
+    width: 100%;
+    position: relative;
+}
+.root .mainPage.layerPage {
+    overflow-y: unset;
+}
+.root .mainPage .layer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid var(--border-color);
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    padding: 5px 0px 5px 0px;
+}
+.root .mainPage .layer.select {
+    box-shadow: inset 0px 0px 6px #0000005c;
+}
+.root .mainPage .layers {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.root .mainPage .layer .input-item {
+    display: inline-flex;
+    height: 20px;
+    align-items: center;
+    padding: 5px;
+    border-radius: 12px;
+    margin: 2px;
+    justify-content: space-between;
+    border: 1px solid var(--border-color);
+    font-size: 14px;
+}
+.root .mainPage .layer .clip {
+    cursor: pointer;
+    margin-top: -5px;
+    position: relative;
+    top: 7px;
+}
+.root .mainPage .layer .clip.active{
+    box-shadow: inset 0px 0px 10px #00000070;
+}
+.root .mainPage .layer .line {
+    /* display: flex; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: calc(100% - 120px);
+}
+
+.root .mainPage .layer .layer-num-bt {
+    border-radius: 10px;
+    padding: 4px 8px 4px 8px;
+    border: 1px solid var(--border-color);
+    margin-left: 5px;
+}
+
+.root .mainPage .layer .layer-num-bt .num-bt {
+    cursor: pointer;
+}
+
+
+
+.root .mainPage .layer .input-item .num-bt-box {
+    width: 20px;
+    text-align: center;
+}
+
+.root .mainPage .layer .input-item .num-bt-box .num-bt {
+    border: 1px solid var(--border-color);
+    font-size: 10px;
+    height: 8px;
+    display: flex;
+    cursor: pointer;
+    background: white;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.root .mainPage .layer .input-item .label {
+    cursor: ns-resize;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.root .mainPage .layer .input-item .unit {
+    margin: 0px 10px 0px 0px;
+}
+
+.root .mainPage .layer .input-item.file {
+    cursor: pointer;
+}
+.root .mainPage .layer .input-item.file .file-name {
+    width: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.root .mainPage .layer .input-item.file .file-select {
+    margin: 10px;
+}
+
+
+.root .mainPage .layer .input-item .flex-input-box {
+    position: relative;
+    min-width: 25px;
+    width: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.root .mainPage .layer .input-item .flex-input-box .input-label {
+    visibility: hidden;
+    white-space: pre;
+    font-size: 14px;
+}
+.root .mainPage .layer .input-item input {
+    position: absolute;
+    width: 100%;
+}
+.root .mainPage .layer .input-item .input-set {
+    font-size: 14px;
+    text-align: center;
+    margin: 0px 4px 0px 4px;
+    border: 0px;
+}
+
+.root .mainPage .layer .visible {
+    cursor: pointer;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--input-item-background-color);
+}
+.root .mainPage .layer .visible.active {
+    background-color: white;
+}
+.root .mainPage .layer .visible img {
+    /* position: absolute; */
+}
+
+.root .mainPage .layer .visible .flag {
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: #0000009c;
+    rotate: 45deg;
+    
+}
+.root .mainPage .layer .visible.active .flag {
+    visibility: hidden;
+}
+
+.root .mainPage .layer .delete {
+    cursor: pointer;
+}
+
+.root .mainPage .layer .input-item.color .color-text {
+    position: relative;
+    width: 60px;
+    font-size: 14px;
+    text-align: center;
+    margin: 0px 8px 0px 8px;
+    border: 0px;
+}
+.root .mainPage .layer .input-item.color .color-pick {
+    position: relative;
+    width: 26px;
+    padding: 0px;
+    border: 1px solid var(--border-color);
+    margin: 0px;
+}
+.root .mainPage .layer .toggle .label {
+    cursor: unset;
+}
+.root .mainPage .layer .toggle .toggleBox {
+    width: 45px;
+    height: 23px;
+    margin-left: 5px;
+    box-shadow: inset 0px 0px 5px #00000040;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: var(--unactive);
+    cursor: pointer;
+    transition: background-color 100ms;
+}
+.root .mainPage .layer .toggle .toggleBox.active {
+    background-color: var(--bright-green)
+}
+.root .mainPage .layer .toggle .toggleDot {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 100%;
+    position: absolute;
+    left: 2px;
+    transition: left 200ms;
+}
+.root .mainPage .layer .toggle .toggleBox.active .toggleDot {
+    left: 22px;
+}
+
+.alertMessage {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.alertMessage .alertBox {
+    opacity: 0;
+    position: relative;
+    z-index: 99;
+    display: flex;
+    color: white;
+    font-size: 15px;
+    transition: all 500ms ease 0s;
+    background: #000000a8;
+    backdrop-filter: blur(10px);
+    padding: 10px 12px 10px 12px;
+    line-height: 16px;
+    inline-size: max-content;
+    border-radius: 10px;
+    align-items: center;
+}
+.alertMessage .outter {
+    transition: all 500ms ease 0s;
+    height: 0px;
+    margin-bottom: 5px;
+}
+.alertMessage .closeBt {
+    width: 16px;
+    height: 16px;
+    background: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+
+.root .mainPage .layer .input-item.font textarea {
+    text-align: left;
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+
+}
+.root .mainPage .layer .input-item.font {
+    position: relative;
+    min-height: 20px;
+    height: unset;
+    min-width: 170px;
+    display: block;
+}
+.root .mainPage .layer .input-item.font .preText {
+    visibility: hidden;
+    font-size: 14px;
+}
+.root .mainPage .layer .input-item.font-select select {
+    height: 120%;
+    border: 0px;
+}
+.root .mainPage .layer .input-item.font-select .label {
+    cursor: unset;
+}
