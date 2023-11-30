@@ -1,0 +1,43 @@
+:root {
+    --table-color: #00000042;
+    --header-back-color: #000000c4;
+    --table-width: 8;
+}
+html, body {
+    padding: 0px;
+    margin: 0px;
+}
+.main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+#calender-box {
+    padding-bottom: calc(var(--main-width) * 0.1);
+}
+#calender-box .line {
+    display: flex;
+}
+#calender-box .item {
+    width: calc(var(--main-width) / var(--table-width));
+    height: calc((var(--main-width) / var(--table-width)) * 0.5);
+    border-right: 1px solid var(--table-color);
+    border-bottom: 1px solid var(--table-color);
+    display: inline-flex;
+    align-items: center;
+    font-size: calc(var(--main-width) * 0.02);
+    text-align: center;
+    justify-content: center;
+    white-space: pre;
+}
+#calender-box .item .text {
+    empty-cells: show;
+}
+#calender-box .item:first-child {
+
+}
+#calender-box .item.header {
+    background-color: var(--header-back-color);
+    color: white;
+    font-weight: bold;
+}
+
