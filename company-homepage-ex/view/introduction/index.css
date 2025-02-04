@@ -1,0 +1,816 @@
+.overview {
+    background-image: url(./images/main-bg.png?ver=2022-03-03);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.overview .inner {
+    width: calc(100% - 28px * 2);
+}
+.overview .title {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 66px;
+    line-height: 110%;
+    /* identical to box height, or 73px */
+
+    text-align: center;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+
+    /* White */
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+
+    margin-bottom: 58px;
+}
+.overview .description {
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 120%;
+    /* or 31px */
+
+    text-align: center;
+    letter-spacing: -0.03em;
+
+    /* White */
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+}
+.overview .mobile {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .overview .title {
+        font-size: 44px;
+    }
+    .overview .description {
+        font-size: 18.5px;
+    }
+    .overview .mobile {
+        display: unset;
+    }
+    .overview .desktop {
+        display: none;
+    }
+}
+.vision {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.vision .ellipse1 {
+    width: 1450px;
+    height: 1450px;
+    border-radius: 100%;
+    border: 1px solid #CAD7E3;
+    position: absolute;
+}
+.vision .ellipse2 {
+    width: 943px;
+    height: 943px;
+    border-radius: 100%;
+    border: 1px solid #CAD7E3;
+    position: absolute;
+}
+.vision .ellipse3 {
+    width: 615px;
+    height: 615px;
+    border-radius: 100%;
+    border: 1px solid #CAD7E3;
+    position: absolute;
+}
+.vision .ellipse4 {
+    width: 305px;
+    height: 305px;
+    border-radius: 100%;
+    border: 1px solid #005AAB;
+    position: absolute;
+}
+.vision .ellipse5 {
+    width: 263px;
+    height: 263px;
+    border-radius: 100%;
+    background-color: #005AAB;
+    position: absolute;
+}
+.vision .ellipse1 * {
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vision .ellipse1 .ellipse1 {
+    width: 136px;
+    height: 136px;
+    background-color: white;
+    border-radius: 100%;
+    border: 1px solid #CAD7E3;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 125%;
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: #000000;
+
+    top: 360px;
+    left: 290px;
+}
+.vision .ellipse1 .ellipse2 {
+    position: absolute;
+    width: 49.02px;
+    height: 49.02px;
+    left: 589px;
+    top: 418px;
+    border: 0px;
+
+    background: #E0E5F8;
+}
+.vision .ellipse1 .ellipse2 div {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 110%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #000000;
+    top: 53px;
+    position: absolute;
+}
+.vision .ellipse1 .ellipse3 {
+    position: absolute;
+    width: 132.54px;
+    border: 0px;
+    height: 132.54px;
+    top: 457px;
+    left: 899px;
+
+    background: #DDECF9;
+}
+.vision .ellipse1 .ellipse4 {
+    position: absolute;
+    width: 132.54px;
+    height: 132.54px;
+    border: 0px;
+    background: #E6F3F7;
+    top: 614px;
+    left: 354px;
+}
+.vision .ellipse1 .ellipse5 {
+    width: 136px;
+    height: 136px;
+    background-color: white;
+    border-radius: 100%;
+    border: 1px solid #CAD7E3;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 125%;
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: #000000;
+
+    top: 656px;
+    left: 1128px;
+}
+.vision .ellipse1 .ellipse6 {
+    position: absolute;
+    width: 49.02px;
+    height: 49.02px;
+
+    background: #E6F3F6;
+    top: 781px;
+    left: 1091px;
+
+}
+.vision .ellipse1 .ellipse6 div {
+    position: absolute;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 110%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #000000;
+    top: 61px;
+}
+.vision .ellipse1 .ellipse7 {
+    width: 136px;
+    height: 136px;
+    background-color: white;
+    border-radius: 100%;
+    border: 1px solid #CAD7E3;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 125%;
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: #000000;
+
+    top: 889px;
+    left: 254px;
+}
+.vision .ellipse1 .ellipse8 {
+    position: absolute;
+    width: 49.02px;
+    height: 49.02px;
+
+    background: #DDECF9;
+    top: 924px;
+    left: 488px;
+}
+.vision .ellipse1 .ellipse8 div {
+    position: absolute;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 110%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #000000;
+    top: 61px;
+}
+.vision .ellipse1 .ellipse9 {
+    position: absolute;
+    width: 132.54px;
+    height: 132.54px;
+
+    background: #E0E5F8;
+    top: 925px;
+    left: 804px;
+}
+.vision .ellipse1 .text {
+    position: absolute;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 110%;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #000000;
+    border-bottom: 15px solid #E6F3F6;
+    border-radius: 0;
+    height: 8px;
+}
+.vision .ellipse1 .text1 {
+    top: 626px;
+    left: 141px;
+}
+.vision .ellipse1 .text2 {
+    top: 483px;
+    left: 1062px;
+}
+.vision .ellipse1 .text3 {
+    top: 952px;
+    left: 1018px;
+    border-color: #E0E5F8;
+}
+
+
+.vision .title-box {
+    position: absolute;
+    top: 110px;
+    width: 100%;
+    text-align: center;
+    font-family: Open Sans;
+    font-style: normal;
+    line-height: 120%;
+    /* or 50px */
+
+    text-align: center;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+
+    color: #000000;
+}
+.vision .title-box .title {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 19px;
+}
+.vision .title-box .subtitle {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%;
+    /* identical to box height, or 29px */
+
+    text-align: center;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+
+    color: #000000;
+
+    padding: 0px 25px 0px 25px;
+}
+.vision .mask {
+    position: absolute;
+    width: 100%;
+    height: 165px;
+    bottom: 0px;
+    background: linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0));
+}
+
+
+
+.vision .bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 1000px) {
+    .vision .title-box .title {
+        font-size: 28px;
+    }
+    .vision .title-box .subtitle {
+        font-size: 13px;
+    }
+
+    .vision .ellipse1 .text {
+        font-size: 45px;
+    }
+    .vision .ellipse1 .ellipse5 {
+        font-size: 36px;
+    }
+    .vision .ellipse1 .ellipse1 {
+        font-size: 36px;
+    }
+    .vision .ellipse1 .ellipse7 {
+        font-size: 36px;
+    }
+    .vision .ellipse1 .ellipse2 div {
+        font-size: 36px;
+    }
+    .vision .ellipse1 .ellipse6 div {
+        font-size: 36px;
+    }
+    .vision .ellipse1 .ellipse8 div {
+        font-size: 36px;
+    }
+}
+.philosophy {
+    background-image: url(./images/philosophy-bg.png?ver=2022-03-03);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: unset;
+}
+.philosophy .title {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 120%;
+    /* or 50px */
+
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+
+    color: #000000;
+
+    margin-bottom: 161px;
+}
+.philosophy .blocks {
+    display: flex;
+    justify-content: space-between;
+} 
+.philosophy .block {
+    width: 445px;
+    height: 486px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgb(0 53 101 / 20%);
+    border-radius: 0px 20px 0px 20px;
+    margin-bottom: 20px;
+}
+.philosophy .block .art {
+    height: 265px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.philosophy .block .title {
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    /* or 29px */
+
+    text-align: center;
+    letter-spacing: -0.03em;
+
+    /* black */
+
+    color: #303030;
+    margin-bottom: 36px;
+}
+.philosophy .block .description {
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 160%;
+    /* or 32px */
+
+    text-align: center;
+    letter-spacing: -0.03em;
+
+    /* grey 5 */
+
+    color: #555555;
+}
+@media (max-width: 1400px) {
+
+    .philosophy .blocks {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 470px) {
+    .philosophy .block {
+        width: 325px;
+        height: 350px;
+    }
+    .philosophy .block .art {
+        height: 195px;
+    }
+    .philosophy .block .art img {
+        width: 134px;
+        height: 134px;
+    }
+    .philosophy .block .title {
+        font-size: 20px;
+    }
+    .philosophy .block .description {
+        font-size: 15px;
+    }
+    .philosophy .d {
+        display: none;
+    }
+    .philosophy .block .title {
+        margin-bottom: 18px;
+    }
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.message .inner {
+    position: absolute;
+}
+.message .title {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 110%;
+    /* or 46px */
+
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+
+    color: #000000;
+
+    margin-bottom: 100px;
+}
+.message .body {
+    position: relative;
+}
+.message .img-box {
+    top: 0px;
+    left: 0px;
+    width: 50%;
+}
+.message .text {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 50%;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 25px;
+    /* or 17px */
+
+    letter-spacing: -0.01em;
+
+    color: #000000;
+
+}
+
+@media (max-width: 850px) {
+    .message {
+        height: unset;
+    }
+    .message .inner {
+        position: relative;
+        margin-top: 78px;
+    }
+    .message .img-box {
+        width: 100%;
+        height: 329px;
+        display: flex;
+        justify-content: center;
+    }
+    .message .title {
+        margin-bottom: 16px;
+    }
+    .message .text {
+        position: relative;
+        width: 100%;
+        left: 0px;
+        margin-top: 35px;
+    }
+}
+.ci {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), rgba(0, 90, 171, 0.04);
+}
+.ci .inner {
+    position: relative;
+} 
+.ci .title {
+    font-family: Open Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 42px;
+line-height: 120%;
+/* or 50px */
+
+letter-spacing: -0.01em;
+text-transform: uppercase;
+
+color: #000000;
+
+margin-bottom: 66px;
+}
+.ci .name {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 55px;
+    line-height: 120%;
+    /* identical to box height, or 66px */
+
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+
+    color: #000000;
+    margin-bottom: 52px;
+}
+.ci hr {
+    width: 380px;
+    margin: 0px;
+    margin-bottom: 52px;
+    border: 0px;
+    height: 2px;
+    background: #878787;
+}
+.ci .description {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 25px;
+    /* or 17px */
+
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+
+    color: #000000;
+
+}
+.ci .img {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0ms;
+    
+}
+.ci .img img {
+    mix-blend-mode: multiply;
+    width: 80%;
+    object-fit: contain;
+    transition: all 0ms;
+}
+
+
+@media (max-width: 950px) {
+    .ci .img {
+        position: relative;
+        left: 0px;
+        width: 100%;
+        height: 220px;
+        margin-bottom: 36px;
+    }
+    .ci .img img {
+        width: unset;
+        height: 100%;
+    }
+    .ci hr {
+        width: 100%;
+    }
+    .ci {
+        height: unset;
+        padding: 40px 0px 40px 0px;
+    }
+}
+
+.map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.map .inner {
+    position: relative;
+}
+.map .title {
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 110%;
+    /* or 46px */
+
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+
+    /* black */
+
+    color: #303030;
+
+    margin-bottom: 30px;
+}
+.map .map-box {
+    width: 100%;
+    height: 260px;
+    background-color: rgb(171 171 171);
+    margin-bottom: 30px;
+    position: relative;
+    transition: all 0ms;
+}
+.map .map-box * {
+    transition: all 0ms;  
+}
+#mapDiv {
+    width: 100%;
+    height: 100%;
+    transition: all 0ms;
+}
+.map .contents {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.map .contents .item {
+    width: calc(50% - 20px);
+}
+.map .contents .item .name {
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+    /* or 23px */
+
+    letter-spacing: -0.03em;
+
+    /* black */
+
+    color: #303030;
+}
+.map .contents .item hr {
+    border: 0px;
+    height: 1px;
+    background-color : #DBDBDB;
+    margin: 16px 0px 16px 0px;
+}
+.map .contents .item .row {
+    position: relative;
+    height: 36px;
+}
+.map .contents .item .row .name {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 90px;
+    height: 100%;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 160%;
+    /* identical to box height, or 29px */
+
+    letter-spacing: -0.03em;
+
+    /* Blue */
+
+    color: #005AAB;
+}
+.map .contents .item .row .value {
+    position: absolute;
+    top: 0px;
+    left: 90px;
+    width: calc(100% - 90px);
+    height: 100%;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 160%;
+    /* identical to box height, or 29px */
+
+    letter-spacing: -0.03em;
+
+    /* black */
+
+    color: #303030;
+}
+
+@media (max-width: 620px) {
+    .map .contents {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .map .contents .item {
+        width: 100%;
+        margin-bottom: 33px;
+    }
+}
+@media (max-width: 500px) {
+    .vision .title-box {
+        top: 50px;
+    }
+    .vision {
+        height: 450px;
+    }
+    .philosophy .title {
+        margin-bottom: 80px;
+    }
+}

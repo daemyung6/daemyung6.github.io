@@ -1,0 +1,63 @@
+.full-page {
+    display: flex;
+    justify-content: center;
+    background-image: url(./images/hr-bg.png?ver=2022-03-03);
+    background-position: center;
+    background-size: cover;
+    min-height: 1600px;
+    height: auto;
+    padding-top: 80px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 135%;
+    letter-spacing: -0.03em;
+    color: #000000;
+    text-align: center;
+}
+.full-page .title {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 110%;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 24px;
+    margin-bottom: 10px;
+}
+.full-page .page-width {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.block {
+    width: 400px;
+    height: 415px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgb(0 53 101 / 20%);
+    border-radius: 0px 20px 0px 20px;
+    display: inline-block;
+    margin: 30px;
+}
+.block .img {
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.block .img img {
+    min-width: 50%;
+    max-width: 80%;
+}
+@media (max-width: 858px) {
+    .block {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta property="og:title" content="콘돌 | KONDOR"/>
+    <meta property="og:description" content ="KONDOR Hompage"/>
+    <meta property="og:image" content="https://kondor.co.kr/preview.png"/>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/fav/favicon-16x16.png">
+    <link rel="manifest" href="/fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>KONDOR - 콘돌소개</title>
+    <link rel="stylesheet" href="./view/layout.css?ver=2022-03-03">
+    <link rel="stylesheet" href="./view/popup.css?ver=2022-03-03">
+    <script src="./view/set-mobile.js?ver=2022-03-03"></script>
+    <script src="./view/menu.js?ver=2022-03-03"></script>
+    <script src="./view/page-control.js?ver=2022-03-03"></script>
+     
+    <link rel="stylesheet" href="./view/introduction/index.css?ver=2022-03-03">
+    <script src="./view/introduction/index.js?ver=2022-03-03"></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=4zrske01k5"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+ 
+        <div id="header">
+        <div class="page-width inner">
+            <a href="./" class="main-icon"></a>
+            <div id="lang-menu" class="lang-menu">
+                <div class="name">
+                    KOR
+                </div>
+                <div class="icon"></div>
+                <div class="list">
+                    <div>KOR</div>
+                    <!-- <div>ENG</div> -->
+                </div>
+            </div>
+            <div class="mobile-menu" id="mobile-menu"></div>
+            <div class="menu">
+                <div class="item">
+                    <a class="select" href="./introduction">
+                        콘돌소개
+                    </a>
+                    <div class="mobile-bt"></div>
+                    <div class="children-menu long">
+                        <div class="arrow"></div>
+                        <div class="menu-inner">
+                            <a href="./introduction#overview">회사소개</a>
+                            <a href="./introduction#philosophy">경영이념</a>
+                            <a href="./introduction#message">CEO 메시지</a>
+                            <a href="./introduction#ci">CI</a>
+                            <a href="./introduction#map">오시는길</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <a  href="./business-area">
+                        사업분야
+                    </a>
+                    <div class="mobile-bt"></div>
+                    <div class="children-menu small">
+                        <div class="arrow"></div>
+                        <div class="menu-inner">
+                            <a href="./business-area#konpay">KONPAY</a>
+                            <a href="./business-area#butter-land">Butter Land</a>
+                            <a href="./business-area#legal-power">Legal Power</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <a  href="./affiliates">
+                        계열사
+                    </a>
+                    <div class="mobile-bt"></div>
+                    <div class="children-menu small3">
+                        <div class="arrow"></div>
+                        <div class="menu-inner">
+                            <a href="./affiliates#Block-Commerce-Protocol">BCP</a>
+                            <a href="./affiliates#CKB">CKB Brothers</a>
+                            <a href="./affiliates#KDCC">KDCC</a>
+                            <a href="./affiliates#camp-global">Camp Global</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <a  href="./partner-company">
+                        파트너사
+                    </a>
+                </div>
+                <div class="item">
+                    <a  href="./media">
+                        미디어
+                    </a>
+                    <div class="mobile-bt"></div>
+                    <div class="children-menu small2">
+                        <div class="arrow"></div>
+                        <div class="menu-inner">
+                            <a href="./media">보도자료</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <a  href="./careers">
+                        인재채용
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="full-page overview" id="overview">
+        <div class="inner">
+            <div class="title">
+                KONDOR
+            </div>
+            <div class="description">
+                KONDOR 그룹은 다가오는 디지털 대전환을 주도할 핵심기술 사업을 통해<br class="desktop" />
+                비즈니스의 성장을 만들어 가는 기업입니다.<br class="desktop" />
+                <br class="mobile" />
+                <br class="mobile" />
+                온라인과 오프라인의 경계가 무너지는 디지털 대전환의 시대,<br />
+                상상이 현실이 되는 기술과 일상을 연결합니다. <br class="desktop" />
+                <br class="mobile" />
+                <br class="mobile" />
+                블록체인, 메타버스, 엔터테인먼트를 융합하여 시너지를 극대화하고,<br />
+                중소상공인과 개인에게 더 나은 삶으로 다가가고자 합니다.
+            </div>
+        </div>
+    </div>
+    <div class="full-page vision">
+        <div class="bg" id="vision-bg">
+            <div class="ellipse2"></div>
+            <div class="ellipse3"></div>
+            <div class="ellipse4"></div>
+            <div class="ellipse5"></div>
+            <div class="ellipse1">
+                <div class="ellipse1">
+                    인재경영
+                </div>
+                <div class="ellipse2">
+                    <div>challenge</div>
+                </div>
+                <div class="ellipse3"></div>
+                <div class="ellipse4"></div>
+                <div class="ellipse5">
+                    투명경영
+                </div>
+                <div class="ellipse6">
+                    <div>change</div>
+                </div>
+                <div class="ellipse7">
+                    윤리경영
+                </div>
+                <div class="ellipse8">
+                    <div>creation</div>
+                </div>
+                <div class="ellipse9"></div>
+                <div class="text text1">BlockChain</div>
+                <div class="text text3">ENTERTAINMENT</div>
+                <div class="text text2">METAVERSE</div>
+            </div>
+        </div>
+        <div class="title-box">
+            <div class="title">
+                Company Vision
+            </div>
+            <div class="subtitle">
+                새로운 가치로 산업을 리딩하며 지속가능한 비즈니스를 만들어 다양한 산업과의 융복합을  통해 글로벌 브랜드로 성장해 나가겠습니다.
+            </div>
+        </div>
+        <div class="mask"></div>
+    </div>
+    <div class="full-page philosophy" id="philosophy">
+        <div class="inner page-width">
+            <div class="title">
+                경영 이념
+            </div>
+            <div class="blocks">
+                <div class="block">
+                    <div class="art">
+                        <img src="./view/introduction/images/philosophy-1.png?ver=2022-03-03" alt="">
+                    </div>
+                    <div class="title">겸손&지혜</div>
+                    <div class="description">
+                        겸손은 사람을 진실되게 만들어 줍니다.<br />
+                        명예 앞에 항상 겸손을 앞세워<br />
+                        지혜의 울타리 안에서 성공을 키워 냅니다.
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="art">
+                        <img src="./view/introduction/images/philosophy-2.png?ver=2022-03-03" alt="">
+                    </div>
+                    <div class="title">열정&성실</div>
+                    <div class="description">
+                        미래의 목표와 성장을 위해 <br />
+                        정확한 타겟  포지셔닝을  정하여<br />
+                        열정과 성실함으로 꾸준히 전진합니다.
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="art">
+                        <img src="./view/introduction/images/philosophy-3.png?ver=2022-03-03" alt="">
+                    </div>
+                    <div class="title">가치창조</div>
+                    <div class="description">
+                        각자 추구하는 가치를 연결한<br />
+                        시너지를 모아 더 의미 있는<br />
+                        가치를 창조하여<br class="d" />
+                        모두 함께 윈윈 합니다.
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="full-page message" id="message">
+        <div class="inner page-width">
+            <div class="title">CEO 메시지</div>
+            <div class="body">
+                <div class="img-box">
+                    <img src="./view/introduction/images/ceo.png?ver=2022-03-03" alt="">
+                </div>
+                <div class="text">
+                    지금, 세상은 새로운 시대적인 흐름 속에서 패러다임의 전환을<br />
+                    요구하고 있으며, 이에 발맞춰 새로운 구도로 재편되어가고 있습니다.<br />
+                    이러한 흐름을 누군가는 위기라고 할 지 모르지만,<br />
+                    무에서 유를 창조할 수 있다는 신념으로 걸어온 저는<br />
+                    지금 이 시대의 흐름을 기회라고 믿습니다.<br />
+                    <br />
+                    이제 KONDOR은 최고의 가치창조를 지향하는<br />
+                    KONDOR만의 자신감으로 전세계를 무대로 날아오르고자 합니다.<br />
+                    겸손과 지혜, 열정과 성실을 바탕으로 각자의 지향점을 연결하고<br />
+                    융합 시키는 무대의 주역으로서 새로운 가치창조 실현을 이루어<br />
+                    상생의 장으로 도약하는 발판을 만들겠습니다.<br />
+                    <br />
+                    거대한 두 날개를 활짝 펼치고 힘껏 비상하는 KONDOR를 꿈꿔봅니다.<br />
+                    그것은 분명 '나'가 아닌 '우리'의 힘이어야만 가능하다는 진리를<br />
+                    다시 한 번 기억하며, 개인의 성장에 머물지 않고 지역사회와 국가,<br />
+                    더 나아가 전세계적으로도 긍정을 끼치는 선순환의 구심점이 되도록<br />
+                    최선을 다하겠습니다.<br />
+                    <br />
+                    <br />
+                    (주)콘돌 CEO & Founder 차세영
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="full-page ci" id="ci">
+        <div class="inner page-width">
+            <div class="title">
+                CI
+            </div>
+            <div class="name">
+                kondor
+            </div>
+            <hr>
+            <div class="img">
+                <img src="./view/introduction/images/ci.png?ver=2022-03-03" alt="">
+            </div>
+            <div class="description">
+                콘돌의 심볼마크는 Black과 Gold 2가지 색을 기본으로 하고 있습니다.<br />
+                Black 컬러는 콘돌 특유의 자신감을 상징하며, <br />
+                Gold 컬러는 최고를 지향하는 리더십을 상징적으로 구형하고 있습니다.<br />
+                전체적으로는 'KONDOR'이 높이 비상하는 모습을 나타냄과 동시에 <br />
+                날개로 세상을 감싸 안는다는 뜻을 품고 있습니다.
+            </div>
+        </div>
+    </div>
+    <div class="full-page map" id="map">
+        <div class="inner page-width">
+            <div class="title">오시는길</div>
+            <div class="map-box">
+                <di id="mapDiv" style="position: absolute;">
+            </div>
+            <script>
+                (function() {
+                    var mapDiv = document.getElementById('mapDiv');
+                    var map = new naver.maps.Map(mapDiv);
+                    var map = new naver.maps.Map('mapDiv', {
+                        center: new naver.maps.LatLng(37.52899202069052, 127.12327969206898),
+                        zoom: 17
+                    });
+                    var marker = new naver.maps.Marker({
+                        position: new naver.maps.LatLng(37.52899202069052, 127.12327969206898),
+                        map: map
+                    });
+                })()
+            </script>
+            <div class="contents">
+                <div class="item">
+                    <div class="name">Contact us</div>
+                    <hr>
+                    <div class="row">
+                        <div class="name">Tell</div>
+                        <div class="value"><a href="tel:02-420-7890">02-420-7890</a></div>
+                    </div>
+                    <div class="row">
+                        <div class="name">Email</div>
+                        <div class="value"><a href="mailto:info@kondor.co.kr">info@kondor.co.kr</a></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="name">위 치</div>
+                    <hr>
+                    <div class="row">
+                        <div class="name">본 사</div>
+                        <div class="value">서울특별시 강동구 성내로 6길 11 삼원타워 5층</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="footer">
+    <div class="page-width">
+        <a class="main-icon" href="./"></a>
+        <div class="contents">
+            <div class="list">
+                <a href="./introduction">회사소개</a>
+                <span></span>
+                <a href="./introduction#map">Contacts US</a>
+            </div>
+            <div>
+                <div class="item">서울특별시 강동구 성내로 6길 11 삼원타워 5층</div>
+                <a class="item" href="tel:02-420-7890"><div class="display-block">대표번호 : 02-420-7890</div></a>
+                <a class="item"><div class="display-block">FAX : 02-470-7880</div></a>
+                <a class="item" href="mailto:info@kondor.co.kr"><div class="display-block">E-MAIL : info@kondor.co.kr</div></a>
+            </div>
+            <br /><br />
+            <div class="copyright">
+                Copyright ⓒ KONDOL CO.,LTD. ALL RIGHTS RESERVED.
+            </div>
+        </div>
+    </div>
+    <div id="top-arrow" class="top-arrow"></div>
+</div>
+</body>
+</html>
