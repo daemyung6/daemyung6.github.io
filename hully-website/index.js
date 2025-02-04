@@ -242,11 +242,11 @@ window.addEventListener('DOMContentLoaded', function () {
           scrollBlock(e);
           return false;
         }
-        if (!isChPlayerPlay) {
-          chPlayer.currentTime = 0;
-          chPlayer.play();
-          isChPlayerPlay = true;
-        }
+        // if (!isChPlayerPlay) {
+        //   chPlayer.currentTime = 0;
+        //   chPlayer.play();
+        //   isChPlayerPlay = true;
+        // }
       }
     },
     {
