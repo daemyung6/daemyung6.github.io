@@ -302,10 +302,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
   const chPlayer = document.getElementById("ch-player");
   let isChPlayerPlay = false;
-  chPlayer.onended = function () {
-    chPlayer.currentTime = 0;
-    chPlayer.play();
-  }
+  // chPlayer.onended = function () {
+  //   chPlayer.currentTime = 0;
+  //   chPlayer.play();
+  // }
 
 
   // const io = new IntersectionObserver((entries) => {
