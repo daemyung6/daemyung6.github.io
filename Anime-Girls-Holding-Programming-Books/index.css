@@ -72,6 +72,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 .viewOut .item {
     max-width: 90%;
@@ -86,14 +87,46 @@ a {
     font-weight: bold;
     cursor: pointer;
     color: white;
-    background: black;
-    padding: 0.5vw 2vw 0.7vw 2vw;
-    border-radius: 1vw;
+    background: #ffffff;
     font-family: 'Noto Sans KR';
+    width: 6vw;
+    height: 6vw;
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0.2vw 0.2vw 2vw black;
+}
+.viewOut .close-button svg {
+    width: 60%;
+}
+.viewOut .close-button svg path {
+    fill: black;
+}
+.viewOut .description {
+    bottom: 2%;
+    position: absolute;
+}
+.viewOut .description a {
+    color: #ffffff;
+    display: block;
+    width: 90vw;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 @media screen and (max-width: 900px) {
+    body {
+        padding: 0px;
+        width: 100%;
+        min-height: unset;
+    }
     .main .menu {
         width: 30vw;
+        height: 100%;
     }
     .main .list {
         padding-left: 30vw;
@@ -102,9 +135,13 @@ a {
     }
     .main .menu .item {
         padding: 2vw;
-        font-size: 2vw;
+        font-size: 3vw;
     }
     .main .list img {
         width: calc(100% - 20px);
+    }
+    .viewOut .close-button {
+        width: 10vw;
+        height: 10vw;
     }
 }

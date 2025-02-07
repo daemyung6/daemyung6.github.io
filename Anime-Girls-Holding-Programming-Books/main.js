@@ -134,11 +134,33 @@ document.addEventListener('DOMContentLoaded', function() {
                 })())
                 viewOut.appendChild((function() {
                     let close = document.createElement('div');
-                    close.innerText = "X";
+                    close.innerHTML = /*svg*/`
+                        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z"/>
+                        </svg>
+                    `
                     close.classList.add('close-button');
                     close.onclick = onclose;
                     return close;
                 })())
+
+                let linkStr = `https://github.com/cat-milk/Anime-Girls-Holding-Programming-Books/tree/master/${encodeURIComponent(dir)}/${encodeURIComponent(file)}`;
+
+                viewOut.appendChild((function() {
+                    let div = document.createElement('div')
+                    div.classList.add('description')
+
+                    div.appendChild((() => {
+                        let a = document.createElement('a')
+                        a.href = linkStr
+                        a.target = '_blank'
+                        a.innerText = linkStr
+                        return a
+                    })())
+
+                    return div
+                })())
+
                 return viewOut
             })())
         }
